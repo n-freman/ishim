@@ -1,0 +1,103 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+   <svg display="none">
+      <symbol id="favorites__str" viewBox="0 0 28 27">
+         <g>
+            <path
+               d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
+               stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         </g>
+      </symbol>
+   </svg>
+
+   <svg display="none">
+      <symbol id="bookmark" viewBox="0 0 19 24">
+         <g>
+            <path
+               d="M18 22.85L9.5 16.7806L1 22.85V3.42778C1 2.78389 1.25587 2.16638 1.71131 1.71108C2.16676 1.25578 2.78447 1 3.42857 1H15.5714C16.2155 1 16.8332 1.25578 17.2887 1.71108C17.7441 2.16638 18 2.78389 18 3.42778V22.85Z"
+               stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         </g>
+      </symbol>
+   </svg>
+   <div class="container__main pad-0 w-1920">
+      {% include 'main/header_employee.html' %}
+      <div class="container__content">
+         <div class="h__fav">
+            <div class="h__fav__top">
+               <h1 class="h__fav__top__title">Избранное</h1>
+
+               <span class="h__fav__top__cat gren__color" id="vac_fav">Вакансии</span>
+               <span class="h__fav__top__cat" id="articles_fav">Статьи</span>
+            </div>
+
+            <div class="h__fav__top__row"></div>
+            <div class="vac__card__wrapper" id="fav__btn__wrapper">
+               {% for vacancy in vacancies %}
+               <div class="vacancy__card" id="fav__btn__wrapper">
+                  <div class="vac__card__inner">
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">{{ vacancy.position }}</h2>
+                        <h2 class="vac__heading__item">{{ vacancy.min_salary }} манат</h2>
+                     </div>
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">{{ vacancy.creation_date|date:"Y.m.d" }}</h2>
+                        <svg width="26px" height="24px">
+                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico{% for chosen in user.employee.chosenvacancy_set.all %}{% if chosen.vacancy == vacancy %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-vacancy' vacancy.id %}"></use>
+                        </svg>
+                     </div>
+                     <div class="vac__categories">
+                        <span class="vac__cat__item two-col">{{ vacancy.sphere }}</span>
+                        <span class="vac__cat__item">{{ vacancy.registration }}</span>
+                        <span class="vac__cat__item">{{ vacancy.experience }}</span>
+                        <span class="vac__cat__item">{{ vacancy.min_age }} лет</span>
+                        <span class="vac__cat__item">{{ vacancy.sex }}</span>
+                        <span class="vac__cat__item two-col">{{ vacancy.education }}</span>
+                     </div>
+                     <div class="vac__btns">
+                        <a href="{% url 'vacancy-info' vacancy.id %}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+                        <a href="{% url 'get-contact' id=vacancy.contact.id %}" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+
+            
+            <div class="disappear" id="fav__wrapper2">
+               {% for article in articles %}
+               <div class="fav__article">
+                  <div class="fav__article__section">
+                     <img src="{{ article.image.url }}" alt="" class="fav__article__pic" width="100" height="100">
+                  </div>
+
+                  <div class="fav__article__section" id="article__btn__wrapper">
+                     <div class="fav__article__section__top">
+                        <a href="{% url 'article-detail' article.id %}" class="article__subtitle">{{ article.title }}</a>
+                        <svg width="19" height="24">
+                           <use xlink:href="#bookmark" width="19" height="24" class="vac__ico{% for chosen in article.chosenarticle_set.all %}{% if chosen.user == user %}__selected__purp{% endif %}{% endfor %}" id="bookmarkbtn"
+                              data-link="{% url 'choose-article' article.id %}"></use>
+                        </svg>
+                     </div>
+                     <div class="fav__article__section__bottom">
+                        <div>{{ article.views}}</div>
+                        <div>{{ article.creation_date|date:"Y.m.d" }}</div>
+                     </div>
+                  </div>
+               </div>
+               
+
+               {% endfor %}
+            </div>
+            
+
+
+         </div>
+      </div>
+   </div>
+   <script src="{% static 'scripts/header.js' %}"></script>
+   <script src="{% static 'scripts/favourtie.js' %}"></script>
+   <script src="{% static 'scripts/empl_fav.js' %}"></script>
+   <script src="{% static 'scripts/fav_art.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+      <div class="container__main pad-0 w-1920">
+         {% include 'main/header_employee.html' %}
+         <div class="container__content">
+            <div class="my__vac">
+
+               {% for vacancy in vacancies %}
+               <div class="my__vac__item">
+
+                  <h2 class="my__vac__item__title"><a href="{% url 'vacancy-info' vacancy.id %}">{{ vacancy.position }}</a></h2>
+                  <h3 class="my__vac__item__subtitle">{{ vacancy.min_salary }} ман.</h3>
+
+                  <a href="" class="amount__resp">{{ vacancy.response_set.count }} человек откликнулись к этой вакансии</a>
+
+                  <span>Вакансия обновлена {{ vacancy.creation_date|date:"Y.m.d" }}</span>
+
+                  <a href="{% url 'suitable-cvs' vacancy.id %}" class="suitable__link">{{ vacancy.cv_set.count }} подходящих сотрудников</a>
+               </div>
+               {% endfor %}
+            </div>
+         </div>    
+      </div>
+      <script src="{% static 'scripts/header.js' %}"></script>
+{% endblock %}

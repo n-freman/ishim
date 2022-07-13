@@ -1,0 +1,92 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+      <div class="container__main pad-0 w-1920">
+         {% include 'main/header_employee.html' %}
+         <div class="container__content">
+            <div class="my__vac__view">
+               <h1 class="mvv__headline">Моё резюме</h1>
+               <h3 class="mvv__subtitle">{{ object.first_name }} {{ object.last_name }}</h3>
+               <span class="mvv__main__info">{{ object.sex }}, {{ object.birth_date|date:"Y.m.d" }}</span>
+               <span class="mvv__main__info">{{ object.registration }}</span>
+               <span class="mvv__main__info">{{ object.mobile_num }}</span>
+               <span class="mvv__main__info">{{ object.email }}</span>
+               <span class="mvv__main__info">Опубликовано в {{ object.creation_date|date:"H:i" }}</span>
+               <span class="mvv__main__info">{{ object.views }} просмотров</span>
+               <a href="{% url 'refresh-cv' object.id %}" class="mvv__refresh__in__search__btn green__btn">Обновить в поиске</a>
+               <a href="" class="mvv__edit__btn purp__btn">Редактировать</a>
+               <h4 class="mvv__subtitle">{{ object.position }}
+               </h4>
+               <p class="mvv__info">
+                  <span>{{ object.sphere }}</span>
+                  
+                  <span>График работы: {{ object.work_graph }}</span>
+                
+                  <span>Пол: {{ object.sex }}</span>
+                  
+                  <span>Занятость:  {{ object.busyness }}</span>
+               </p>
+               <h4 class="mvv__subtitle">Опыт работы</h4>
+               {% for cvattr in object.cvattr_set.all %}
+               {% if cvattr.workexperience %}
+               <p class="mvv__info">
+                  <span>{{ cvattr.workexperience.positon }}</span>
+                  
+                  <span>{{ cvattr.workexperience.org_name }}</span>
+                  
+                  <span>{{ cvattr.workexperience.start_year }} - {{ cvattr.workexperience.end_year }}</span>
+               </p>
+               <h4 class="mvv__subtitle">Обязанности:</h4>
+               <p class="mvv__info">
+                  {{ cvattr.workexperience.responsibilities }}
+               </p>
+               {% endif %}
+               {% endfor %}
+               <h4 class="mvv__subtitle">Образование
+               </h4>
+               {% for cvattr in object.cvattr_set.all %}
+                  {% if cvattr.education %}
+               <p class="mvv__info">
+                  <span>
+                     {{ cvattr.education.degree }}
+                  </span>
+                  
+                  <span>{{ cvattr.education.establishment }}</span>
+                  
+                  <span>{{ cvattr.education.start_year }} - {{ cvattr.education.end_year }}</span>
+
+                  <span>Факультет: {{ cvattr.education.faculty }}</span>
+
+                  <span>Специальность: {{ cvattr.education.specialization }}</span>
+
+               </p>
+               {% endif %}
+               {% endfor %}
+               <h4 class="mvv__subtitle">Знание программ</h4>
+               <p class="mvv__info">
+                  {% for cvattr in object.cvattr_set.all %}
+                  {% if cvattr.knownprogram %}
+                  <span>- {{ cvattr.knownprogram.program }}</span>
+                  {% endif %}
+                  {% endfor %}
+               </p>
+               <h4 class="mvv__subtitle">Владение языками</h4>
+               <p class="mvv__info">
+                  {% for cvattr in object.cvattr_set.all %}
+                  {% if cvattr.knownlanguage %}
+                  <span>{{ cvattr.knownlanguage.language }} - {{ cvattr.knownlanguage.level }}</span>
+                  {% endif %}
+                  {% endfor %}
+               </p>
+
+               <h4 class="mvv__subtitle">О себе</h4>
+               <p class="mvv__info">
+                  {{ object.about }}
+               </p>
+              
+               <a href="{% url 'delete-cv' cv.id %}" class="mvv__delete__btn">Удалить</a>
+            </div>
+         </div>    
+      </div>
+      <script src="{% static 'scripts/header.js' %}"></script>
+      {% endblock %}

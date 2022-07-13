@@ -1,0 +1,86 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+      <div class="container__main pad-0 w-1920">
+         <header class="header">
+            <div class="container__content">
+               <div class="header__content">
+                  <section class="header__sec__type3 ">
+                     <img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="header__pic ">
+   
+                  </section>
+                  <section class="header__sec__type3">
+                     <form action="{% url 'search' %}">
+   
+                        <div class="nav">
+                           <button type="submit" name="search_btn">
+                              <img src="{% static 'images/search__ic.svg' %}" alt="Sorry">
+                           </button>
+                           <input type="text" class="nav__inp" name='search' placeholder="Профессия, должность или ключевые слова">
+                           <input type="text" class="nav__inp__small" name='search' placeholder="Профессия">
+                        </div>
+                        <a href="">
+                           <img src="{% static 'images/nav__setting.png' %}" alt="Sorry" class="nav__set__pic">
+                        </a>
+                     </form>
+                  </section>
+   
+                  <section class="header__sec__type3">
+                     <a href="" class="header__user__pic">
+                        <img src="{% static 'images/user__def__ic.png' %}" alt="Sorry">
+                     </a>
+                     <button class="hamburger hamburger-line">
+                        <span></span>
+                     </button>
+                  </section>
+               </div>
+            </div>
+         </header>
+         <div class="container__content">
+            <div class="nav__burger disappear">
+               <h1 class="nav__title">Меню</h1>
+      
+               <a href="{% url 'company-catalog' %}" class="nav__link">Каталог компаний</a>
+      
+               <a href="" class="nav__link">Статьи</a>
+   
+               <select name="interface__lang" onchange="window.location.href=this.options[this.selectedIndex].value" class="nav__link">
+                  <option selected disabled hidden class="header__loc__current">Язык</option>
+                  <option value="" class="header__loc__current">RU</option>
+                  <option value="" class="header__loc__current">TM</option>
+               </select>
+   
+               <a href="" class="nav__link">История поиска</a>
+      
+               <a href="" class="nav__link">Условия использования и политика конфиденциальности</a>
+      
+               <a href="" class="nav__link">Связаться с нами</a>
+            </div>
+         </div>
+         <div class="container__content">
+            <div class="my__vac">
+               <h1 class="my__vac__title">Мои вакансии</h1>
+               {% for vacancy in vacancies %}
+               <div class="my__vac__item">
+
+                  <h2 class="my__vac__item__title">{{ vacancy.position }}</h2>
+                  <h3 class="my__vac__item__subtitle">{{ vacancy.min_salary }} ман.</h3>
+
+                  <a href="" class="amount__resp">{{ vacancy.response_set.count }} человек откликнулись к этой вакансии</a>
+
+                  <span>Вакансия обновлена {{ vacancy.creation_date }}</span>
+
+                  <a class="refresh__in__search__btn green__btn" href="{% url 'refresh-vacany' id=vacancy.id %}">Обновить в поиске</button>
+
+                  <a href="" class="edit__btn purp__btn">Редактировать</a>
+
+                  <a href="" class="suitable__link">{{ vacancy.cv_set.count }} подходящий сотрудников</a>
+               </div>
+               {% endfor %}
+
+               <a href="{% url 'create-vacancy' %}" class="add__vac"><span>+</span>Добавить новую вакансию</a>
+            </div>
+         </div>    
+      </div>
+      <script src="{% static 'scripts/header.js' %}"></script>
+{% endblock %}

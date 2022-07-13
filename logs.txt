@@ -1,0 +1,7 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 06, 2022 - 23:18:37
+Django version 4.0.4, using settings 'ishim.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.

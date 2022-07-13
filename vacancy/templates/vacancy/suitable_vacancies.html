@@ -1,0 +1,57 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+
+   <svg display="none">
+      <symbol id="favorites__str" viewBox="0 0 28 27">
+         <g>
+            <path
+               d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
+               stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         </g>
+      </symbol>
+   </svg>
+
+   <div class="container__main pad-0 w-1920">
+      {% include 'main/header_employee.html' %}
+
+      <div class="container__content">
+         
+         <div class="e__rec" id="fav__btn__wrapper">
+            <h1 class="e__rec__title">Подходящие вакансии</h1>
+            <div class="e__rec__inner">
+               {% for vacancy in vacancies %}
+                  <div class="vacancy__card" id="fav__btn__wrapper">
+                     <div class="vac__card__inner">
+                        <div class="vac__heading">
+                           <h2 class="vac__heading__item">{{ vacancy.position }}</h2>
+                           <h2 class="vac__heading__item">{{ vacancy.min_salary }} манат</h2>
+                        </div>
+                        <div class="vac__heading">
+                           <h2 class="vac__heading__item">{{ vacancy.creation_date|date:"Y.m.d" }}</h2>
+                           <svg width="26px" height="24px">
+                              <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico{% for chosen in user.employee.chosenvacancy_set.all %}{% if chosen.vacancy == vacancy %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-vacancy' vacancy.id %}"></use>
+                           </svg>
+                        </div>
+                        <div class="vac__categories">
+                           <span class="vac__cat__item two-col">{{ vacancy.sphere }}</span>
+                           <span class="vac__cat__item">{{ vacancy.registration }}</span>
+                           <span class="vac__cat__item">{{ vacancy.experience }}</span>
+                           <span class="vac__cat__item">{{ vacancy.min_age }} лет</span>
+                           <span class="vac__cat__item">{{ vacancy.sex }}</span>
+                           <span class="vac__cat__item two-col">{{ vacancy.education }}</span>
+                        </div>
+                        <div class="vac__btns">
+                           <a href="{% url 'vacancy-info' vacancy.id %}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+                           <a href="{% url 'get-contact' id=vacancy.contact.id %}" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+                        </div>
+                     </div>
+                  </div>
+                  {% endfor %}
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="{% static 'scripts/header.js' %}"></script>
+   <script src="{% static 'scripts/favourtie.js' %}"></script>
+   {% endblock %}

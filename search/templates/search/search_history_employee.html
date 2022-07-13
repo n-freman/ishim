@@ -1,0 +1,80 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+   <svg display="none" fill="none">
+      <symbol id="search__pic" viewBox="0 0 22 22">
+         <path
+            d="M7.875 16.75C11.672 16.75 14.75 13.672 14.75 9.875C14.75 6.07804 11.672 3 7.875 3C4.07804 3 1 6.07804 1 9.875C1 13.672 4.07804 16.75 7.875 16.75Z"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         <path d="M17.501 19.5001L12.7344 14.7334" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+   </svg>
+   <div class="container__main pad-0 w-1920">
+      {% include 'main/header_employee.html' %}
+
+      <div class="search__history">
+         <div class="container__content">
+            <div class="search__history__inner">
+               <section class="search__history__section">
+                  <div class="search__history__title">
+                     <h1 class="h__fav__top__title">История поиска</h1>
+
+                     <a href="{% url 'clear-history' %}" class="priv__data__item__action">Очистить историю
+                        <img src="{% static 'images/trsh__box__pic.png' %}" alt="">
+                     </a>
+                  </div>
+                  {% for story in stories %}
+                  <div class="search__history__item">
+                     <h3 class="search__history__headline">
+                        {{ story.search.position.0 }}
+                     </h3>
+
+                     <div class="search__history__item__cats__wrapper">
+                        <a href="" class="search__history__item__cat">
+                           {{ story.search.language.0 }}
+                        </a>
+                        <a href="" class="search__history__item__cat">
+                           {{ story.search.work_graph.0 }}
+                        </a>
+                        <a href="" class="search__history__item__cat">
+                           {{ story.search.sex.0 }}
+                        </a>
+                        <a href="" class="search__history__item__cat">
+                           {{ story.search.education.0 }}
+                        </a>
+                        <a href="" class="search__history__item__cat">
+                           {{ story.search.registration.0 }}
+                        </a>
+                        <a href="" class="search__history__item__cat">
+                           {{ story.search.work_exp.0 }}
+                        </a>
+                        <a href="" class="search__history__item__cat">
+                           {{ story.search.sphere.0 }}
+                        </a>
+                        <a href="" class="search__history__item__cat">
+                           от {{ story.search.min_salary.0 }} ман
+                        </a>
+
+                     </div>
+
+                     <div class="search__history__bottom">
+                        <a href="{% url 'delete-history' story.id %}" class="priv__data__item__action">Удалить</a>
+
+                        <a href="{% url 'search-again' stroy.id %}" class="search__history__btn green__btn">
+                           Искать
+                           <svg width="26px" height="24px">
+                              <use xlink:href="#search__pic" width="22" height="22" fill="none" class="white__stroke">
+                              </use>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  {% endfor %}
+               </section>
+
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="{% static 'scripts/header.js' %}"></script>
+   {% endblock %}

@@ -1,0 +1,80 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+   <svg display="none">
+      <symbol id="favorites__str" viewBox="0 0 28 27">
+         <g>
+            <path
+               d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
+               stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         </g>
+      </symbol>
+   </svg>
+   <div class="container__main pad-0 w-1920">
+         {% include 'main/header_employee.html' %}
+      <div class="container__content">
+         <div class="my__vac__view" id="fav__btn__wrapper">
+            <h1 class="mvv__headline">{{ object.position }}</h1>
+            <h3 class="mvv__salary">{{ object.min_salary }} манат</h3>
+            <span class="mvv__main__info">{{ object.creator.hirer.company_name }}</span>
+            <span class="mvv__main__info">{{ object.sphere }}</span>
+            <span class="mvv__main__info">{{ object.city }}</span>
+            <span class="mvv__main__info">Опубликовано {{ object.creation_date|date:"Y.m.d H:i"}}</span>
+
+            <div class="mvv__refresh__in__search__btn__wrapper">
+               <a href="{% url 'make-response' object.id %}" class="mvv__refresh__in__search__btn green__btn">Откликнуться</a>
+               <svg width="30px" height="30px">
+                  <use xlink:href="#favorites__str" width="30px" height="30px" class="vac__ico{% for chosen in user.employee.chosenvacancy_set.all %}{% if chosen.vacancy == object %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-vacancy' object.id %}" data-link=""></use>
+               </svg>
+            </div>
+
+            <h4 class="mvv__subtitle">Требования
+            </h4>
+            <p class="mvv__info">
+               <span>Опыт: {{ object.experience }}</span>
+
+               <span>Возраст: от {{ object.min_age }} лет</span>
+
+               <span>Пол: {{ object.sex }}</span>
+
+               <span>Образование: {{ object.education }}</span>
+            </p>
+            <h4 class="mvv__subtitle">Владение языками</h4>
+            <p class="mvv__info">
+               {% for language in object.neededlanguage_set.all %}
+                  <span>{{ language.language}} - {{ language.level }}</span>
+               {% endfor %}
+            </p>
+            <h4 class="mvv__subtitle">Обязанности:</h4>
+            <p class="mvv__info">
+               {{ object.responsibilities }}
+            </p>
+            <h4 class="mvv__subtitle">Условия работы</h4>
+            <p class="mvv__info">
+               <span>
+                  {{ object.work_terms }}
+               </span>
+
+               <span>Занятость: {{ object.busyness }}</span>
+
+               <span>График: {{ object.work_graph }}</span>
+            </p>
+            <h4 class="mvv__subtitle">Дополнительная информация о зарплате</h4>
+            <p class="mvv__info">
+               {{ object.payment }}
+            </p>
+
+            <div class="mvv__contacts">
+               <h4 class="mvv__subtitle">Контакты</h4>
+               {% with content=object.contact.content_as_list %}
+               <span>{{ content.0 }}</span>
+               <span>{{ content.1 }}</span>
+               <span>{{ content.2 }}</span>
+               {% endwith %}
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="{% static 'scripts/header.js' %}"></script>
+   <script src="{% static 'scripts/favourtie.js' %}"></script>
+   {% endblock %}

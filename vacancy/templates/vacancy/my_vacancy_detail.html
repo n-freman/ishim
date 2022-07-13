@@ -1,0 +1,80 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+      <svg display="none" fill="none">
+         <symbol id="mob__pic" viewBox="0 0 20 20">
+            <path d="M18.3332 14.1V16.6C18.3341 16.8321 18.2866 17.0618 18.1936 17.2745C18.1006 17.4871 17.9643 17.678 17.7933 17.8349C17.6222 17.9918 17.4203 18.1113 17.2005 18.1856C16.9806 18.26 16.7477 18.2876 16.5165 18.2667C13.9522 17.9881 11.489 17.1118 9.32486 15.7084C7.31139 14.4289 5.60431 12.7219 4.32486 10.7084C2.91651 8.53438 2.04007 6.0592 1.76653 3.48337C1.7457 3.25293 1.77309 3.02067 1.84695 2.80139C1.9208 2.58211 2.03951 2.38061 2.1955 2.20972C2.3515 2.03883 2.54137 1.9023 2.75302 1.80881C2.96468 1.71532 3.19348 1.66692 3.42486 1.66671H5.92486C6.32928 1.66273 6.72136 1.80594 7.028 2.06965C7.33464 2.33336 7.53493 2.69958 7.59153 3.10004C7.69705 3.9001 7.89274 4.68565 8.17486 5.44171C8.28698 5.73998 8.31125 6.06414 8.24478 6.37577C8.17832 6.68741 8.02392 6.97347 7.79986 7.20004L6.74153 8.25837C7.92783 10.3447 9.65524 12.0721 11.7415 13.2584L12.7999 12.2C13.0264 11.976 13.3125 11.8216 13.6241 11.7551C13.9358 11.6887 14.2599 11.7129 14.5582 11.825C15.3143 12.1072 16.0998 12.3029 16.8999 12.4084C17.3047 12.4655 17.6744 12.6694 17.9386 12.9813C18.2029 13.2932 18.3433 13.6914 18.3332 14.1Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+         </symbol>
+      </svg>
+      <div class="container__main pad-0 w-1920">
+         {% include 'main/header_hirer.html' %}
+         <div class="container__content">
+            <div class="my__vac__view">
+               <h1 class="mvv__headline">Мои вакансии</h1>
+               <h2 class="mvv__title">{{ object.position }}</h2>
+               <h3 class="mvv__salary">{{ object.min_salary }} манат</h3>
+               <span class="mvv__main__info">{{ object.creator.hirer.company_name }}</span>
+               <span class="mvv__main__info">{{ object.sphere }}</span>
+               <span class="mvv__main__info">{{ object.city }}</span>
+               <span class="mvv__main__info">Опубликовано {{ object.creation_date|date:"Y.m.d H:i"}}</span>
+               <div class="mvv__amount__resp">{{ vacancy.response_set|length }} откликов</div>
+               <a href="{% url 'refresh-vacancy' object.id %}" class="mvv__refresh__in__search__btn green__btn">
+                  Обновить в поиске
+               </a>
+               <a href="" class="mvv__see__all__resp purp__btn">Просмотреть все отклики</a>
+               
+               <h4 class="mvv__subtitle">Требования
+               </h4>
+               <p class="mvv__info">
+                  <span>Опыт: {{ object.experience }}</span>
+                  
+                  <span>Возраст: от {{ object.min_age }} лет</span>
+                
+                  <span>Пол: {{ object.sex }}</span>
+                  
+                  <span>Образование: {{ object.education }}</span>
+               </p>
+               <h4 class="mvv__subtitle">Владение языками</h4>
+               <p class="mvv__info">
+                  {% for language in object.neededlanguage_set.all %}
+                  <span>{{ language.language}} - {{ language.level }}</span>
+                  {% endfor %}
+               </p>
+               <h4 class="mvv__subtitle">Обязанности:</h4>
+               <p class="mvv__info">
+                  {{ object.responsibilities }}
+               </p>
+               <h4 class="mvv__subtitle">Условия работы</h4>
+               <p class="mvv__info">
+                  <span>
+                     {{ object.work_terms }}
+                  </span>
+                  
+                  <span>Занятость: {{ object.busyness }}</span>
+                  
+                  <span>График: {{ object.work_graph }}</span>
+               </p>
+               <h4 class="mvv__subtitle">Дополнительная информация о зарплате</h4>
+               <p class="mvv__info">
+                  {{ object.payment }}
+               </p>
+               <div class="mvv__contacts">
+                  <h4 class="mvv__subtitle">Контакты</h4>
+                  {% with content=object.contact.content_as_list %}
+                  <span>{{ content.0 }}</span>
+                  <span>
+                     <svg width="20" height="20" class="mr5">
+                        <use xlink:href="#mob__pic" class="mob__pic" fill="none" stroke="black"></use>
+                     </svg>
+                     {{ content.1 }}</span>
+                  <span><span class="mr5">✉</span>{{ content.2 }}</span>
+                  {% endwith %}
+               </div>
+               <a href="{% url 'vacancy-edit' object.id %}" class="mvv__edit__btn purp__btn">Редактировать</a>
+               <a href="{% url 'vacancy-delete' object.id %}" class="mvv__delete__btn">Удалить</a>
+               <a href="{% url 'suitable-cvs' object.id %}" class="suitable__link">Найдено {{ vacancy.cv_set.count }} подходящий сотрудников</a>
+            </div>
+         </div>    
+      </div>
+      <script src="{% static 'scripts/header.js' %}"></script>
+      {% endblock %}

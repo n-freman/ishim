@@ -1,0 +1,110 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+   <svg display="none">
+      <symbol id="favorites__str" viewBox="0 0 28 27">
+         <g>
+            <path
+               d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
+               stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+         </g>
+      </symbol>
+   </svg>
+   <div class="container__main pad-0 w-1920">
+      {% include 'main/header_hirer.html' %}
+      <div class="container__content">
+         <div class="my__vac__view">
+            <h1 class="mvv__headline">{{ object.position }}</h1>
+            <h3 class="mvv__salary">{{ object.first_name }} {{ object.last_name }}</h3>
+            <span class="mvv__main__info">{{ object.sex }}, {{ object.birth_date|date:"Y.m.d" }}</span>
+            <span class="mvv__main__info">{{ object.registration }}</span>
+            <span class="mvv__main__info">{{ object.email }}</span>
+
+            <div class="mvv__refresh__in__search__btn__wrapper"  id="fav__btn__wrapper">
+               <button class="mvv__refresh__in__search__btn green__btn">Получить контакты</button>
+               <svg width="30px" height="30px">
+                  <use xlink:href="#favorites__str" width="30px" height="30px" class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == object %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-cv' object.id %}"></use>
+               </svg>
+            </div>
+
+            <h4 class="mvv__subtitle">{{ object.position }}
+               <span>{{ object.min_salary }} м</span>
+            </h4>
+            <p class="mvv__info">
+               <span>{{ object.sphere }}</span>
+
+               <span>График работы: {{ object.work_graph }}</span>
+
+               <span>Занятость: {{ object.busyness }}</span>
+            </p>
+            <h4 class="mvv__subtitle">Опыт работы</h4>
+            {% for cvattr in object.cvattr_set.all %}
+               {% if cvattr.workexperience %}
+            <p class="mvv__info">
+               <span>{{ cvattr.workexperience.positon }}</span>
+
+               <span>{{ cvattr.workexperience.org_name }}</span>
+
+               <span>{{ cvattr.workexperience.start_year }} - {{ cvattr.workexperience.end_year }}</span>
+
+               <span>Обязанности: <br>
+                  {{ cvattr.workexperience.responsibilities }}</span>
+            </p>
+            {% endif %}
+               {% endfor %}
+            <h4 class="mvv__subtitle">Образование</h4>
+            {% for cvattr in object.cvattr_set.all %}
+            {% if cvattr.education %}
+            <p class="mvv__info">
+               <span>{{ cvattr.education.degree }}</span>
+
+               <span>{{ cvattr.education.establishment }}</span>
+
+               <span>{{ cvattr.education.start_year }} - {{ cvattr.education.end_year }}</span>
+
+               <span>Факультет: {{ cvattr.education.faculty }}</span>
+
+               <span>Специальность: {{ cvattr.education.specialization }}</span>
+
+            </p>
+            {% endif %}
+            {% endfor %}
+            <h4 class="mvv__subtitle">Знание программ</h4>
+            <p class="mvv__info">
+               {% for cvattr in object.cvattr_set.all %}
+                  {% if cvattr.knownprogram %}
+                  <span>- {{ cvattr.knownprogram.program }}</span>
+                  {% endif %}
+                  {% endfor %}
+            </p>
+            <h4 class="mvv__subtitle">Владение языками</h4>
+            <p class="mvv__info">
+               {% for cvattr in object.cvattr_set.all %}
+               {% if cvattr.knownlanguage %}
+               <span>{{ cvattr.knownlanguage.language }} - {{ cvattr.knownlanguage.level }}</span>
+               {% endif %}
+               {% endfor %}
+            </p>
+            <h4 class="mvv__subtitle">О себе</h4>
+            <p class="mvv__info">
+               {{ object.about }}
+            </p>
+         </div>
+
+         <a href="" class="mvv__link">У соискателя есть ещё резюме</a>
+         {% for cv in object.employee.cv_set.all %}
+         <a href="{% url 'cv-info' cv.id %}" class="mvv__another__resumes">
+            <h4 class="mvv__subtitle">
+               {{ cv.first_name }} {{ cv.last_name }}
+            </h4>
+            <p class="mvv__main__info">
+               {{ cv.position }}
+            </p>
+         </a>
+         {% endfor %}
+
+      </div>
+   </div>
+   <script src="{% static 'scripts/header.js' %}"></script>
+   <script src="{% static 'scripts/favourtie.js' %}"></script>
+{% endblock %}
