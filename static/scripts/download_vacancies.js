@@ -3,7 +3,7 @@ const get_value_btn = document.getElementById('refresh__btn__wrapper');
 let count = 0;
 
 
-get_value_btn.addEventListener("click", () => getVacancies(() => createVacancy(res)));
+get_value_btn.addEventListener("click", () => getVacancies(createVacancy));
 
 function getVacancies(cb) {
    let xhr = false;
@@ -29,11 +29,11 @@ function getVacancies(cb) {
       const response = JSON.parse(xhr.responseText);
       count += response.length;
       if (response.length == 0) {
-         document.querySelector(`${get_value_btn} span`).textContent = 'Вы посмотрели все вакансии'
-         get_value_btn.removeChild('svg');
-         get_value_btn.removeEventListener("click", () => getVacancies(createVacancy(res)));
+         document.querySelector(`#refresh__btn__wrapper span`).textContent = 'Вы посмотрели все вакансии'
+         get_value_btn.removeChild(document.querySelector('.refresh__btn'));
+         get_value_btn.removeEventListener("click", () => getVacancies(createVacancy));
       } else {
-         cb(res);
+         cb(response);
       }
 
 
@@ -57,19 +57,19 @@ function createVacancy(res) {
             <h2 class="vac__heading__item">${item.min_salary}</h2>
          </div>
          <div class="vac__heading">
-            <h2 class="vac__heading__item">${time.getFullYear}${time.getMonth()}.${time.getDate}</h2>
+            <h2 class="vac__heading__item">${time.getFullYear()}.${time.getMonth()}.${time.getDate()}</h2>
             <svg width="26px" height="24px">
                <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"
                   data-link="${item.id}"></use>
             </svg>
          </div>
          <div class="vac__categories">
-            <div class="vac__cat__item"">${item.sphere}</span>
-            <div class="vac__cat__item" ">${item.registration}</span>
-            <div class="vac__cat__item"">${item.experience}</span>
-            <div class="vac__cat__item"">От ${item.min_age} до ${item.max_age}</span>
-            <div class="vac__cat__item"">${sex}</span>
-            <div class="vac__cat__item"">${item.education}</span>
+            <div class="vac__cat__item"">${item.sphere}</div>
+            <div class="vac__cat__item" ">${item.registration}</div>
+            <div class="vac__cat__item"">${item.experience}</div>
+            <div class="vac__cat__item"">От ${item.min_age} до ${item.max_age}</div>
+            <div class="vac__cat__item"">${sex}</div>
+            <div class="vac__cat__item"">${item.education}</div>
          </div>
 
          <div class="vac__btns">
@@ -79,7 +79,6 @@ function createVacancy(res) {
       </div>`
       result_block.appendChild(div);
    });
-   console.log(time.getFullYear());
 };
 
 
