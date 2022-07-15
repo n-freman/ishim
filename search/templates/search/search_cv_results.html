@@ -9,7 +9,7 @@
                {% for cv in cv_list %}
                <div class="my__vac__item">
 
-                  <h2 class="my__vac__item__title"><a href="{% url 'cv-info' cv.id %}">{{ vacancy.position }}</a></h2>
+                  <h2 class="my__vac__item__title"><a href="{% url 'cv-info' cv.id %}">{{ cv.position }}</a></h2>
                   <h3 class="my__vac__item__subtitle">{{ cv.min_salary }} ман.</h3>
 
                   <a href="" class="amount__resp">{{ cv.chosencv_set.count }} человек откликнулись к этой вакансии</a>

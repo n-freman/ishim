@@ -22,7 +22,7 @@ def search_cv(request):
         print('ERROR!')
         position = ''
     cvs = list(CV.objects.filter(
-        position__lower=position)
+        position__contains=position)
     )
     context = {
         'cv_list': cvs,
@@ -43,7 +43,7 @@ def search_vacancy(request):
         position = ''
     vacancies = list(
         Vacancy.objects.filter(
-            position__lower=position)
+            position__contains=position)
     )
     context = {
         'vacancies': vacancies
@@ -61,8 +61,8 @@ def wide_search_cv(request):
             print('Here...')
             cvs = list(
                 CV.objects.filter(
-                    position=data['position'][0],
-                    sphere=data['sphere'][0]
+                    position__contains=data['position'][0],
+                    sphere__contains=data['sphere'][0]
                 )
             )
             context = {
@@ -86,8 +86,8 @@ def wide_search_vacancy(request):
         if data['position'] and data['sphere']:
             vacancies = list(
                 Vacancy.objects.filter(
-                    position__lower=data['position'][0],
-                    sphere__lower=data['sphere'][0]
+                    position__contains=data['position'][0],
+                    sphere__contains=data['sphere'][0]
                     )
             )
             context = {
@@ -145,8 +145,8 @@ def search_again(request, id):
     story = Story.objects.get(id=id)
     if hasattr(request.user, 'employee'):
         vacancies = Vacancy.objects.filter(
-            position=story.search.position,
-            sphere=story.search.sphere
+            position__contains=story.search.position,
+            sphere__contains=story.search.sphere
             )
         context = {
             'vacancies': vacancies
@@ -154,8 +154,8 @@ def search_again(request, id):
         return render(request, 'search/search_vacancy_results.html', context)
     else:
         cv_list = CV.objects.filter(
-            position=story.search.position,
-            sphere=story.search.sphere
+            position__contains=story.search.position,
+            sphere__contains=story.search.sphere
         )
         context = {
             'cvs': cv_list
