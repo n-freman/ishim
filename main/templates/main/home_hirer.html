@@ -72,6 +72,7 @@
                </aside>
 
                <section class="result__vacancy" id="fav__btn__wrapper">
+                  <div id="result__vacancy__inner">
                   {% for cv in cv_list %}
                   <div class="vacancy__card" id="fav__btn__wrapper">
                      <div class="vac__card__inner">
@@ -100,6 +101,7 @@
                      </div>
                   </div>
                   {% endfor %}
+               </div>
                   <div class="refresh__btn__wrapper" id="refresh__btn__wrapper">
                      <svg class="refresh__btn">
                         <use xlink:href="#refresh" class="refresh__btn">

@@ -24,7 +24,7 @@ function getVacancies(cb) {
        alert('got some err ');
        return false;
    }
-   xhr.open('GET' , `someUrl${count}`);
+   xhr.open('GET' , `/vacancy/get/${count}`);
    xhr.addEventListener('load' , () => {
       const response = JSON.parse(xhr.responseText);
       count += response.length;
@@ -60,7 +60,7 @@ function createVacancy(res) {
             <h2 class="vac__heading__item">${time.getFullYear()}.${time.getMonth()}.${time.getDate()}</h2>
             <svg width="26px" height="24px">
                <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"
-                  data-link="${item.id}"></use>
+                  data-link="/vacancy/chosen/${item.id}"></use>
             </svg>
          </div>
          <div class="vac__categories">
@@ -68,12 +68,12 @@ function createVacancy(res) {
             <div class="vac__cat__item" ">${item.registration}</div>
             <div class="vac__cat__item"">${item.experience}</div>
             <div class="vac__cat__item"">От ${item.min_age} до ${item.max_age}</div>
-            <div class="vac__cat__item"">${sex}</div>
+            <div class="vac__cat__item"">${item.sex}</div>
             <div class="vac__cat__item"">${item.education}</div>
          </div>
 
          <div class="vac__btns">
-            <a href="${item.id}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+            <a href="/vacancy/${item.id}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
             <a href="${item.id}" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
          </div>
       </div>`
