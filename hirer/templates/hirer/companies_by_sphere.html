@@ -37,22 +37,12 @@
 
          <div class="catalog">
             <div class="container__content">
-               <h1 class="catalog__title">Каталог компаний по отраслям</h1>
-               <div class="catalog__inner">
-                  {% for sphere in spheres %}
-                  <a href="{% url 'companies-by-sphere' sphere.sphere %}" class="catalog__item">
-                     <div class="catalog__category">{{ sphere.sphere }}</div>
-                     <div class="companies__amount">{{ sphere.dcount }}</div>
-                  </a>
-                  {% endfor %}
-               </div>
-
-               <h1 class="catalog__subtitle">Все компании</h1>
+               <h1 class="catalog__subtitle">Все компании в отрасли {{ sphere }}</h1>
 
                <div class="all__companies__wrapper">
                   <div class="all__companies__content">
-                     {% for hirer in hirers%}
-                     <a href="" class="all__companies__name">{{ hirer.company_name }}</a>
+                     {% for company in companies %}
+                     <a href="" class="all__companies__name">{{ company.company_name }}</a>
                      {% endfor %}
                   </div>
                </div>

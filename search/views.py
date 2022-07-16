@@ -161,3 +161,4 @@ def search_again(request, id):
             'cvs': cv_list
         }
         return render(request, 'search/search_cv_results.html', context)
+    

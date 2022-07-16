@@ -3,7 +3,7 @@
    <div class="container__content">
       <div class="header__content">
          <section class="header__sec__type3 ">
-            <img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="header__pic ">
+            <a href="{% url 'home' %}"><img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="header__pic "></a>
 
          </section>
          <section class="header__sec__type3">
@@ -67,7 +67,7 @@
 
       <a href="{% url 'company-catalog' %}" class="nav__link">Каталог компаний</a>
 
-      <a href="" class="nav__link">Статьи</a>
+      <a href="{% url 'articles' %}" class="nav__link">Статьи</a>
 
       <select name="interface__lang" onchange="window.location.href=this.options[this.selectedIndex].value"
          class="nav__link">

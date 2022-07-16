@@ -114,7 +114,6 @@ def hirer_type(request):
     return render(request, 'hirer/hirer_type.html')
 
 
-@employee_required
 @login_required
 def company_catalog(request):
     context = {}
@@ -125,8 +124,15 @@ def company_catalog(request):
 
 
 @login_required
-def hirer_info(request, id):
-    context = {
-        'hirer': Hirer.objects.get(id=id)
-    }
-    return render(request, 'hirer/hirer_info.html', context)
+def companies_by_sphere(request, sphere):
+    companies = Hirer.objects.filter(sphere=sphere)
+    return render(request, 'hirer/companies_by_sphere.html', {'companies': companies, 'sphere': sphere})
+
+
+
+# @login_required
+# def hirer_info(request, id):
+#     context = {
+#         'hirer': Hirer.objects.get(id=id)
+#     }
+#     return render(request, 'hirer/hirer_info.html', context)

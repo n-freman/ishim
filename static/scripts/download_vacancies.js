@@ -1,6 +1,6 @@
 const result_block = document.getElementById('result__vacancy__inner');
 const get_value_btn = document.getElementById('refresh__btn__wrapper');
-let count = 0;
+let count = 3;
 
 
 get_value_btn.addEventListener("click", () => getVacancies(createVacancy));
@@ -74,7 +74,7 @@ function createVacancy(res) {
 
          <div class="vac__btns">
             <a href="/vacancy/${item.id}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
-            <a href="${item.id}" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+            <a href="contacts/get-by-vac/${item.id}" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
          </div>
       </div>`
       result_block.appendChild(div);
