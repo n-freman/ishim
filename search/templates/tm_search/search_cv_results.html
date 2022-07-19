@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+      <div class="container__main pad-0 w-1920">
+         {% include 'main/header_hirer.html' %}
+         <div class="container__content">
+            <div class="my__vac">
+
+               {% for cv in cv_list %}
+               <div class="my__vac__item">
+
+                  <h2 class="my__vac__item__title"><a href="{% url 'cv-info-tm' cv.id %}">{{ cv.position }}</a></h2>
+                  <h3 class="my__vac__item__subtitle">{{ cv.min_salary }} ман.</h3>
+
+                  <a href="" class="amount__resp">{{ cv.chosencv_set.count }} человек откликнулись к этой вакансии</a>
+
+                  <span>Вакансия обновлена {{ cv.creation_date|date:"Y.m.d" }}</span>
+
+                  <a href="{% url 'suitable-vacancies-tm' cv.id %}" class="suitable__link">{{ cv.suitable_vacancies.count }} подходящих вакансий</a>
+               </div>
+               {% endfor %}
+            </div>
+         </div>    
+      </div>
+      <script src="{% static 'scripts/header.js' %}"></script>
+{% endblock %}

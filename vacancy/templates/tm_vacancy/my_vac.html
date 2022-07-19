@@ -1,0 +1,33 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+      <div class="container__main pad-0 w-1920">
+         {% include 'tm_main/header_hirer.html' %}
+         <div class="container__content">
+            <div class="my__vac">
+               <h1 class="my__vac__title">Мои вакансии</h1>
+               {% for vacancy in vacancies %}
+                  <div class="my__vac__item">
+
+                     <h2 class="my__vac__item__title"><a href="{% url 'my-vacancy-info-tm' vacancy.id %}">{{ vacancy.position }}</a></h2>
+                     <h3 class="my__vac__item__subtitle">{{ vacancy.min_salary }} ман.</h3>
+
+                     <a href="" class="amount__resp">{{ vacancy.response_set.count }} человек откликнулись к этой вакансии</a>
+
+                     <span>Вакансия обновлена {{ vacancy.creation_date|date:'Y.m.d H:i' }}</span>
+
+                     <a class="refresh__in__search__btn green__btn" href="{% url 'refresh-vacancy-tm' vacancy.id %}">Обновить в поиске</a>
+
+                     <a href="{% url 'vacancy-edit-tm' vacancy.id %}" class="edit__btn purp__btn">Редактировать</a>
+
+                     <a href="{% url 'suitable-cvs-tm' vacancy.id %}" class="suitable__link">{{ vacancy.cv_set.count }} подходящих сотрудников</a>
+                  </div>
+               {% endfor %}
+
+               <a href="{% url 'create-vacancy-tm' %}" class="add__vac"><span>+</span>Добавить новую вакансию</a>
+            </div>
+            
+         </div>    
+      </div>
+      <script src="{% static 'scripts/header.js' %}"></script>
+      {% endblock %}

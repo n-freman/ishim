@@ -1,0 +1,8 @@
+{% autoescape off %}
+<h1>Salam, {{user.username}}</h1> 
+Please use the link below to verify your account.
+
+http://{{domain}}{% url 'activate-tm' uidb64=uid token=token %}
+
+
+{% endautoescape %}

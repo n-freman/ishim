@@ -29,17 +29,6 @@ def add_to_chosen(request, id):
         print('[Deleting]...')
         chosen.delete()
     return Response(status=status.HTTP_202_ACCEPTED)
-    
-    
-def remove_from_chosen(request):
-    pk = request.GET['pk']
-    article = Article.objects.get(pk=pk)
-    chosen = ChosenArticle.objects.get(
-        user=request.user,
-        article=article
-    )
-    chosen.delete()
-
 
 class ArticleListView(ListView):
     model = Article

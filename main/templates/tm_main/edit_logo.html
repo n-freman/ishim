@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+   <div class="container__main pad-0 w-1920">
+      {% include 'tm_main/header_hirer.html' %}
+      <div class="container__content">
+
+         <div class="reg-user-conf container__content">
+            <div class="reg-user-conf__inner">
+               <div class="reg-user-conf__content">
+                  <h1 class="reg-user-conf__title">Изменение Данных</h1>
+
+                  <form action="" class="reg-user-conf__form" method="post" enctype="multipart/form-data" id="form__id">
+                     {% csrf_token %}
+                     <div class="user-info-block">
+                        <div class="user-logo-blok">
+                           <div class="user__logo__txt">Изменить лого компании</div>
+                           <input required type="file" class="user-logo" id="user__logo" name="logo">
+                           <label for="user__logo" class="user__logo__select">
+                              <span>+</span>
+                           </label>
+                        </div>
+                        <input required type="submit" class="continue__btn purp__btn mt-30" value="Изменить">
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      {% endblock %}

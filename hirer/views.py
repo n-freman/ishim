@@ -30,7 +30,7 @@ def company_create(request, *args):
                         'u_form': u_form,
                         'e_form': e_form,
                     }
-                    return render(request, 'employee/employee_create.html', context)
+                    return render(request, 'hirer/company_create.html', context)
 
             except Exception as identifier:
                 print(identifier)
@@ -77,7 +77,7 @@ def enterpreneuer_create(request, *args):
                         'u_form': u_form,
                         'e_form': e_form,
                     }
-                    return render(request, 'employee/employee_create.html', context)
+                    return render(request, 'hirer/entepreneuer_create.html', context)
 
             except Exception as identifier:
                 print(identifier)

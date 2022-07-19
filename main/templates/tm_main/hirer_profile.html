@@ -1,0 +1,79 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+   <div class="container__main pad-0 w-1920">
+      {% include 'main/header_hirer.html' %}
+      <div class="priv__data mt-60">
+         <div class="container__content">
+            <div class="priv__data__inner" id="delete__wrap">
+               <h1 class="priv__data__title">Личные данные</h1>
+
+               <div class="priv__data__item">
+                  <div>Название</div>
+                  <div>{{ request.user.hirer.company_name }}</div>
+
+                  <a href="{% url 'edit-company-tm' %}" class="priv__data__item__action">изменить</a>
+                  <a href="{% url 'edit-company-tm' %}" class="priv__data__item__action__mob">
+                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
+                  </a>
+               </div>
+
+               <div class="priv__data__item">
+                  <div>Сфера деятельности</div>
+                  <div>{{ request.user.hirer.sphere }}</div>
+
+                  <a href="{% url 'edit-sphere-tm' %}" class="priv__data__item__action">изменить</a>
+                  <a href="{% url 'edit-sphere-tm' %}" class="priv__data__item__action__mob">
+                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
+                  </a>
+               </div>
+
+               <div class="priv__data__item">
+                  <div>Электронная почта</div>
+                  <div>{{ request.user.email }}</div>
+
+                  <a href="#" class="priv__data__item__action">изменить</a>
+                  <a href="#" class="priv__data__item__action__mob">
+                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
+                  </a>
+               </div>
+
+               <div class="priv__data__item">
+                  <div>Мобильный телефон</div>
+                  <div>{{ request.user.hirer.phone_num }}</div>
+
+                  <a href="{% url 'edit-phone-tm' %}" class="priv__data__item__action">изменить</a>
+                  <a href="{% url 'edit-phone-tm' %}" class="priv__data__item__action__mob">
+                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
+                  </a>
+               </div>
+
+               <div class="priv__data__item">
+                  <div>Пароль</div>
+                  <div>********</div>
+
+                  <a href="{% url 'edit-password-tm' %}" class="priv__data__item__action">изменить</a>
+                  <a href="{% url 'edit-password-tm' %}" class="priv__data__item__action__mob">
+                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
+                  </a>
+               </div>
+
+               <div class="priv__data__item">
+                  <div>Город</div>
+                  <div>{{ request.user.hirer.city }}</div>
+
+                  <a href="{% url 'edit-city-tm' %}" class="priv__data__item__action">изменить</a>
+                  <a href="{% url 'edit-city-tm' %}" class="priv__data__item__action__mob">
+                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
+                  </a>
+               </div>
+
+               <div class="priv__data__item__action" id="delete__btn">Удаление</div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="{% static 'scripts/header.js' %}"></script>
+   <script src="{% static 'scripts/delete_account.js' %}"></script>
+   {% endblock %}
