@@ -49,6 +49,12 @@ function getResumes(cb) {
 function createVacancy(res) {
    res.forEach( item => {
       const time = new Date(item.creation_date);
+      let time_num ;
+      if (time.getMonth() < 10) {
+         time_num = 0;
+      } else {
+         time_num = '';
+      }
       const div = document.createElement('div');
       div.className = 'vacancy__card';
       div.innerHTML = `
@@ -58,7 +64,7 @@ function createVacancy(res) {
             <h2 class="vac__heading__item">${item.min_salary}</h2>
          </div>
          <div class="vac__heading">
-            <h2 class="vac__heading__item">${time.getFullYear()}.${time.getMonth()}.${time.getDate()}</h2>
+            <h2 class="vac__heading__item">${time.getFullYear()}.${time_num}${time.getMonth()}.${time_num}${time.getDate()}</h2>
             <svg width="26px" height="24px">
                <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"
                   data-link="/employee/chosen/${item.id}"></use>
