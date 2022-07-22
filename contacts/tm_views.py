@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from main.decorators import employee_required
+from main.decorators import employee_required, hirer_required
 from vacancy.models import Vacancy
-from .models import Contact, ChosenContact
+from employee.models import CV
+from .models import Contact, ChosenContact, ChosenCVContact
 
 
 @employee_required
@@ -54,4 +55,25 @@ def get_by_vac(reqeuest, id):
         )
     else:
         chosen.delete()
+    return redirect(request.META.get('HTTP_REFERER'))
+
+
+@hirer_required
+@login_required
+def get_by_cv(request, id):
+    cv = get_object_or_404(CV, id=id)
+    contact = get_object_or_404(
+        ChosenCVContact,
+        cv=cv,
+        user=request.user
+    )
+    if contact:
+        contact.delete()
+    else:
+        data = cv.first_name + cv.last_name + '\n' + cv.mobile_num + '\n' + cv.email
+        contact = ChosenCVContact.objects.create(
+            user=request.user,
+            cv=cv,
+            data=data
+        )
     return redirect(request.META.get('HTTP_REFERER'))
