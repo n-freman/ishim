@@ -15,6 +15,6 @@ git clone https://github.com/n-freman/ishim.git
 cd ishim
 ```
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 python manage.py runserver
 ```

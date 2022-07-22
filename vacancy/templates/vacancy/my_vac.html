@@ -12,7 +12,7 @@
                      <h2 class="my__vac__item__title"><a href="{% url 'my-vacancy-info' vacancy.id %}">{{ vacancy.position }}</a></h2>
                      <h3 class="my__vac__item__subtitle">{{ vacancy.min_salary }} ман.</h3>
 
-                     <a href="" class="amount__resp">{{ vacancy.response_set.count }} человек откликнулись к этой вакансии</a>
+                     <a href="{% url 'vacancy-responses' vacancy.id %}" class="amount__resp">{{ vacancy.response_set.count }} человек откликнулись к этой вакансии</a>
 
                      <span>Вакансия обновлена {{ vacancy.creation_date|date:'Y.m.d H:i' }}</span>
 

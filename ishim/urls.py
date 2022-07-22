@@ -59,7 +59,7 @@ urlpatterns = [
 
 
 tm_urlpatterns = [
-    path('tm/', home, name='home-tm'),
+    path('tm/', tm_views.home, name='home-tm'),
     path('tm/employee/', include('employee.tm_urls')),
     path('tm/hirer/', include('hirer.tm_urls')),
     path('tm/vacancy/', include('vacancy.tm_urls')),

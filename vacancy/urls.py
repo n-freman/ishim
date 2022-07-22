@@ -16,4 +16,5 @@ urlpatterns = [
     path('get/<int:n>', views.get_vacancies, name='get-vacancies'),
     path('suitable/<int:id>', views.suitable_vacancies, name='suitable-vacancies'),
     path('response-notifications/', views.response_notifications, name='response-notifications'),
+    path('<int:pk>/responses', views.vacancy_responses, name='vacancy-responses'),
 ]

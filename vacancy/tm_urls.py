@@ -16,4 +16,5 @@ urlpatterns = [
     path('get/<int:n>', tm_views.get_vacancies, name='get-vacancies-tm'),
     path('suitable/<int:id>', tm_views.suitable_vacancies, name='suitable-vacancies-tm'),
     path('response-notifications/', tm_views.response_notifications, name='response-notifications-tm'),
+    path('<int:pk>/responses', tm_views.vacancy_responses, name='vacancy-responses-tm'),
 ]

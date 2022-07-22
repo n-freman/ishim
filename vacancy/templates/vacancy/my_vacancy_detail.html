@@ -17,7 +17,7 @@
                <span class="mvv__main__info">{{ object.sphere }}</span>
                <span class="mvv__main__info">{{ object.city }}</span>
                <span class="mvv__main__info">Опубликовано {{ object.creation_date|date:"Y.m.d H:i"}}</span>
-               <div class="mvv__amount__resp">{{ vacancy.response_set|length }} откликов</div>
+               <div class="mvv__amount__resp">{{ vacancy.response_set.count }} откликов</div>
                <a href="{% url 'refresh-vacancy' object.id %}" class="mvv__refresh__in__search__btn green__btn">
                   Обновить в поиске
                </a>

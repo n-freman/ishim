@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.views.generic import (
     ListView, 
@@ -219,3 +219,15 @@ def response_notifications(request):
     }
     context.update(get_footer())
     return render(request, 'tm_vacancy/response_notifications.html', context)
+
+
+@hirer_required
+@login_required
+def vacancy_responses(request, pk):
+    vacancy = get_object_or_404(Vacancy, id=pk)
+    context = {
+        'vacancy': vacancy,
+        'responses': vacancy.response_set.all(),
+    }
+    context.update(get_footer())
+    return render(request, 'tm_vacancy/vacancy_responses.html', context)

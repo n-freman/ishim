@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+   <div class="container__main pad-0 w-1920">
+      {% include 'main/header_hirer.html' %}
+      <div class="container__content">
+         <div class="h__res__info">
+            <h1 class="my__responses__title">
+               Уведомления об откликах
+            </h1>
+
+            <section class="result__vacancy">
+               <div class="vacancy__card">
+                  <div class="vac__card__inner">
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">{{ vacancy.position }}</h2>
+                        <h2 class="vac__heading__item">{{ vacancy.min_salary }} манат</h2>
+                     </div>
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">{{ vacancy.creation_date|date:"Y.m.d" }}</h2>
+                        <svg width="26px" height="24px">
+                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico" data-link="">
+                           </use>
+                        </svg>
+                     </div>
+                     <div class="vac__categories">
+                        <span class="vac__cat__item two-col">{{ vacancy.sphere }}</span>
+                        <span class="vac__cat__item">{{ vacancy.registration }}</span>
+                        <span class="vac__cat__item">Опыт {{ vacancy.experience }}</span>
+                        <span class="vac__cat__item">{{ vacancy.min_age }} лет</span>
+                        <span class="vac__cat__item">Пол {{ vacancy.sex }}</span>
+                        <span class="vac__cat__item two-col">Образование {{ vacancy.education }}</span>
+                     </div>
+
+                     <div class="vac__btns">
+                        <a href="{% url 'my-vacancy-info' vacancy.id  %}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <h3 class="my__responses__subtitle">
+               На эту вакансию откликнулись {{ responses.count }} человек
+            </h3>
+
+            {% for response in responses %}
+            {% with response.employee as employee %}
+            <div class="h__notif__item">
+               <h3 class="h__notif__item__title">{{ employee.cv_set.all.0.position }}</h3>
+
+               <div class="h__notif__item__txt">{{ employee.first_name }} {{ employee.last_name }}</div>
+               <div class="h__notif__item__txt">Откликнулся {{ response.creation_date|date:"m.d" }}</div>
+            </div>
+            {% endwith %}
+            {% endfor %}
+
+
+         </div>
+      </div>
+
+      {% include 'main/footer.html' %}
+   </div>
+   <script src="{% static 'scripts/header.js' %}"></script>
+
+{% endblock %}
