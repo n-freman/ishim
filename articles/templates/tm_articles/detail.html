@@ -58,7 +58,7 @@
 
                <div class="article__additionally borderb2">
                   <img src="{% static 'images/share__icon.png' %}" alt="" class="article__additionally__item" id="share"
-                     data-copy-link="{% url 'article-detail-tm' article.id %}">
+                     data-copy-link="{% url 'article-detail' article.id %}">
 
                   <div class="article__additionally__item"  id="article__btn__wrapper">
                      <div class="article__additionally__item__views">
@@ -69,7 +69,7 @@
                      </div>
                      <svg width="19" height="24">
                         <use xlink:href="#bookmark" width="19" height="24" class="vac__ico{% for chosen in article.chosenarticle_set.all %}{% if chosen.user == user %}__selected__purp{% endif %}{% endfor %}" id="bookmarkbtn"
-                           data-link="{% url 'choose-article-tm' article.id %}"></use>
+                           data-link="{% url 'choose-article' article.id %}"></use>
                      </svg>
                   </div>
                </div>

@@ -21,9 +21,9 @@
                <img src="{% static 'images/header/header__logo2.png' %}" alt="" class="header__pic2">
                <div class="header__loc header__loc2">
                   <select name="interface__lang" id=""
-                     onchange="window.location.href=this.options[this.selectedIndex].value">
+                     onchange="window.location.href=this.options[this.selectedIndex].value" autocomplete="off">
                      <option value="" class="header__loc__current">RU</option>
-                     <option value="" class="header__loc__current" selected>TM</option>
+                     <option value="" class="header__loc__current">TM</option>
                   </select>
                </div>
 
@@ -43,10 +43,10 @@
 
                <div class="header__btns">
                   {% if not user.is_authenticated %}
-                  <a href="{% url 'login-tm' %}" class="header__btn purp__btn">Вход</a>
-                  <a href="{% url 'register-tm' %}" class="header__btn purp__btn">Регистрация</a>
+                  <a href="{% url 'login' %}" class="header__btn purp__btn">Вход</a>
+                  <a href="{% url 'register' %}" class="header__btn purp__btn">Регистрация</a>
                   {% else %}
-                  <a href="{% url 'logout-tm' %}" class="header__btn purp__btn">Выход</a>
+                  <a href="{% url 'logout' %}" class="header__btn purp__btn">Выход</a>
                   {% endif %}
                </div>
             </section>
@@ -69,9 +69,9 @@
                         Размещайте вакансии на ishim.com и находите у нас подходящих сотрудников. Ishim- это новая
                         модель найма работников.
                      </p>
-                     <a href="{% url 'create-vacancy-tm' %}" class="intro__desc__item__btn" id="hirer_btn">Добавить
+                     <a href="{% url 'create-vacancy' %}" class="intro__desc__item__btn" id="hirer_btn">Добавить
                         вакансию</a>
-                     <a href="{% url 'create-cv-tm' %}" class="disappear" id="employee_btn">Добавить резюме</a>
+                     <a href="{% url 'create-cv' %}" class="disappear" id="employee_btn">Добавить резюме</a>
                   </div>
                   <img src="{% static 'images/intro/Pappers.png' %}" alt="" class="intro__desc__item__pic">
                </div>
@@ -139,6 +139,18 @@
                            <span class="res__slbar__right-p">{{ city.dcount }}</span>
                         </div>
                         {% endfor %}
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">Ашхабад</span>
+                           <span class="res__slbar__right-p">1070</span>
+                        </div>
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">Балканы</span>
+                           <span class="res__slbar__right-p">805</span>
+                        </div>
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">Мары</span>
+                           <span class="res__slbar__right-p">501</span>
+                        </div>
                      </div>
 
                      <div class="res__slbar__item">
@@ -173,6 +185,18 @@
                            <span class="res__slbar__right-p">{{ sphere.dcount }}</span>
                         </div>
                         {% endfor %}
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">Бугалтерия</span>
+                           <span class="res__slbar__right-p">957</span>
+                        </div>
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">IT,интернет</span>
+                           <span class="res__slbar__right-p">816</span>
+                        </div>
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">Продажи</span>
+                           <span class="res__slbar__right-p">512</span>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -232,9 +256,9 @@
                            <span class="vac__cat__item two-col">{{ vacancy.education }}</span>
                         </div>
                         <div class="vac__btns">
-                           <a href="{% url 'vacancy-info-tm' vacancy.id %}" class="vac__btns__item purp__btn"
+                           <a href="{% url 'vacancy-info' vacancy.id %}" class="vac__btns__item purp__btn"
                               target="_blank">Подробнее</a>
-                           <a href="{% url 'get-contact-tm' vacancy.contact.id %}" class="vac__btns__item green__btn"
+                           <a href="{% url 'get-contact' vacancy.contact.id %}" class="vac__btns__item green__btn"
                               target="_blank">Получить контакты</a>
                         </div>
                      </div>
@@ -242,11 +266,122 @@
                   {% endfor %}
                </div>
 
+               <div class="vacancy__card" id="fav__btn__wrapper">
+                  <div class="vac__card__inner">
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">Помощник Бухгалтера</h2>
+                        <h2 class="vac__heading__item">2000 манат</h2>
+                     </div>
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">22:04</h2>
+                        <svg width="26px" height="24px">
+                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"></use>
+                        </svg>
+                     </div>
+                     <div class="vac__categories">
+                        <span class="vac__cat__item two-col">Бухгалтерия и управление</span>
+                        <span class="vac__cat__item">Ашхабад</span>
+                        <span class="vac__cat__item">Опыт 5 лет</span>
+                        <span class="vac__cat__item">28 лет</span>
+                        <span class="vac__cat__item">Пол мужской</span>
+                        <span class="vac__cat__item two-col">Образование среднее</span>
+                     </div>
+
+                     <div class="vac__btns">
+                        <a href="" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+                        <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="vacancy__card">
+                  <div class="vac__card__inner">
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">Помощник Бухгалтера</h2>
+                        <h2 class="vac__heading__item">2000 манат</h2>
+                     </div>
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">22:04</h2>
+                        <svg width="26px" height="24px">
+                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"></use>
+                        </svg>
+                     </div>
+                     <div class="vac__categories">
+                        <span class="vac__cat__item two-col">Бухгалтерия и управление</span>
+                        <span class="vac__cat__item">Ашхабад</span>
+                        <span class="vac__cat__item">Опыт 5 лет</span>
+                        <span class="vac__cat__item">28 лет</span>
+                        <span class="vac__cat__item">Пол мужской</span>
+                        <span class="vac__cat__item two-col">Образование среднее</span>
+                     </div>
+
+                     <div class="vac__btns">
+                        <a href="" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+                        <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="vacancy__card">
+                  <div class="vac__card__inner">
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">Помощник Бухгалтера</h2>
+                        <h2 class="vac__heading__item">2000 манат</h2>
+                     </div>
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">22:04</h2>
+                        <svg width="26px" height="24px">
+                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"></use>
+                        </svg>
+                     </div>
+                     <div class="vac__categories">
+                        <span class="vac__cat__item two-col">Бухгалтерия и управление</span>
+                        <span class="vac__cat__item">Ашхабад</span>
+                        <span class="vac__cat__item">Опыт 5 лет</span>
+                        <span class="vac__cat__item">28 лет</span>
+                        <span class="vac__cat__item">Пол мужской</span>
+                        <span class="vac__cat__item two-col">Образование среднее</span>
+                     </div>
+
+                     <div class="vac__btns">
+                        <a href="" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+                        <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="vacancy__card">
+                  <div class="vac__card__inner">
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">Помощник Бухгалтера</h2>
+                        <h2 class="vac__heading__item">2000 манат</h2>
+                     </div>
+                     <div class="vac__heading">
+                        <h2 class="vac__heading__item">22:04</h2>
+                        <svg width="26px" height="24px">
+                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"></use>
+                        </svg>
+                     </div>
+                     <div class="vac__categories">
+                        <span class="vac__cat__item two-col">Бухгалтерия и управление</span>
+                        <span class="vac__cat__item">Ашхабад</span>
+                        <span class="vac__cat__item">Опыт 5 лет</span>
+                        <span class="vac__cat__item">28 лет</span>
+                        <span class="vac__cat__item">Пол мужской</span>
+                        <span class="vac__cat__item two-col">Образование среднее</span>
+                     </div>
+
+                     <div class="vac__btns">
+                        <a href="" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+                        <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+                     </div>
+                  </div>
+               </div>
             </section>
          </div>
       </div>
    </div>
-   {% include 'tm_main/footer.html' %}
+   {% include 'main/footer.html' %}
 </div>
 <script src="{% static 'scripts/favourtie.js' %}"></script>
 <script src="{% static 'scripts/home_user_type.js' %}"></script>

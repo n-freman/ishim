@@ -6,12 +6,11 @@
          <div class="container__content header-wavy__inner">
             <img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="header__pic">
             <div class="header__loc">
-               <form action="">
-                  <select name="interface__lang" id="">
-                     <option value="RU" class="header__loc__current">RU</option>
-                     <option value="TM" class="header__loc__current">TM</option>
-                  </select>
-               </form>
+               <select name="interface__lang" id=""
+                  onchange="window.location.href=this.options[this.selectedIndex].value" autocomplete="off">
+                  <option value="" class="header__loc__current">RU</option>
+                  <option value="" class="header__loc__current" selected>TM</option>
+               </select>
             </div>
          </div>
       </header>

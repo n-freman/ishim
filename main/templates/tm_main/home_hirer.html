@@ -11,7 +11,7 @@
       </symbol>
    </svg>
    <div class="container__main pad-0 w-1920">
-      {% include 'tm_main/header_hirer.html' %}
+      {% include 'main/header_hirer.html' %}
       <div class="result mt-60">
          <div class="container__content">
             <div class="result__inner">
@@ -83,7 +83,7 @@
                         <div class="vac__heading">
                            <h2 class="vac__heading__item">{{ cv.creation_date|date:"Y.m.d" }}</h2>
                            <svg width="26px" height="24px">
-                              <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == cv %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-cv-tm' cv.id %}"></use>
+                              <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == cv %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-cv' cv.id %}"></use>
                            </svg>
                         </div>
                         <div class="vac__categories">
@@ -95,7 +95,7 @@
                            <span class="vac__cat__item two-col">{{ cv.work_graph }}</span>
                         </div>
                         <div class="vac__btns">
-                           <a href="{% url 'cv-info-tm' cv.id %}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+                           <a href="{% url 'cv-info' cv.id %}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
                            <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
                         </div>
                      </div>

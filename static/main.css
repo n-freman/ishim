@@ -952,6 +952,7 @@ svg {
 	font-size: 1.3rem;
 	font-weight: 500;
 	color: rgba(0, 0, 0, 0.3);
+	text-align: center;
 	transition: 0.2s linear;
 }
 
@@ -1614,11 +1615,12 @@ reg-h-t = registration-hirer-type
 .reg-g-c__btn {
 	display: block;
 	width: 467px;
-	height: 79px;
+	padding: 20px 0;
 
 	font-weight: 700;
 	font-size: 1.8rem;
 	line-height: 1.5;
+
 	color: #FFFFFF;
 
 	border-radius: 30px;
@@ -3609,9 +3611,25 @@ reg-h-t = registration-hirer-type
 		height: 25px;
 	}
 
+	.reg-g-c__inner {
+		width: 100%;
+	}
 
+	.reg-g-c__title {
+		font-size: 1.4rem;
+		text-align: center;
+		margin-bottom: 30px;
+	}
 
+	.reg-g-c__btn {
+		width: 60%;
+		padding: 10px 0;
 
+		font-weight: 500;
+		font-size: 1.2rem;
+
+		border-radius: 20px;
+	}
 
 
 

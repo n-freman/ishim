@@ -2,57 +2,59 @@
 {% load static %}
 {% block content %}
 
-   <svg display="none">
-      <symbol id="favorites__str" viewBox="0 0 28 27">
-         <g>
-            <path
-               d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
-               stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-         </g>
-      </symbol>
-   </svg>
+<svg display="none">
+   <symbol id="favorites__str" viewBox="0 0 28 27">
+      <g>
+         <path
+            d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
+            stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+   </symbol>
+</svg>
 
-   <div class="container__main pad-0 w-1920">
-      {% include 'main/header_hirer.html' %}
+<div class="container__main pad-0 w-1920">
+   {% include 'main/header_hirer.html' %}
 
-      <div class="container__content">
-         
-         <div class="e__rec" id="fav__btn__wrapper">
-            <h1 class="e__rec__title">Подходящие резюме</h1>
-            <div class="e__rec__inner">
-               {% for cv in cv_list %}
-                  <div class="vacancy__card" id="fav__btn__wrapper">
-                     <div class="vac__card__inner">
-                        <div class="vac__heading">
-                           <h2 class="vac__heading__item">{{ cv.position }}</h2>
-                           <h2 class="vac__heading__item">{{ cv.min_salary }} манат</h2>
-                        </div>
-                        <div class="vac__heading">
-                           <h2 class="vac__heading__item">{{ cv.creation_date|date:"Y.m.d" }}</h2>
-                           <svg width="26px" height="24px">
-                              <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == cv %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-cv-tm' cv.id %}"></use>
-                           </svg>
-                        </div>
-                        <div class="vac__categories">
-                           <span class="vac__cat__item two-col">{{ cv.sphere }}</span>
-                           <span class="vac__cat__item">{{ cv.registration }}</span>
-                           <span class="vac__cat__item">{{ cv.busyness }}</span>
-                           <span class="vac__cat__item">{{ cv.birth_date|date:"Y.m.d" }}</span>
-                           <span class="vac__cat__item">{{ cv.sex }}</span>
-                           <span class="vac__cat__item two-col">{{ cv.work_graph }}</span>
-                        </div>
-                        <div class="vac__btns">
-                           <a href="{% url 'cv-info-tm' cv.id %}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
-                           <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
-                        </div>
-                     </div>
+   <div class="container__content">
+
+      <div class="e__rec" id="fav__btn__wrapper">
+         <h1 class="e__rec__title">Подходящие резюме</h1>
+         <div class="e__rec__inner">
+            {% for cv in cv_list %}
+            <div class="vacancy__card" id="fav__btn__wrapper">
+               <div class="vac__card__inner">
+                  <div class="vac__heading">
+                     <h2 class="vac__heading__item">{{ cv.position }}</h2>
+                     <h2 class="vac__heading__item">{{ cv.min_salary }} манат</h2>
                   </div>
-                  {% endfor %}
-
+                  <div class="vac__heading">
+                     <h2 class="vac__heading__item">{{ cv.creation_date|date:"Y.m.d" }}</h2>
+                     <svg width="26px" height="24px">
+                        <use xlink:href="#favorites__str" width="26px" height="24px"
+                           class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == cv %}__selected{% endif %}{% endfor %}"
+                           data-link="{% url 'chosen-cv' cv.id %}"></use>
+                     </svg>
+                  </div>
+                  <div class="vac__categories">
+                     <span class="vac__cat__item two-col">{{ cv.sphere }}</span>
+                     <span class="vac__cat__item">{{ cv.registration }}</span>
+                     <span class="vac__cat__item">{{ cv.busyness }}</span>
+                     <span class="vac__cat__item">{{ cv.birth_date|date:"Y.m.d" }}</span>
+                     <span class="vac__cat__item">{{ cv.sex }}</span>
+                     <span class="vac__cat__item two-col">{{ cv.work_graph }}</span>
+                  </div>
+                  <div class="vac__btns">
+                     <a href="{% url 'cv-info' cv.id %}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
+                     <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+                  </div>
+               </div>
             </div>
+            {% endfor %}
+
          </div>
       </div>
    </div>
-   <script src="{% static 'scripts/header.js' %}"></script>
-   <script src="{% static 'scripts/favourtie.js' %}"></script>
-   {% endblock %}
+</div>
+<script src="{% static 'scripts/header.js' %}"></script>
+<script src="{% static 'scripts/favourtie.js' %}"></script>
+{% endblock %}

@@ -10,12 +10,12 @@
    </svg>
    <div class="container__main pad-0 w-1920">
       {% if user.hirer %}
-      {% include 'tm_main/header_hirer.html' %}
-      {% endif %}
+         {% include 'main/header_hirer.html' %}
+         {% endif %}
 
-      {% if user.employee %}
-      {% include 'tm_main/header_employee.html' %}
-      {% endif %}
+         {% if user.employee %}
+         {% include 'main/header_employee.html' %}
+         {% endif %}
 
       <div class="reg-user-conf container__content">
          <div class="reg-user-conf__inner">

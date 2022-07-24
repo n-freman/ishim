@@ -23,7 +23,7 @@
             <div class="mvv__refresh__in__search__btn__wrapper"  id="fav__btn__wrapper">
                <button class="mvv__refresh__in__search__btn green__btn">Получить контакты</button>
                <svg width="30px" height="30px">
-                  <use xlink:href="#favorites__str" width="30px" height="30px" class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == object %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-cv-tm' object.id %}"></use>
+                  <use xlink:href="#favorites__str" width="30px" height="30px" class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == object %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-cv' object.id %}"></use>
                </svg>
             </div>
 
@@ -93,7 +93,7 @@
 
          <a href="" class="mvv__link">У соискателя есть ещё резюме</a>
          {% for cv in object.employee.cv_set.all %}
-         <a href="{% url 'cv-info-tm' cv.id %}" class="mvv__another__resumes">
+         <a href="{% url 'cv-info' cv.id %}" class="mvv__another__resumes">
             <h4 class="mvv__subtitle">
                {{ cv.first_name }} {{ cv.last_name }}
             </h4>

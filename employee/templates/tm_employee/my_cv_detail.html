@@ -13,7 +13,7 @@
                <span class="mvv__main__info">{{ object.email }}</span>
                <span class="mvv__main__info">Опубликовано в {{ object.creation_date|date:"H:i" }}</span>
                <span class="mvv__main__info">{{ object.views }} просмотров</span>
-               <a href="{% url 'refresh-cv-tm' object.id %}" class="mvv__refresh__in__search__btn green__btn">Обновить в поиске</a>
+               <a href="{% url 'refresh-cv' object.id %}" class="mvv__refresh__in__search__btn green__btn">Обновить в поиске</a>
                <a href="" class="mvv__edit__btn purp__btn">Редактировать</a>
                <h4 class="mvv__subtitle">{{ object.position }}
                </h4>
@@ -84,7 +84,7 @@
                   {{ object.about }}
                </p>
               
-               <a href="{% url 'delete-cv-tm' cv.id %}" class="mvv__delete__btn">Удалить</a>
+               <a href="{% url 'delete-cv' cv.id %}" class="mvv__delete__btn">Удалить</a>
             </div>
          </div>    
       </div>

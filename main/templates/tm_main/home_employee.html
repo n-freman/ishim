@@ -11,7 +11,7 @@
    </symbol>
 </svg>
 <div class="container__main pad-0 w-1920">
-   {% include 'tm_main/header_employee.html' %}
+   {% include 'main/header_employee.html' %}
    <div class="result mt-60">
       <div class="container__content">
          <div class="result__inner">
@@ -84,7 +84,7 @@
                            <svg width="26px" height="24px">
                               <use xlink:href="#favorites__str" width="26px" height="24px"
                                  class="vac__ico{% for chosen in user.employee.chosenvacancy_set.all %}{% if chosen.vacancy == vacancy %}__selected{% endif %}{% endfor %}"
-                                 data-link="{% url 'chosen-vacancy-tm' vacancy.id %}"></use>
+                                 data-link="{% url 'chosen-vacancy' vacancy.id %}"></use>
                            </svg>
                         </div>
                         <div class="vac__categories">
@@ -96,9 +96,9 @@
                            <span class="vac__cat__item two-col">{{ vacancy.education }}</span>
                         </div>
                         <div class="vac__btns">
-                           <a href="{% url 'vacancy-info-tm' vacancy.id %}" class="vac__btns__item purp__btn"
+                           <a href="{% url 'vacancy-info' vacancy.id %}" class="vac__btns__item purp__btn"
                               target="_blank">Подробнее</a>
-                           <a href="{% url 'get-contact-tm' id=vacancy.contact.id %}" class="vac__btns__item green__btn"
+                           <a href="{% url 'get-contact' id=vacancy.contact.id %}" class="vac__btns__item green__btn"
                               target="_blank">Получить контакты</a>
                         </div>
                      </div>
@@ -122,7 +122,7 @@
          </div>
       </div>
    </div>
-   {% include 'tm_main/footer.html' %}
+   {% include 'main/footer.html' %}
 </div>
 
 <script src="{% static 'scripts/header.js' %}"></script>

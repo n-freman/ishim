@@ -25,12 +25,12 @@
 
                <div class="my__responses__item">
                   <div class="my__responses__item__additionally">{{ response.vacancy.creator.hirer.company_name }}</div>
-                  <a href="{% url 'make-response-tm' response.vacancy.id %}" class="my__responses__item__btn">Отменить отклик</a>
+                  <a href="{% url 'make-response' response.vacancy.id %}" class="my__responses__item__btn">Отменить отклик</a>
                </div>
             </div>
             {% endfor %}
          </div>
       </div>
    </div>
-   <script src="{% static 'scripts/header.js' %}"></script>
+   <script src="../scripts/header.js"></script>
 {% endblock %}
