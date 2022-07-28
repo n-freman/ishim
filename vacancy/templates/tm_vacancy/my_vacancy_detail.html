@@ -7,59 +7,59 @@
          </symbol>
       </svg>
       <div class="container__main pad-0 w-1920">
-         {% include 'tm_main/header_hirer.html' %}
+         {% include 'main/header_hirer.html' %}
          <div class="container__content">
             <div class="my__vac__view">
-               <h1 class="mvv__headline">Мои вакансии</h1>
+               <h1 class="mvv__headline">Meniň wakansiýalarym</h1>
                <h2 class="mvv__title">{{ object.position }}</h2>
-               <h3 class="mvv__salary">{{ object.min_salary }} манат</h3>
+               <h3 class="mvv__salary">{{ object.min_salary }} manat</h3>
                <span class="mvv__main__info">{{ object.creator.hirer.company_name }}</span>
                <span class="mvv__main__info">{{ object.sphere }}</span>
                <span class="mvv__main__info">{{ object.city }}</span>
-               <span class="mvv__main__info">Опубликовано {{ object.creation_date|date:"Y.m.d H:i"}}</span>
-               <div class="mvv__amount__resp">{{ vacancy.response_set|length }} откликов</div>
-               <a href="{% url 'refresh-vacancy-tm' object.id %}" class="mvv__refresh__in__search__btn green__btn">
-                  Обновить в поиске
+               <span class="mvv__main__info">ýerleşdirildi {{ object.creation_date|date:"Y.m.d H:i"}}</span>
+               <div class="mvv__amount__resp">{{ vacancy.response_set.count }} jogap</div>
+               <a href="{% url 'refresh-vacancy' object.id %}" class="mvv__refresh__in__search__btn green__btn">
+                  Gözlegde başda çyk
                </a>
-               <a href="" class="mvv__see__all__resp purp__btn">Просмотреть все отклики</a>
+               <a href="" class="mvv__see__all__resp purp__btn">Ähli jogaplary aç</a>
                
-               <h4 class="mvv__subtitle">Требования
+               <h4 class="mvv__subtitle">Talaplar
                </h4>
                <p class="mvv__info">
-                  <span>Опыт: {{ object.experience }}</span>
+                  <span>Iş tejribesi: {{ object.experience }}</span>
                   
-                  <span>Возраст: от {{ object.min_age }} лет</span>
+                  <span>Ýaş: от {{ object.min_age }} ýaşdan</span>
                 
-                  <span>Пол: {{ object.sex }}</span>
+                  <span>Jyns: {{ object.sex }}</span>
                   
-                  <span>Образование: {{ object.education }}</span>
+                  <span>Bilim: {{ object.education }}</span>
                </p>
-               <h4 class="mvv__subtitle">Владение языками</h4>
+               <h4 class="mvv__subtitle">Diller bilimi</h4>
                <p class="mvv__info">
                   {% for language in object.neededlanguage_set.all %}
                   <span>{{ language.language}} - {{ language.level }}</span>
                   {% endfor %}
                </p>
-               <h4 class="mvv__subtitle">Обязанности:</h4>
+               <h4 class="mvv__subtitle">Jogapkärçilikler:</h4>
                <p class="mvv__info">
                   {{ object.responsibilities }}
                </p>
-               <h4 class="mvv__subtitle">Условия работы</h4>
+               <h4 class="mvv__subtitle">Iş şertleri</h4>
                <p class="mvv__info">
                   <span>
                      {{ object.work_terms }}
                   </span>
                   
-                  <span>Занятость: {{ object.busyness }}</span>
+                  <span>işlemek: {{ object.busyness }}</span>
                   
-                  <span>График: {{ object.work_graph }}</span>
+                  <span>Iş wagty   : {{ object.work_graph }}</span>
                </p>
-               <h4 class="mvv__subtitle">Дополнительная информация о зарплате</h4>
+               <h4 class="mvv__subtitle">Aýlyk barada goşmaça maglumatlary</h4>
                <p class="mvv__info">
                   {{ object.payment }}
                </p>
                <div class="mvv__contacts">
-                  <h4 class="mvv__subtitle">Контакты</h4>
+                  <h4 class="mvv__subtitle">kontaktlar</h4>
                   {% with content=object.contact.content_as_list %}
                   <span>{{ content.0 }}</span>
                   <span>
@@ -70,11 +70,11 @@
                   <span><span class="mr5">✉</span>{{ content.2 }}</span>
                   {% endwith %}
                </div>
-               <a href="{% url 'vacancy-edit-tm' object.id %}" class="mvv__edit__btn purp__btn">Редактировать</a>
-               <a href="{% url 'vacancy-delete-tm' object.id %}" class="mvv__delete__btn">Удалить</a>
-               <a href="{% url 'suitable-cvs-tm' object.id %}" class="suitable__link">Найдено {{ vacancy.cv_set.count }} подходящий сотрудников</a>
+               <a href="{% url 'vacancy-edit' object.id %}" class="mvv__edit__btn purp__btn">Üýtegetmek</a>
+               <a href="{% url 'vacancy-delete' object.id %}" class="mvv__delete__btn">Pozmak</a>
+               <a href="{% url 'suitable-cvs' object.id %}" class="suitable__link">{{ vacancy.cv_set.count }} sany laýyk işgär tapyldy</a>
             </div>
          </div>    
       </div>
-      <script src="{% static 'scripts/header.js' %}"></script>
+      <script src="{% static 'tm_scripts/header.js' %}"></script>
       {% endblock %}

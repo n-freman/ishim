@@ -10,7 +10,7 @@ employee.addEventListener('click' , (e) => {
       document.getElementById('employee_btn').classList.remove('disappear');
       document.getElementById('hirer_btn').classList.remove('intro__desc__item__btn');
       document.getElementById('hirer_btn').classList.add('disappear');
-      textArea.innerHTML = 'Размещайте резюме на ishim.com и находите у нас подходящие вакансии. Ishim-  это новая модель поиска работы.'
+      textArea.innerHTML = 'Все что вам нужно для быстрого поиска работы'
    }
 })
 

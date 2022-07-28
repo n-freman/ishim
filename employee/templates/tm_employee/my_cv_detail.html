@@ -12,21 +12,21 @@
                <span class="mvv__main__info">{{ object.mobile_num }}</span>
                <span class="mvv__main__info">{{ object.email }}</span>
                <span class="mvv__main__info">Опубликовано в {{ object.creation_date|date:"H:i" }}</span>
-               <span class="mvv__main__info">{{ object.views }} просмотров</span>
-               <a href="{% url 'refresh-cv' object.id %}" class="mvv__refresh__in__search__btn green__btn">Обновить в поиске</a>
-               <a href="" class="mvv__edit__btn purp__btn">Редактировать</a>
+               <span class="mvv__main__info">{{ object.views }} görkeziş</span>
+               <a href="{% url 'refresh-cv' object.id %}" class="mvv__refresh__in__search__btn green__btn">Gözlegde başda çyk</a>
+               <a href="" class="mvv__edit__btn purp__btn">Üýtegetmek</a>
                <h4 class="mvv__subtitle">{{ object.position }}
                </h4>
                <p class="mvv__info">
                   <span>{{ object.sphere }}</span>
                   
-                  <span>График работы: {{ object.work_graph }}</span>
+                  <span>Iş tertibi: {{ object.work_graph }}</span>
                 
-                  <span>Пол: {{ object.sex }}</span>
+                  <span>Jyns: {{ object.sex }}</span>
                   
-                  <span>Занятость:  {{ object.busyness }}</span>
+                  <span>Iş görnüşi:  {{ object.busyness }}</span>
                </p>
-               <h4 class="mvv__subtitle">Опыт работы</h4>
+               <h4 class="mvv__subtitle">Iş tejribesi</h4>
                {% for cvattr in object.cvattr_set.all %}
                {% if cvattr.workexperience %}
                <p class="mvv__info">
@@ -36,13 +36,13 @@
                   
                   <span>{{ cvattr.workexperience.start_year }} - {{ cvattr.workexperience.end_year }}</span>
                </p>
-               <h4 class="mvv__subtitle">Обязанности:</h4>
+               <h4 class="mvv__subtitle">Jogapkärçilikler:</h4>
                <p class="mvv__info">
                   {{ cvattr.workexperience.responsibilities }}
                </p>
                {% endif %}
                {% endfor %}
-               <h4 class="mvv__subtitle">Образование
+               <h4 class="mvv__subtitle">Bilim
                </h4>
                {% for cvattr in object.cvattr_set.all %}
                   {% if cvattr.education %}
@@ -55,14 +55,14 @@
                   
                   <span>{{ cvattr.education.start_year }} - {{ cvattr.education.end_year }}</span>
 
-                  <span>Факультет: {{ cvattr.education.faculty }}</span>
+                  <span>Fakultet: {{ cvattr.education.faculty }}</span>
 
-                  <span>Специальность: {{ cvattr.education.specialization }}</span>
+                  <span>Hünär: {{ cvattr.education.specialization }}</span>
 
                </p>
                {% endif %}
                {% endfor %}
-               <h4 class="mvv__subtitle">Знание программ</h4>
+               <h4 class="mvv__subtitle">Programmalar bilimi </h4>
                <p class="mvv__info">
                   {% for cvattr in object.cvattr_set.all %}
                   {% if cvattr.knownprogram %}
@@ -70,7 +70,7 @@
                   {% endif %}
                   {% endfor %}
                </p>
-               <h4 class="mvv__subtitle">Владение языками</h4>
+               <h4 class="mvv__subtitle">Diller bilimi</h4>
                <p class="mvv__info">
                   {% for cvattr in object.cvattr_set.all %}
                   {% if cvattr.knownlanguage %}
@@ -79,14 +79,14 @@
                   {% endfor %}
                </p>
 
-               <h4 class="mvv__subtitle">О себе</h4>
+               <h4 class="mvv__subtitle">Özüm barada</h4>
                <p class="mvv__info">
                   {{ object.about }}
                </p>
               
-               <a href="{% url 'delete-cv' cv.id %}" class="mvv__delete__btn">Удалить</a>
+               <a href="{% url 'delete-cv' cv.id %}" class="mvv__delete__btn">Pozmak</a>
             </div>
          </div>    
       </div>
-      <script src="{% static 'scripts/header.js' %}"></script>
+      <script src="{% static 'tm_scripts/header.js' %}"></script>
       {% endblock %}

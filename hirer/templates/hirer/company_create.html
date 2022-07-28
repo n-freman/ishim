@@ -1,93 +1,95 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-   <div class="container__main pad-0 w-1920">
-      <header class="header-wavy">
-         <div class="container__content header-wavy__inner">
-            <img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="header__pic">
-            <div class="header__loc">
-               <select name="interface__lang" id=""
-                  onchange="window.location.href=this.options[this.selectedIndex].value" autocomplete="off">
-                  <option value="" class="header__loc__current">RU</option>
-                  <option value="" class="header__loc__current" selected>TM</option>
-               </select>
-            </div>
+<div class="container__main pad-0 w-1920">
+   <header class="header-wavy">
+      <div class="container__content header-wavy__inner">
+         <img src="{% static 'images/header/Ishim__logo.png' %}" alt="Sorry got some error" class="header__pic">
+         <div class="header__loc">
+            <select name="interface__lang" id="" onchange="window.location.href=this.options[this.selectedIndex].value"
+               autocomplete="off">
+               <option value="" class="header__loc__current">RU</option>
+               <option value="" class="header__loc__current" selected>TM</option>
+            </select>
          </div>
-      </header>
+      </div>
+   </header>
 
 
-         <div class="reg-user-conf container__content">
-         <div class="reg-user-conf__inner">
-            <div class="reg-user-conf__content">
-               <h1 class="reg-user-conf__title">Регистрация Работодателя</h1>
+   <div class="reg-user-conf container__content">
+      <div class="reg-user-conf__inner">
+         <div class="reg-user-conf__content">
+            <h1 class="reg-user-conf__title">Регистрация Работодателя</h1>
 
-               <form action="" method="post"  id="form__id" class="reg-user-conf__form">
-                    {% csrf_token %}
-                  <div class="user-info-block">
-                     <h2>Название компании</h2>
-                     <div class="user-inp-blok">
-                        <input type="text" class="user-text" value="" name="company_name">
-                     </div>
+            <form action="" method="post" id="form__id" class="reg-user-conf__form">
+               {% csrf_token %}
+               <div class="user-info-block">
+                  <h2>Название компании</h2>
+                  <div class="user-inp-blok">
+                     <input type="text" class="user-text" value="" name="company_name">
                   </div>
-                  <div class="user-info-block">
-                     <h2>Сфера</h2>
-                     <input type="text" class="user-text" value="" name="sphere">
-                  </div>
-                  
-                  <div class="user-info-block user-mob-block">
-                     <h2>Мобильный телефон</h2>
-                     <div class="user-mob-pic-wrapper">
-                        <img src="{% static 'images/info__pic.svg' %}" alt="" class="user-mob-pic">
-                        <p class="user-mob-info">
-                           Укажите номер по которому лучше всего можно связаться с вами
-                        </p>
-                     </div>
-                     <input required type="tel" class="user-text" value="+993" name="phone_num">
-                  </div>
+               </div>
+               <div class="user-info-block">
+                  <h2>Сфера</h2>
+                  <input type="text" class="user-text" value="" name="sphere">
+               </div>
 
-                  <div class="user-info-block">
-                     <h2>Эл. почта</h2>
-                     <input required type="text" class="user-text" value="" name="email">
+               <div class="user-info-block user-mob-block">
+                  <h2>Мобильный телефон</h2>
+                  <div class="user-mob-pic-wrapper">
+                     <img src="{% static 'images/info__pic.svg' %}" alt="Sorry got some error" class="user-mob-pic">
+                     <p class="user-mob-info">
+                        Укажите номер по которому лучше всего можно связаться с вами
+                     </p>
                   </div>
+                  <input required type="tel" class="user-text" value="+993" name="phone_num">
+               </div>
 
-                  <div class="user-info-block">
-                     <h2>Пароль</h2>
-                     <div class="user-inp-blok">
-                        <input type="password" class="user-text" value="" name="password1">
-                        <img src="{% static 'images/close__eye.svg' %}" alt="" class="user-block-pic" id="eye__btn">
-                     </div>
-                     
-                  </div>
-                  <div class="user-info-block">
-                     <h2>Подтверждение пароля</h2>
-                     <div class="user-inp-blok">
-                        <input type="password" class="user-text" value="" name="password2">
-                        <img src="{% static 'images/close__eye.svg' %}" alt="" class="user-block-pic" id="eye__btn">
-                     </div>
+               <div class="user-info-block">
+                  <h2>Эл. почта</h2>
+                  <input required type="text" class="user-text" value="" name="email">
+               </div>
+
+               <div class="user-info-block">
+                  <h2>Пароль</h2>
+                  <div class="user-inp-blok">
+                     <input type="password" class="user-text" value="" name="password1">
+                     <img src="{% static 'images/close__eye.svg' %}" alt="Sorry got some error" class="user-block-pic"
+                        id="eye__btn">
                   </div>
 
-                  <div class="user-info-block">
-                     <h2>Город проживания</h2>
-                     <select required name="city" id="" class="user-text user-select-bg">
-                        <option slected value="Ашхабад">Ашхабад</option>
-                        <option value="Аннау">Аннау</option>
-                        <option value="Бахарден">Бахарден</option>
-                        <option value="Бизмеин">Бизмеин</option>
-                        <option value="Гёкдепе">Гёкдепе</option>
-                        <option value="Кахка">Кахка</option>
-                        <option value="Теджен">Теджен</option>
-                        <option value="Балканабад">Балканабад</option>
-                        <option value="Берекет">Берекет</option>
-                        <option value="anothr__city">Другой город</option>
-                     </select>
+               </div>
+               <div class="user-info-block">
+                  <h2>Подтверждение пароля</h2>
+                  <div class="user-inp-blok">
+                     <input type="password" class="user-text" value="" name="password2">
+                     <img src="{% static 'images/close__eye.svg' %}" alt="Sorry got some error" class="user-block-pic"
+                        id="eye__btn">
                   </div>
-                  <input required type="submit" class="continue__btn purp__btn m-0auto" value="Продолжить">
+               </div>
 
-               </form>
-            </div>
+               <div class="user-info-block">
+                  <h2>Город проживания</h2>
+                  <select required name="city" id="" class="user-text user-select-bg">
+                     <option slected value="Ашхабад">Ашхабад</option>
+                     <option value="Аннау">Аннау</option>
+                     <option value="Бахарден">Бахарден</option>
+                     <option value="Бизмеин">Бизмеин</option>
+                     <option value="Гёкдепе">Гёкдепе</option>
+                     <option value="Кахка">Кахка</option>
+                     <option value="Теджен">Теджен</option>
+                     <option value="Балканабад">Балканабад</option>
+                     <option value="Берекет">Берекет</option>
+                     <option value="anothr__city">Другой город</option>
+                  </select>
+               </div>
+               <input required type="submit" class="continue__btn purp__btn m-0auto" value="Продолжить">
+
+            </form>
          </div>
       </div>
    </div>
-   <script src="{% static 'scripts/select_another_city.js' %}"></script>
-   <script src="{% static 'scripts/show_hide_pass.js' %}"></script>
-   {% endblock %}
+</div>
+<script src="{% static 'scripts/select_another_city.js' %}"></script>
+<script src="{% static 'scripts/show_hide_pass.js' %}"></script>
+{% endblock %}

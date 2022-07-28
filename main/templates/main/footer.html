@@ -1,45 +1,47 @@
 {% load static %}
 <footer class="footer">
-    <div class="container__content">
-       <section class="footer__inner">
-          <div class="footer__content">
-             <div class="footer__item">
+   <div class="container__content">
+      <section class="footer__inner">
+         <div class="footer__content">
+            <div class="footer__item">
 
-                <img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="footer__pic">
+               <img src="{% static 'images/header/Ishim__logo.png' %}" alt="Sorry got some error" class="footer__pic"
+                  title="Ishim logo">
 
-                <a href="" class="footer__text">О нас</a>
-                <a href="{% url 'company-catalog' %}" class="footer__text">Каталог компаний</a>
-                <span href="mailto:ishim.tm@gmail.com" class="footer__text">ishim.tm@gmail.com</span>
+               <a href="" class="footer__text">О нас</a>
+               <a href="{% url 'company-catalog' %}" class="footer__text">Каталог компаний</a>
+               <span href="mailto:ishim.tm@gmail.com" class="footer__text">ishim.tm@gmail.com</span>
 
-                <div class="footer__row"></div>
+               <div class="footer__row"></div>
 
-                <span class="footer__text">Все права защищены</span>
+               <span class="footer__text">Все права защищены</span>
 
-             </div>
+            </div>
 
-             <div class="footer__item">
+            <div class="footer__item">
 
-                <div class="footer__social">
-                    <a href="">
-                   <img src="{% static 'images/footer/facebook__icon.svg' %}" alt="facebook logo"
-                      class="footer__social__pic">
-                    </a>
-                    <a href="">
-                   <img src="{% static 'images/footer/instagram__icon.svg' %}" alt="instagram logo"
-                      class="footer__social__pic">
-                    </a>
-                    <a href="">
-                   <img src="{% static 'images/footer/imo__icon.svg' %}" alt="imo logo" class="footer__social__pic">
-                </a>
-                </div>
+               <div class="footer__social">
+                  <a href="">
+                     <img src="{% static 'images/footer/facebook__icon.svg' %}" alt="facebook logo"
+                        class="footer__social__pic" title="Facebook">
+                  </a>
+                  <a href="">
+                     <img src="{% static 'images/footer/instagram__icon.svg' %}" alt="instagram logo"
+                        class="footer__social__pic" title="Instagram">
+                  </a>
+                  <a href="">
+                     <img src="{% static 'images/footer/imo__icon.svg' %}" alt="imo logo" class="footer__social__pic"
+                        title="Imo">
+                  </a>
+               </div>
 
-                <span class="footer__text">На сайте</span>
-                <span class="footer__text">{{ vacancy_num }} вакансий</span>
-                <span class="footer__text">{{ cv_num }} резюме</span>
-                <span class="footer__text">{{ user_num }} компаний и</span>
-                <span class="footer__text">работодателей</span>
-             </div>
-          </div>
-       </section>
-    </div>
- </footer>
+               <span class="footer__text">На сайте</span>
+               <span class="footer__text">{{ vacancy_num }} вакансий</span>
+               <span class="footer__text">{{ cv_num }} резюме</span>
+               <span class="footer__text">{{ user_num }} компаний и</span>
+               <span class="footer__text">работодателей</span>
+            </div>
+         </div>
+      </section>
+   </div>
+</footer>

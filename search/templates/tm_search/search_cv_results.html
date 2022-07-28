@@ -9,18 +9,18 @@
                {% for cv in cv_list %}
                <div class="my__vac__item">
 
-                  <h2 class="my__vac__item__title"><a href="{% url 'cv-info-tm' cv.id %}">{{ cv.position }}</a></h2>
-                  <h3 class="my__vac__item__subtitle">{{ cv.min_salary }} ман.</h3>
+                  <h2 class="my__vac__item__title"><a href="{% url 'cv-info' cv.id %}">{{ cv.position }}</a></h2>
+                  <h3 class="my__vac__item__subtitle">{{ cv.min_salary }} manat</h3>
 
                   <a href="" class="amount__resp">{{ cv.chosencv_set.count }} человек откликнулись к этой вакансии</a>
 
                   <span>Вакансия обновлена {{ cv.creation_date|date:"Y.m.d" }}</span>
 
-                  <a href="{% url 'suitable-vacancies-tm' cv.id %}" class="suitable__link">{{ cv.suitable_vacancies.count }} подходящих вакансий</a>
+                  <a href="{% url 'suitable-vacancies' cv.id %}" class="suitable__link">{{ cv.suitable_vacancies.count }} laýyk boş wezipe tapyldy</a>
                </div>
                {% endfor %}
             </div>
          </div>    
       </div>
-      <script src="{% static 'scripts/header.js' %}"></script>
+      <script src="{% static 'tm_scripts/header.js' %}"></script>
 {% endblock %}

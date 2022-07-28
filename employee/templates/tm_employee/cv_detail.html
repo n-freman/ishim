@@ -21,7 +21,7 @@
             <span class="mvv__main__info">{{ object.email }}</span>
 
             <div class="mvv__refresh__in__search__btn__wrapper"  id="fav__btn__wrapper">
-               <button class="mvv__refresh__in__search__btn green__btn">Получить контакты</button>
+               <button class="mvv__refresh__in__search__btn green__btn">Kontaktlary almak </button>
                <svg width="30px" height="30px">
                   <use xlink:href="#favorites__str" width="30px" height="30px" class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == object %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-cv' object.id %}"></use>
                </svg>
@@ -35,9 +35,9 @@
 
                <span>График работы: {{ object.work_graph }}</span>
 
-               <span>Занятость: {{ object.busyness }}</span>
+               <span>Işlemek: {{ object.busyness }}</span>
             </p>
-            <h4 class="mvv__subtitle">Опыт работы</h4>
+            <h4 class="mvv__subtitle">Iş tejribesi</h4>
             {% for cvattr in object.cvattr_set.all %}
                {% if cvattr.workexperience %}
             <p class="mvv__info">
@@ -69,7 +69,7 @@
             </p>
             {% endif %}
             {% endfor %}
-            <h4 class="mvv__subtitle">Знание программ</h4>
+            <h4 class="mvv__subtitle">Programmalar bilimi </h4>
             <p class="mvv__info">
                {% for cvattr in object.cvattr_set.all %}
                   {% if cvattr.knownprogram %}
@@ -77,7 +77,7 @@
                   {% endif %}
                   {% endfor %}
             </p>
-            <h4 class="mvv__subtitle">Владение языками</h4>
+            <h4 class="mvv__subtitle">Diller bilimi</h4>
             <p class="mvv__info">
                {% for cvattr in object.cvattr_set.all %}
                {% if cvattr.knownlanguage %}
@@ -85,7 +85,7 @@
                {% endif %}
                {% endfor %}
             </p>
-            <h4 class="mvv__subtitle">О себе</h4>
+            <h4 class="mvv__subtitle">Özüm barada</h4>
             <p class="mvv__info">
                {{ object.about }}
             </p>
@@ -105,6 +105,6 @@
 
       </div>
    </div>
-   <script src="{% static 'scripts/header.js' %}"></script>
-   <script src="{% static 'scripts/favourtie.js' %}"></script>
+   <script src="{% static 'tm_scripts/header.js' %}"></script>
+   <script src="{% static 'tm_scripts/favourtie.js' %}"></script>
 {% endblock %}

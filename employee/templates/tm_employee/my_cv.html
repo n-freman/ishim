@@ -1,31 +1,32 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-      <div class="container__main pad-0 w-1920">
-         {% include 'main/header_employee.html' %}
-         <div class="container__content">
-            <div class="my__vac">
-               <h1 class="my__vac__title">Мои Резюме</h1>
-               {% for cv in cv_list %}
-               <div class="my__vac__item">
+<div class="container__main pad-0 w-1920">
+   {% include 'main/header_employee.html' %}
+   <div class="container__content">
+      <div class="my__vac">
+         <h1 class="my__vac__title">Мои Резюме</h1>
+         {% for cv in cv_list %}
+         <div class="my__vac__item">
 
-                  <h2 class="my__vac__item__title"><a href="{% url 'my-cv-info' cv.id %}">{{ cv.position }}</a></h2>
-                  <h3 class="my__vac__item__subtitle">{{ cv.min_salary }} ман.</h3>
+            <h2 class="my__vac__item__title"><a href="{% url 'my-cv-info' cv.id %}">{{ cv.position }}</a></h2>
+            <h3 class="my__vac__item__subtitle">{{ cv.min_salary }} manat.</h3>
 
-                  <a href="" class="amount__resp">{{ cv.chosencv_set.count }} человек отметили это резюме</a>
+            <a href="" class="amount__resp">{{ cv.chosencv_set.count }} человек отметили это резюме</a>
 
-                  <span>Резюме обновлено {{ cv.creation_date|date:"m.d"}}</span>
+            <span>Rezýume {{ cv.creation_date|date:"m.d"}} iyulda täzelendi</span>
 
-                  <a href="{% url 'refresh-cv' cv.id %}" class="refresh__in__search__btn green__btn">Обновить в поиске</a>
+            <a href="{% url 'refresh-cv' cv.id %}" class="refresh__in__search__btn green__btn">Gözlegde başda çyk</a>
 
-                  <a href="{% url 'cv-edit' cv.id %}" class="edit__btn purp__btn">Редактировать</a>
+            <a href="{% url 'cv-edit' cv.id %}" class="edit__btn purp__btn">Üýtegetmek</a>
 
-                  <a href="{% url 'suitable-vacancies' cv.id %}" class="suitable__link">{{ cv.suitable_vacancies.count }} подходящих вакансий</a>
-               </div>
-               {% endfor %}
-               <a href="{% url 'create-cv' %}" class="add__vac"><span>+</span>Добавить новое резюме</a>
-            </div>
-         </div>    
+            <a href="{% url 'suitable-vacancies' cv.id %}" class="suitable__link">{{ cv.suitable_vacancies.count }}
+               laýyk boş wezipe tapyldy</a>
+         </div>
+         {% endfor %}
+         <a href="{% url 'create-cv' %}" class="add__vac"><span>+</span>Täze rezýyme döretmek</a>
       </div>
-      <script src="{% static 'scripts/header.js' %}"></script>
-      {% endblock %}
+   </div>
+</div>
+<script src="{% static 'tm_scripts/header.js' %}"></script>
+{% endblock %}

@@ -3,8 +3,8 @@
    <div class="container__content">
       <div class="header__content">
          <section class="header__sec__type3 ">
-            <a href="{% url 'home' %}"><img src="{% static 'images/header/Ishim__logo.png' %}" alt=""
-                  class="header__pic "></a>
+            <a href="{% url 'home' %}"><img src="{% static 'images/header/Ishim__logo.png' %}"
+                  alt="Sorry got some error" class="header__pic "></a>
 
          </section>
          <section class="header__sec__type3">
@@ -13,9 +13,9 @@
                   <button type="submit" name="search_btn">
                      <img src="{% static 'images/search__ic.svg' %}" alt="Sorry">
                   </button>
-                  <input type="text" class="nav__inp" placeholder="Профессия, должность или ключевые слова"
+                  <input type="text" class="nav__inp" placeholder="Hünär, wezipe ýa-da açar sözler"
                      name="position">
-                  <input type="text" class="nav__inp__small" placeholder="Профессия" name="position">
+                  <input type="text" class="nav__inp__small" placeholder="Hünär" name="position">
                </div>
                <a href="{% url 'wide-search-vacancy' %}">
                   <img src="{% static 'images/nav__setting.png' %}" alt="Sorry" class="nav__set__pic">
@@ -29,26 +29,26 @@
                <div class="user__profile">
                   <div class="user__profile__item">
                      <a href="" class="user__profile__pic">
-                        <img src="{% static 'images/user__profile__ico.png' %}" alt="">
+                        <img src="{% static 'images/user__profile__ico.png' %}" alt="Sorry got some error" title="User">
                      </a>
 
                      <h1 class="user__profile__title">{{ user.employee.first_name }} {{ user.employee.last_name }}</h1>
                   </div>
                   <div class="user__profile__item">
 
-                     <a href="{% url 'my-cv' %}" class="user__profile__link">Мои резюме</a>
+                     <a href="{% url 'my-cv' %}" class="user__profile__link">Meniň rezýumelarym</a>
 
-                     <a href="{% url 'profile' %}" class="user__profile__link">Личные данные</a>
+                     <a href="{% url 'profile' %}" class="user__profile__link">Şahsy maglumatlar</a>
 
-                     <a href="{% url 'my-responses' %}" class="user__profile__link">Мои отклики</a>
+                     <a href="{% url 'my-responses' %}" class="user__profile__link">Meniň jogaplarym</a>
 
-                     <a href="" class="user__profile__link">Рекомендации</a>
+                     <a href="" class="user__profile__link">Hödürlemeler</a>
 
-                     <a href="{% url 'employee-chosen' %}" class="user__profile__link">Избранное</a>
+                     <a href="{% url 'employee-chosen' %}" class="user__profile__link">Saýlananlar</a>
 
                   </div>
                   <div class="user__profile__item">
-                     <a href="{% url 'logout' %}" class="user__profile__last__link">Выйти</a>
+                     <a href="{% url 'logout' %}" class="user__profile__last__link">Sahypadan çykmak</a>
                   </div>
                </div>
             </div>
@@ -61,23 +61,23 @@
 </header>
 <div class="container__content">
    <div class="nav__burger disappear">
-      <h1 class="nav__title">Меню</h1>
+      <h1 class="nav__title">Menu</h1>
 
-      <a href="{% url 'company-catalog' %}" class="nav__link">Каталог компаний</a>
+      <a href="{% url 'company-catalog' %}" class="nav__link">Kompaniýalar katalogy</a>
 
-      <a href="{% url 'articles' %}" class="nav__link">Статьи</a>
+      <a href="{% url 'articles' %}" class="nav__link">Makalalar</a>
 
       <select name="interface__lang" onchange="window.location.href=this.options[this.selectedIndex].value"
          class="nav__link" autocomplete="off">
-         <option selected disabled hidden class="header__loc__current">Язык</option>
+         <option selected disabled hidden class="header__loc__current">Dil</option>
          <option value="" class="header__loc__current">RU</option>
          <option value="" class="header__loc__current">TM</option>
       </select>
 
-      <a href="{% url 'search-histroy-employee' %}" class="nav__link">История поиска</a>
+      <a href="{% url 'search-histroy-employee' %}" class="nav__link">Siziň gözlegleriňiz</a>
 
-      <a href="" class="nav__link">Условия использования и политика конфиденциальности</a>
+      <a href="" class="nav__link">Ulanyş şertleri</a>
 
-      <a href="" class="nav__link">Связаться с нами</a>
+      <a href="" class="nav__link">Biz bilen habarlaşyň</a>
    </div>
 </div>

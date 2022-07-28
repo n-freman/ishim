@@ -1,36 +1,37 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-   <svg display="none">
-      <symbol id="favorites__str" viewBox="0 0 28 27">
-         <g>
-            <path
-               d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
-               stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-         </g>
-      </symbol>
-   </svg>
-   <div class="container__main pad-0 w-1920">
-      {% include 'main/header_employee.html' %}
-      <div class="container__content">
-         <div class="my__responses">
-            <h1 class="my__responses__title">Мои отклики</h1>
-            <h2 class="my__responses__subtitle">Вакансии на которые вы откликнулись</h2>
-            {% for response in responses %}
-            <div class="my__responses__item__wrapper">
-               <div class="my__responses__item">
-                  <h3 class="my__responses__item__headline">{{ response.vacancy.position }}</h3>
-                  <h3 class="my__responses__item__headline">{{ response.vacancy.min_salary }} манат</h3>
-               </div>
-
-               <div class="my__responses__item">
-                  <div class="my__responses__item__additionally">{{ response.vacancy.creator.hirer.company_name }}</div>
-                  <a href="{% url 'make-response' response.vacancy.id %}" class="my__responses__item__btn">Отменить отклик</a>
-               </div>
+<svg display="none">
+   <symbol id="favorites__str" viewBox="0 0 28 27">
+      <g>
+         <path
+            d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
+            stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+   </symbol>
+</svg>
+<div class="container__main pad-0 w-1920">
+   {% include 'main/header_employee.html' %}
+   <div class="container__content">
+      <div class="my__responses">
+         <h1 class="my__responses__title">Мои отклики</h1>
+         <h2 class="my__responses__subtitle">Вакансии на которые вы откликнулись</h2>
+         {% for response in responses %}
+         <div class="my__responses__item__wrapper">
+            <div class="my__responses__item">
+               <h3 class="my__responses__item__headline">{{ response.vacancy.position }}</h3>
+               <h3 class="my__responses__item__headline">{{ response.vacancy.min_salary }} манат</h3>
             </div>
-            {% endfor %}
+
+            <div class="my__responses__item">
+               <div class="my__responses__item__additionally">{{ response.vacancy.creator.hirer.company_name }}</div>
+               <a href="{% url 'make-response' response.vacancy.id %}" class="my__responses__item__btn">Отменить
+                  отклик</a>
+            </div>
          </div>
+         {% endfor %}
       </div>
    </div>
-   <script src="../scripts/header.js"></script>
+</div>
+<script src="{% static 'scripts/header.js' %}"></script>
 {% endblock %}

@@ -104,15 +104,15 @@ document.getElementById("user__lang__btn__wrapper").addEventListener("click", fu
 //    console.log(body);
 //  });
 
-const select = document.getElementById('user__industry');
-select.addEventListener('change' , (e) => {
-   let index =  select.selectedIndex;
-   console.log(index);
-   if(index == 4) {
-      select.classList.add('disappear');
-      const div = document.createElement('div');
-      div.className = 'user-inp-blok';
-      div.innerHTML = `<input required type="text" class="user-text" value="" placeholder="Другое" name="anotherIndustry" id="anotherIndustryId">`
-      document.getElementById('industry__wrapper').appendChild(div);
-   }
-})
+const selectIndustry = document.getElementById('user__industry');
+selectIndustry.addEventListener('change' , (e) => {
+  let index =  selectIndustry.selectedIndex;
+  console.log(index);
+  if(index == 14) {
+    document.getElementById('industry__wrapper').removeChild(selectIndustry);
+     const div = document.createElement('div');
+     div.className = 'user-inp-blok';
+     div.innerHTML = `<input required type="text" class="user-text" value="" placeholder="Другое" name="sphere" id="anotherIndustryId">`
+     document.getElementById('industry__wrapper').appendChild(div);
+  }
+});

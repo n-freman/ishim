@@ -25,7 +25,7 @@
                <div class="vac__card__inner">
                   <div class="vac__heading">
                      <h2 class="vac__heading__item">{{ cv.position }}</h2>
-                     <h2 class="vac__heading__item">{{ cv.min_salary }} манат</h2>
+                     <h2 class="vac__heading__item">{{ cv.min_salary }} manat</h2>
                   </div>
                   <div class="vac__heading">
                      <h2 class="vac__heading__item">{{ cv.creation_date|date:"Y.m.d" }}</h2>
@@ -44,8 +44,9 @@
                      <span class="vac__cat__item two-col">{{ cv.work_graph }}</span>
                   </div>
                   <div class="vac__btns">
-                     <a href="{% url 'cv-info' cv.id %}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
-                     <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+                     <a href="{% url 'cv-info' cv.id %}" class="vac__btns__item purp__btn"
+                        target="_blank">Giňişleýin</a>
+                     <a href="" class="vac__btns__item green__btn" target="_blank">Kontaktlary almak</a>
                   </div>
                </div>
             </div>
@@ -55,6 +56,6 @@
       </div>
    </div>
 </div>
-<script src="{% static 'scripts/header.js' %}"></script>
-<script src="{% static 'scripts/favourtie.js' %}"></script>
+<script src="{% static 'tm_scripts/header.js' %}"></script>
+<script src="{% static 'tm_scripts/favourtie.js' %}"></script>
 {% endblock %}

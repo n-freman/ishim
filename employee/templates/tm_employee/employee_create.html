@@ -4,7 +4,7 @@
 <div class="container__main pad-0 w-1920">
    <header class="header-wavy">
       <div class="container__content header-wavy__inner">
-         <img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="header__pic">
+         <img src="{% static 'images/header/Ishim__logo.png' %}" alt="Sorry got some error" class="header__pic">
          <div class="header__loc">
             <select name="interface__lang" id="" onchange="window.location.href=this.options[this.selectedIndex].value"
                autocomplete="off">
@@ -19,14 +19,14 @@
    <div class="reg-user-conf container__content">
       <div class="reg-user-conf__inner">
          <div class="reg-user-conf__content">
-            <h1 class="reg-user-conf__title">Регистрация пользователя</h1>
+            <h1 class="reg-user-conf__title">Dalaşgäri hasaba alyş</h1>
 
             <form action="" class="reg-user-conf__form" method="post" id="form__id">
                {% csrf_token %}
                <div class="user-full-name">
                   <div class="user-title">
-                     <h2>Имя</h2>
-                     <h2>Фамилия</h2>
+                     <h2>Ady</h2>
+                     <h2>Familiýa</h2>
                   </div>
                   <input type="text" class="user-name" value="" name="first_name">
 
@@ -34,22 +34,22 @@
                </div>
 
                <div class="user-birth-date">
-                  <h2>Дата рождения</h2>
+                  <h2>Doglan gün</h2>
                   <input type="number" class="user-bd__date user-bd__item" name="birth_date__date" value=""
                      placeholder="03">
                   <select name="birth_date__month" id="" class="user-bd__item user-select-bg">
-                     <option value="1">Январь</option>
-                     <option value="2">Февраль</option>
-                     <option selected value="3">Март</option>
-                     <option value="4">Апрель</option>
-                     <option value="5">Май</option>
-                     <option value="6">Июнь</option>
-                     <option value="7">Июль</option>
-                     <option value="8">Август</option>
-                     <option value="9">Сентябрь</option>
-                     <option value="10">Октябрь</option>
-                     <option value="11">Ноябрь</option>
-                     <option value="12">Декабрь</option>
+                     <option value="01">Ýanwar</option>
+                     <option value="02">Fewral</option>
+                     <option selected value="03">Mart</option>
+                     <option value="04">Aprel</option>
+                     <option value="05">Maý</option>
+                     <option value="06">Iýun</option>
+                     <option value="07">Iýul</option>
+                     <option value="08">Awgust</option>
+                     <option value="09">Sentýabr</option>
+                     <option value="10">Oktýabr</option>
+                     <option value="11">Noýabr</option>
+                     <option value="12">Dekabr</option>
                   </select>
 
                   <select name="birth_date__year" id="" class="user-bd__item user-select-bg">
@@ -105,26 +105,27 @@
                </div>
 
                <div class="user-info-block user-mob-block">
-                  <h2>Мобильный телефон</h2>
+                  <h2>Telefon</h2>
                   <div class="user-mob-pic-wrapper">
-                     <img src="{% static 'images/info__pic.svg' %}" alt="" class="user-mob-pic">
+                     <img src="{% static 'images/info__pic.svg' %}" alt="Sorry got some error" class="user-mob-pic">
                      <p class="user-mob-info">
-                        Укажите номер по которому лучше всего можно связаться с вами
+                        Siziň ýa-da kadrlar bölüminiň müdiri bilen habarlaşmak üçin telefon belgilerini ýazyň
                      </p>
                   </div>
                   <input type="tel" class="user-text" value="+993" name="phone_num">
                </div>
 
                <div class="user-info-block">
-                  <h2>Эл. почта</h2>
+                  <h2>elektron poçta</h2>
                   <input type="text" class="user-text" value="" name="email">
                </div>
 
                <div class="user-info-block">
-                  <h2>Пароль</h2>
+                  <h2>Parol</h2>
                   <div class="user-inp-blok">
                      <input type="password" class="user-text" value="" name="password1">
-                     <img src="{% static 'images/close__eye.svg' %}" alt="" class="user-block-pic" id="eye__btn">
+                     <img src="{% static 'images/close__eye.svg' %}" alt="Sorry got some error" class="user-block-pic"
+                        id="eye__btn">
                   </div>
 
                </div>
@@ -132,43 +133,47 @@
                   <h2>Подтверждение пароля</h2>
                   <div class="user-inp-blok">
                      <input type="password" class="user-text" value="" name="password2">
-                     <img src="{% static 'images/close__eye.svg' %}" alt="" class="user-block-pic" id="eye__btn">
+                     <img src="{% static 'images/close__eye.svg' %}" alt="Sorry got some error" class="user-block-pic"
+                        id="eye__btn">
                   </div>
                </div>
 
-               <div class="user-info-block">
-                  <h2>Город проживания</h2>
-                  <select name="city" id="" class="user-text user-select-bg">
-                     <option slected value="Ашхабад">Ашхабад</option>
-                     <option value="Аннау">Аннау</option>
-                     <option value="Бахарден">Бахарден</option>
-                     <option value="Бизмеин">Бизмеин</option>
-                     <option value="Гёкдепе">Гёкдепе</option>
-                     <option value="Кахка">Кахка</option>
-                     <option value="Теджен">Теджен</option>
-                     <option value="Балканабад">Балканабад</option>
-                     <option value="Берекет">Берекет</option>
-                     <option value="anothr__city">Другой город</option>
+               <div class="user-info-block" id="city__wrapper">
+                  <h2>Şäher</h2>
+                  <select name="city" id="user__city" class="user-text user-select-bg">
+                     <option value="Aşgabat">Aşgabat</option>
+                     <option value="Anau">Anau</option>
+                     <option value="Baharden">Baharden</option>
+                     <option value="Bizmein">Bizmein</option>
+                     <option value="Gökdepe">Gökdepe</option>
+                     <option value="Kaka">Kaka</option>
+                     <option value="Tejen">Tejen</option>
+                     <option value="Balkanabat">Balkanabat</option>
+                     <option value="Bereket">Bereket</option>
+                     <option value="Çardjou">Çardjou</option>
+                     <option value="Mary">Mary</option>
+                     <option value="Daşoguz">Daşoguz</option>
+                     <option value="anothr__city">wajib däl</option>
                   </select>
                </div>
 
                <div class="user-info-block">
-                  <h2>Пол</h2>
+                  <h2>Jyns</h2>
                   <div class="user-gender-block">
-                     <input required type="radio" id="man-id" value="man" name="sex">
-                     <label for="man-id" class="user-gender">Мужчина</label>
+                     <input required type="radio" id="man-id" value="Erkek" name="sex">
+                     <label for="man-id" class="user-gender">Erkek</label>
 
-                     <input required type="radio" id="woman-id" value="woman" name="sex">
-                     <label for="woman-id" class="user-gender">Женщина</label>
+                     <input required type="radio" id="woman-id" value="Aýal" name="sex">
+                     <label for="woman-id" class="user-gender">Aýal</label>
                   </div>
                </div>
-               <input type="submit" class="continue__btn purp__btn m-0auto" value="Продолжить">
+               <input type="submit" class="continue__btn purp__btn m-0auto" value="Dowam et">
 
             </form>
          </div>
       </div>
    </div>
 </div>
-<script src="{% static 'scripts/select_another_city.js' %}"></script>
-<script src="{% static 'scripts/show_hide_pass.js' %}"></script>
+<script src="{% static 'tm_scripts/select_another_city.js' %}"></script>
+<script src="{% static 'tm_scripts/show_hide_pass.js' %}"></script>
 {% endblock %}

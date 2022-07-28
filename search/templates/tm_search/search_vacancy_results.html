@@ -9,18 +9,18 @@
                {% for vacancy in vacancies %}
                <div class="my__vac__item">
 
-                  <h2 class="my__vac__item__title"><a href="{% url 'vacancy-info-tm' vacancy.id %}">{{ vacancy.position }}</a></h2>
+                  <h2 class="my__vac__item__title"><a href="{% url 'vacancy-info' vacancy.id %}">{{ vacancy.position }}</a></h2>
                   <h3 class="my__vac__item__subtitle">{{ vacancy.min_salary }} ман.</h3>
 
                   <a href="" class="amount__resp">{{ vacancy.response_set.count }} человек откликнулись к этой вакансии</a>
 
                   <span>Вакансия обновлена {{ vacancy.creation_date|date:"Y.m.d" }}</span>
 
-                  <a href="{% url 'suitable-cvs-tm' vacancy.id %}" class="suitable__link">{{ vacancy.cv_set.count }} подходящих сотрудников</a>
+                  <a href="{% url 'suitable-cvs' vacancy.id %}" class="suitable__link">{{ vacancy.cv_set.count }} подходящих сотрудников</a>
                </div>
                {% endfor %}
             </div>
          </div>    
       </div>
-      <script src="{% static 'scripts/header.js' %}"></script>
+      <script src="{% static 'tm_scripts/header.js' %}"></script>
 {% endblock %}

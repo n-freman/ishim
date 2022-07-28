@@ -1,79 +1,79 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-   <div class="container__main pad-0 w-1920">
-      {% include 'main/header_hirer.html' %}
-      <div class="priv__data mt-60">
-         <div class="container__content">
-            <div class="priv__data__inner" id="delete__wrap">
-               <h1 class="priv__data__title">Личные данные</h1>
+<div class="container__main pad-0 w-1920">
+   {% include 'main/header_hirer.html' %}
+   <div class="priv__data mt-60">
+      <div class="container__content">
+         <div class="priv__data__inner" id="delete__wrap">
+            <h1 class="priv__data__title">Şahsy maglumatlar</h1>
 
-               <div class="priv__data__item">
-                  <div>Название</div>
-                  <div>{{ request.user.hirer.company_name }}</div>
+            <div class="priv__data__item">
+               <div>Ady</div>
+               <div>{{ request.user.hirer.company_name }}</div>
 
-                  <a href="{% url 'edit-company' %}" class="priv__data__item__action">изменить</a>
-                  <a href="{% url 'edit-company' %}" class="priv__data__item__action__mob">
-                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
-                  </a>
-               </div>
-
-               <div class="priv__data__item">
-                  <div>Сфера деятельности</div>
-                  <div>{{ request.user.hirer.sphere }}</div>
-
-                  <a href="{% url 'edit-sphere' %}" class="priv__data__item__action">изменить</a>
-                  <a href="{% url 'edit-sphere' %}" class="priv__data__item__action__mob">
-                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
-                  </a>
-               </div>
-
-               <div class="priv__data__item">
-                  <div>Электронная почта</div>
-                  <div>{{ request.user.email }}</div>
-
-                  <a href="#" class="priv__data__item__action">изменить</a>
-                  <a href="#" class="priv__data__item__action__mob">
-                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
-                  </a>
-               </div>
-
-               <div class="priv__data__item">
-                  <div>Мобильный телефон</div>
-                  <div>{{ request.user.hirer.phone_num }}</div>
-
-                  <a href="{% url 'edit-phone' %}" class="priv__data__item__action">изменить</a>
-                  <a href="{% url 'edit-phone' %}" class="priv__data__item__action__mob">
-                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
-                  </a>
-               </div>
-
-               <div class="priv__data__item">
-                  <div>Пароль</div>
-                  <div>********</div>
-
-                  <a href="{% url 'edit-password' %}" class="priv__data__item__action">изменить</a>
-                  <a href="{% url 'edit-password' %}" class="priv__data__item__action__mob">
-                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
-                  </a>
-               </div>
-
-               <div class="priv__data__item">
-                  <div>Город</div>
-                  <div>{{ request.user.hirer.city }}</div>
-
-                  <a href="{% url 'edit-city' %}" class="priv__data__item__action">изменить</a>
-                  <a href="{% url 'edit-city' %}" class="priv__data__item__action__mob">
-                     <img src="{% static 'images/pen__pic.svg' %}" alt="">
-                  </a>
-               </div>
-
-               <div class="priv__data__item__action" id="delete__btn">Удаление</div>
-
+               <a href="{% url 'edit-company' %}" class="priv__data__item__action">üýtgetmek</a>
+               <a href="{% url 'edit-company' %}" class="priv__data__item__action__mob">
+                  <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
+               </a>
             </div>
+
+            <div class="priv__data__item">
+               <div>Işiň ugry </div>
+               <div>{{ request.user.hirer.sphere }}</div>
+
+               <a href="{% url 'edit-sphere' %}" class="priv__data__item__action">üýtgetmek</a>
+               <a href="{% url 'edit-sphere' %}" class="priv__data__item__action__mob">
+                  <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
+               </a>
+            </div>
+
+            <div class="priv__data__item">
+               <div>elektron poçta</div>
+               <div>{{ request.user.email }}</div>
+
+               <a href="#" class="priv__data__item__action">üýtgetmek</a>
+               <a href="#" class="priv__data__item__action__mob">
+                  <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
+               </a>
+            </div>
+
+            <div class="priv__data__item">
+               <div>Telefon</div>
+               <div>{{ request.user.hirer.phone_num }}</div>
+
+               <a href="{% url 'edit-phone' %}" class="priv__data__item__action">üýtgetmek</a>
+               <a href="{% url 'edit-phone' %}" class="priv__data__item__action__mob">
+                  <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
+               </a>
+            </div>
+
+            <div class="priv__data__item">
+               <div>parol</div>
+               <div>********</div>
+
+               <a href="{% url 'edit-password' %}" class="priv__data__item__action">üýtgetmek</a>
+               <a href="{% url 'edit-password' %}" class="priv__data__item__action__mob">
+                  <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
+               </a>
+            </div>
+
+            <div class="priv__data__item">
+               <div>Şäher</div>
+               <div>{{ request.user.hirer.city }}</div>
+
+               <a href="{% url 'edit-city' %}" class="priv__data__item__action">üýtgetmek</a>
+               <a href="{% url 'edit-city' %}" class="priv__data__item__action__mob">
+                  <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
+               </a>
+            </div>
+
+            <div class="priv__data__item__action" id="delete__btn">Akkaundymy pozmak</div>
+
          </div>
       </div>
    </div>
-   <script src="{% static 'scripts/header.js' %}"></script>
-   <script src="{% static 'scripts/delete_account.js' %}"></script>
-   {% endblock %}
+</div>
+<script src="{% static 'tm_scripts/header.js' %}"></script>
+<script src="{% static 'tm_scripts/delete_account.js' %}"></script>
+{% endblock %}

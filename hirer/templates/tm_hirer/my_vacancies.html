@@ -5,7 +5,7 @@
          {% icnlude 'main/header_hirer.html' %}
          <div class="container__content">
             <div class="my__vac">
-               <h1 class="my__vac__title">Мои вакансии</h1>
+               <h1 class="my__vac__title">Meniň wakansiýalarym</h1>
                {% for vacancy in vacancies %}
                <div class="my__vac__item">
 
@@ -16,17 +16,17 @@
 
                   <span>Вакансия обновлена {{ vacancy.creation_date }}</span>
 
-                  <a class="refresh__in__search__btn green__btn" href="{% url 'refresh-vacany-tm' id=vacancy.id %}">Обновить в поиске</button>
+                  <a class="refresh__in__search__btn green__btn" href="{% url 'refresh-vacany-tm' id=vacancy.id %}">Gözlegde başda çyk</button>
 
-                  <a href="" class="edit__btn purp__btn">Редактировать</a>
+                  <a href="" class="edit__btn purp__btn">Üýtegetmek</a>
 
-                  <a href="" class="suitable__link">{{ vacancy.cv_set.count }} подходящий сотрудников</a>
+                  <a href="" class="suitable__link">{{ vacancy.cv_set.count }} sany laýyk işgär tapyldy</a>
                </div>
                {% endfor %}
 
-               <a href="{% url 'create-vacancy-tm' %}" class="add__vac"><span>+</span>Добавить новую вакансию</a>
+               <a href="{% url 'create-vacancy-tm' %}" class="add__vac"><span>+</span>Täze wakansiýa goşmak</a>
             </div>
          </div>    
       </div>
-      <script src="{% static 'scripts/header.js' %}"></script>
+      <script src="{% static 'tm_scripts/header.js' %}"></script>
 {% endblock %}

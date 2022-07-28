@@ -19,7 +19,7 @@
                <div class="res__slbar__inner">
                   <div class="res__slbar__content">
                      <div class="res__slbar__item">
-                        <p class="res__slbar__item__title">Регион</p>
+                        <p class="res__slbar__item__title">Region</p>
                         {% for city in city_data %}
                         <div class="res__slbar__item__section">
                            <span class="res__slbar__left-p">{{ city.registration }}</span>
@@ -30,25 +30,25 @@
                      </div>
 
                      <div class="res__slbar__item">
-                        <p class="res__slbar__item__title">Требуют зарплату</p>
+                        <p class="res__slbar__item__title">Talap edilýän aýlyk</p>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 1000</span>
+                           <span class="res__slbar__left-p">1000</span>
                            <span class="res__slbar__right-p">{{ payment_data.one }}</span>
                         </div>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 2000</span>
+                           <span class="res__slbar__left-p">2000</span>
                            <span class="res__slbar__right-p">{{ payment_data.two }}</span>
                         </div>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 3000</span>
+                           <span class="res__slbar__left-p">3000</span>
                            <span class="res__slbar__right-p">{{ payment_data.three }}</span>
                         </div>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 4000</span>
+                           <span class="res__slbar__left-p">4000</span>
                            <span class="res__slbar__right-p">{{ payment_data.four }}</span>
                         </div>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 5000</span>
+                           <span class="res__slbar__left-p">5000</span>
                            <span class="res__slbar__right-p">{{ payment_data.five }}</span>
                         </div>
                      </div>
@@ -57,7 +57,7 @@
                </div>
                <div class="res__slbar__learn-more">
                   <div class="res__slbar__learn-more__inner">
-                     <h2 class="res__slbar__learn-more__title">Статьи</h2>
+                     <h2 class="res__slbar__learn-more__title">Makalalar</h2>
                      {% for article in articles %}
                      <div class="res__slbar__learn-more__item">
                         <img src="{{ article.image.url }}" alt="Sorry" class="l-m__pic" width="50" height="50">
@@ -97,9 +97,9 @@
                         </div>
                         <div class="vac__btns">
                            <a href="{% url 'vacancy-info' vacancy.id %}" class="vac__btns__item purp__btn"
-                              target="_blank">Подробнее</a>
+                              target="_blank">Giňişleýin</a>
                            <a href="{% url 'get-contact' id=vacancy.contact.id %}" class="vac__btns__item green__btn"
-                              target="_blank">Получить контакты</a>
+                              target="_blank">Kontaktlary almak </a>
                         </div>
                      </div>
                   </div>
@@ -125,7 +125,7 @@
    {% include 'main/footer.html' %}
 </div>
 
-<script src="{% static 'scripts/header.js' %}"></script>
-<script src="{% static 'scripts/favourtie.js' %}"></script>
-<script src="{% static 'scripts/download_vacancies.js' %}"></script>
+<script src="{% static 'tm_scripts/header.js' %}"></script>
+<script src="{% static 'tm_scripts/favourtie.js' %}"></script>
+<script src="{% static 'tm_scripts/download_vacancies.js' %}"></script>
 {% endblock %}

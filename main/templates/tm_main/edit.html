@@ -26,7 +26,7 @@
                   {% csrf_token %}
 
                   <div class="user-info-block">
-                     <h2>Изменить {{ heading }}</h2>
+                     <h2>Üýtgetmek {{ heading }}</h2>
                      <div class="user-inp-blok">
                         <input required type="text" class="user-text" value="" placeholder="" name="{{ name }}"
                            id="some_name">
@@ -40,7 +40,7 @@
          </div>
       </div>
    </div>
-   <script src="{% static 'scripts/header.js' %}"></script>
-   <script src="{% static 'scripts/create__vac.js' %}"></script>
-   <script src="{% static 'scripts/select_another.js' %}"></script>
+   <script src="{% static 'tm_scripts/header.js' %}"></script>
+   <script src="{% static 'tm_scripts/create__vac.js' %}"></script>
+   <script src="{% static 'tm_scripts/select_another.js' %}"></script>
    {% endblock %}

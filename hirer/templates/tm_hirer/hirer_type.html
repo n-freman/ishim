@@ -1,11 +1,13 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
+
 <body>
    <div class="container__main pad-0 w-1920">
       <header class="header-wavy">
          <div class="container__content header-wavy__inner">
-            <img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="header__pic">
+            <img src="{% static 'images/header/Ishim__logo.png' %}" alt="Sorry got some error" class="header__pic"
+               title="Ishim">
             <div class="header__loc">
                <select name="interface__lang" id=""
                   onchange="window.location.href=this.options[this.selectedIndex].value" autocomplete="off">
@@ -17,9 +19,9 @@
       </header>
 
       <div class="reg-h-t container__content">
-         <h1 class="reg-h-t__title m-0auto">Выберите тип пользователя</h1>
-            <a class="reg-h-t__btn wh__btn" href="{% url 'create-enterpreneuer' %}">Частное лицо</a>
-            <a class="reg-h-t__btn green__btn" href="{% url 'create-company' %}">Компания, огранизация</a>
+         <h1 class="reg-h-t__title m-0auto">Ulanyjy görnüşini saýlaň</h1>
+         <a class="reg-h-t__btn wh__btn" href="{% url 'create-enterpreneuer' %}">Şahsy adam</a>
+         <a class="reg-h-t__btn green__btn" href="{% url 'create-company' %}">kompaniýa, gurama</a>
       </div>
    </div>
-{% endblock %}
+   {% endblock %}

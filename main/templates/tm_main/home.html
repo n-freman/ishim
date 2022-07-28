@@ -17,8 +17,10 @@
       <div class="container__content">
          <div class="header__content">
             <section class="header__sec">
-               <img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="header__pic header__pic__dn">
-               <img src="{% static 'images/header/header__logo2.png' %}" alt="" class="header__pic2">
+               <img src="{% static 'images/header/Ishim__logo.png' %}" alt="Sorry got some error"
+                  class="header__pic header__pic__dn" title="Header Logo">
+               <img src="{% static 'images/header/header__logo2.png' %}" alt="Sorry got some error" class="header__pic2"
+                  title="Header Logo">
                <div class="header__loc header__loc2">
                   <select name="interface__lang" id=""
                      onchange="window.location.href=this.options[this.selectedIndex].value" autocomplete="off">
@@ -31,20 +33,23 @@
             <section class="header__sec">
                <div class="header__social">
                   <a href="" class="header__link">
-                     <img src="{% static 'images/facebook__ic__black.svg' %}" alt="" class="header__social__pic">
+                     <img src="{% static 'images/facebook__ic__black.svg' %}" alt="Sorry got some error"
+                        class="header__social__pic" title="Facebook icon">
                   </a>
                   <a href="" class="header__link">
-                     <img src="{% static 'images/inst__ic__black.svg' %}" alt="" class="header__social__pic">
+                     <img src="{% static 'images/inst__ic__black.svg' %}" alt="Sorry got some error"
+                        class="header__social__pic" title="Instagram icon">
                   </a>
                   <a href="" class="header__link">
-                     <img src="{% static 'images/imo__ic__black.svg' %}" alt="" class="header__social__pic">
+                     <img src="{% static 'images/imo__ic__black.svg' %}" alt="Sorry got some error"
+                        class="header__social__pic" title="Imo icon">
                   </a>
                </div>
 
                <div class="header__btns">
                   {% if not user.is_authenticated %}
-                  <a href="{% url 'login' %}" class="header__btn purp__btn">Вход</a>
-                  <a href="{% url 'register' %}" class="header__btn purp__btn">Регистрация</a>
+                  <a href="{% url 'login' %}" class="header__btn purp__btn">Içeri gir</a>
+                  <a href="{% url 'register' %}" class="header__btn purp__btn">Hasaba al </a>
                   {% else %}
                   <a href="{% url 'logout' %}" class="header__btn purp__btn">Выход</a>
                   {% endif %}
@@ -59,48 +64,51 @@
          <div class="intro__inner">
             <div class="intro__desc">
                <div class="intro__desc__btns">
-                  <a href="" class="intro__desc-btn" id="employee">Соискатель</a>
-                  <a href="" class="intro__desc-btn" id="hirer">Работодатель</a>
+                  <a href="" class="intro__desc-btn" id="employee">Iş gözleýji</a>
+                  <a href="" class="intro__desc-btn" id="hirer">Iş beriji</a>
                </div>
 
                <div class="intro__desc__inner">
                   <div class="intro__desc__item">
                      <p class="intro__desc__item__txt" id="u_t_txt">
-                        Размещайте вакансии на ishim.com и находите у нас подходящих сотрудников. Ishim- это новая
-                        модель найма работников.
+                        Işim.com-da boş iş wezipeleri ýerleşdiriň we biz bilen size laýyk işgärleri tapyň. Ishim - täze
+                        işe alyş usuly.
                      </p>
-                     <a href="{% url 'create-vacancy' %}" class="intro__desc__item__btn" id="hirer_btn">Добавить
-                        вакансию</a>
-                     <a href="{% url 'create-cv' %}" class="disappear" id="employee_btn">Добавить резюме</a>
+                     <a href="{% url 'create-vacancy' %}" class="intro__desc__item__btn" id="hirer_btn">Wakansiýa
+                        döretmek</a>
+                     <a href="{% url 'create-cv' %}" class="disappear" id="employee_btn">Rezýume döretmek</a>
                   </div>
-                  <img src="{% static 'images/intro/Pappers.png' %}" alt="" class="intro__desc__item__pic">
+                  <img src="{% static 'images/intro/Pappers.png' %}" alt="Sorry got some error"
+                     class="intro__desc__item__pic">
                </div>
             </div>
 
             <div class="intro__features">
-               <h1 class="intro__features__title">Как Ishim работает для вас</h1>
+               <h1 class="intro__features__title">Işim siziň üçin nähili hyzmatlary edýär</h1>
                <div class="intro__features__inner">
 
                   <div class="intro__features__item">
                      <div class="intro__features__item__block__logo">
-                        <img src="{% static 'images/intro/bag.svg' %}" alt="" class="intro__features__item__logo">
+                        <img src="{% static 'images/intro/bag.svg' %}" alt="Sorry got some error"
+                           class="intro__features__item__logo">
                      </div>
                      <div class="intro__features__item__content">
-                        <span class="intro__features__item__title">Работа</span>
+                        <span class="intro__features__item__title">Iş</span>
                         <p class="intro__features__item__txt">
-                           Быстрый и удобный поиск сотрудников с помощью фильтров
+                           Filtrler bilen çalt we amatly işgärler gözlegi
                         </p>
                      </div>
                   </div>
 
                   <div class="intro__features__item">
                      <div class="intro__features__item__block__logo">
-                        <img src="{% static 'images/intro/list.svg' %}" alt="" class="intro__features__item__logo">
+                        <img src="{% static 'images/intro/list.svg' %}" alt="Sorry got some error"
+                           class="intro__features__item__logo">
                      </div>
                      <div class="intro__features__item__content">
-                        <span class="intro__features__item__title">Интересные статьи</span>
+                        <span class="intro__features__item__title">Gyzykly makalalar</span>
                         <p class="intro__features__item__txt">
-                           События в мире бизнеса работы в вашей сфере деятельности
+                           Biznes dünýädäki we öz ugruňyzdaky wakalar
                         </p>
                      </div>
                   </div>
@@ -108,12 +116,13 @@
 
                   <div class="intro__features__item">
                      <div class="intro__features__item__block__logo">
-                        <img src="{% static 'images/intro/jingle.svg' %}" alt="" class="intro__features__item__logo">
+                        <img src="{% static 'images/intro/jingle.svg' %}" alt="Sorry got some error"
+                           class="intro__features__item__logo">
                      </div>
                      <div class="intro__features__item__content">
-                        <span class="intro__features__item__title">Получайте уведомления</span>
+                        <span class="intro__features__item__title">Habarlary alyň</span>
                         <p class="intro__features__item__txt">
-                           Уведомления об откликах соискателей к вашим вакансиям
+                           Boş wezipeleriňize ýüz tutýanlar barada jogap habarnamalary
                         </p>
                      </div>
                   </div>
@@ -132,7 +141,7 @@
                <div class="res__slbar__inner">
                   <div class="res__slbar__content">
                      <div class="res__slbar__item">
-                        <p class="res__slbar__item__title">Регион</p>
+                        <p class="res__slbar__item__title">Region</p>
                         {% for city in city_data %}
                         <div class="res__slbar__item__section">
                            <span class="res__slbar__left-p">{{ city.registration }}</span>
@@ -154,31 +163,31 @@
                      </div>
 
                      <div class="res__slbar__item">
-                        <p class="res__slbar__item__title">Требуют зарплату</p>
+                        <p class="res__slbar__item__title">Talap edilýän aýlyk</p>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 1000</span>
+                           <span class="res__slbar__left-p">1000</span>
                            <span class="res__slbar__right-p">{{ payment_data.one }}</span>
                         </div>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 2000</span>
+                           <span class="res__slbar__left-p">2000</span>
                            <span class="res__slbar__right-p">{{ payment_data.two }}</span>
                         </div>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 3000</span>
+                           <span class="res__slbar__left-p">3000</span>
                            <span class="res__slbar__right-p">{{ payment_data.three }}</span>
                         </div>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 4000</span>
+                           <span class="res__slbar__left-p">4000</span>
                            <span class="res__slbar__right-p">{{ payment_data.four }}</span>
                         </div>
                         <div class="res__slbar__item__section">
-                           <span class="res__slbar__left-p">от 5000</span>
+                           <span class="res__slbar__left-p">5000</span>
                            <span class="res__slbar__right-p">{{ payment_data.five }}</span>
                         </div>
                      </div>
 
                      <div class="res__slbar__item">
-                        <p class="res__slbar__item__title">Отрасли</p>
+                        <p class="res__slbar__item__title">Pudak</p>
                         {% for sphere in spheres %}
                         <div class="res__slbar__item__section">
                            <span class="res__slbar__left-p">{{ sphere.sphere }}</span>
@@ -202,7 +211,7 @@
                </div>
                <div class="res__slbar__learn-more">
                   <div class="res__slbar__learn-more__inner">
-                     <h2 class="res__slbar__learn-more__title">Статьи</h2>
+                     <h2 class="res__slbar__learn-more__title">Makalalar</h2>
                      {% for article in articles %}
                      <div class="res__slbar__learn-more__item">
                         <img src="{{ article.image.url }}" alt="Sorry" class="l-m__pic" width="50" height="50">
@@ -224,8 +233,8 @@
                            <button type="submit" name="search_btn">
                               <img src="{% static 'images/search__ic.svg' %}" alt="Sorry">
                            </button>
-                           <input type="text" class="nav__inp" placeholder="Профессия, должность или ключевые слова">
-                           <input type="text" class="nav__inp__small" placeholder="Профессия">
+                           <input type="text" class="nav__inp" placeholder="Hünär, wezipe ýa-da açar sözler">
+                           <input type="text" class="nav__inp__small" placeholder="Hünär">
                         </div>
                         <a href="">
                            <img src="{% static 'images/setting__btn.svg' %}" alt="Sorry" class="setting__btn">
@@ -239,7 +248,7 @@
                      <div class="vac__card__inner">
                         <div class="vac__heading">
                            <h2 class="vac__heading__item">{{ vacancy.position }}</h2>
-                           <h2 class="vac__heading__item">{{ vacancy.min_salary }} манат</h2>
+                           <h2 class="vac__heading__item">{{ vacancy.min_salary }} manat</h2>
                         </div>
                         <div class="vac__heading">
                            <h2 class="vac__heading__item">{{ vacancy.creation_date }}</h2>
@@ -257,125 +266,13 @@
                         </div>
                         <div class="vac__btns">
                            <a href="{% url 'vacancy-info' vacancy.id %}" class="vac__btns__item purp__btn"
-                              target="_blank">Подробнее</a>
+                              target="_blank">Giňişleýin</a>
                            <a href="{% url 'get-contact' vacancy.contact.id %}" class="vac__btns__item green__btn"
-                              target="_blank">Получить контакты</a>
+                              target="_blank">Kontaktlary almak </a>
                         </div>
                      </div>
                   </div>
                   {% endfor %}
-               </div>
-
-               <div class="vacancy__card" id="fav__btn__wrapper">
-                  <div class="vac__card__inner">
-                     <div class="vac__heading">
-                        <h2 class="vac__heading__item">Помощник Бухгалтера</h2>
-                        <h2 class="vac__heading__item">2000 манат</h2>
-                     </div>
-                     <div class="vac__heading">
-                        <h2 class="vac__heading__item">22:04</h2>
-                        <svg width="26px" height="24px">
-                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"></use>
-                        </svg>
-                     </div>
-                     <div class="vac__categories">
-                        <span class="vac__cat__item two-col">Бухгалтерия и управление</span>
-                        <span class="vac__cat__item">Ашхабад</span>
-                        <span class="vac__cat__item">Опыт 5 лет</span>
-                        <span class="vac__cat__item">28 лет</span>
-                        <span class="vac__cat__item">Пол мужской</span>
-                        <span class="vac__cat__item two-col">Образование среднее</span>
-                     </div>
-
-                     <div class="vac__btns">
-                        <a href="" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
-                        <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="vacancy__card">
-                  <div class="vac__card__inner">
-                     <div class="vac__heading">
-                        <h2 class="vac__heading__item">Помощник Бухгалтера</h2>
-                        <h2 class="vac__heading__item">2000 манат</h2>
-                     </div>
-                     <div class="vac__heading">
-                        <h2 class="vac__heading__item">22:04</h2>
-                        <svg width="26px" height="24px">
-                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"></use>
-                        </svg>
-                     </div>
-                     <div class="vac__categories">
-                        <span class="vac__cat__item two-col">Бухгалтерия и управление</span>
-                        <span class="vac__cat__item">Ашхабад</span>
-                        <span class="vac__cat__item">Опыт 5 лет</span>
-                        <span class="vac__cat__item">28 лет</span>
-                        <span class="vac__cat__item">Пол мужской</span>
-                        <span class="vac__cat__item two-col">Образование среднее</span>
-                     </div>
-
-                     <div class="vac__btns">
-                        <a href="" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
-                        <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="vacancy__card">
-                  <div class="vac__card__inner">
-                     <div class="vac__heading">
-                        <h2 class="vac__heading__item">Помощник Бухгалтера</h2>
-                        <h2 class="vac__heading__item">2000 манат</h2>
-                     </div>
-                     <div class="vac__heading">
-                        <h2 class="vac__heading__item">22:04</h2>
-                        <svg width="26px" height="24px">
-                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"></use>
-                        </svg>
-                     </div>
-                     <div class="vac__categories">
-                        <span class="vac__cat__item two-col">Бухгалтерия и управление</span>
-                        <span class="vac__cat__item">Ашхабад</span>
-                        <span class="vac__cat__item">Опыт 5 лет</span>
-                        <span class="vac__cat__item">28 лет</span>
-                        <span class="vac__cat__item">Пол мужской</span>
-                        <span class="vac__cat__item two-col">Образование среднее</span>
-                     </div>
-
-                     <div class="vac__btns">
-                        <a href="" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
-                        <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="vacancy__card">
-                  <div class="vac__card__inner">
-                     <div class="vac__heading">
-                        <h2 class="vac__heading__item">Помощник Бухгалтера</h2>
-                        <h2 class="vac__heading__item">2000 манат</h2>
-                     </div>
-                     <div class="vac__heading">
-                        <h2 class="vac__heading__item">22:04</h2>
-                        <svg width="26px" height="24px">
-                           <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"></use>
-                        </svg>
-                     </div>
-                     <div class="vac__categories">
-                        <span class="vac__cat__item two-col">Бухгалтерия и управление</span>
-                        <span class="vac__cat__item">Ашхабад</span>
-                        <span class="vac__cat__item">Опыт 5 лет</span>
-                        <span class="vac__cat__item">28 лет</span>
-                        <span class="vac__cat__item">Пол мужской</span>
-                        <span class="vac__cat__item two-col">Образование среднее</span>
-                     </div>
-
-                     <div class="vac__btns">
-                        <a href="" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
-                        <a href="" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
-                     </div>
-                  </div>
                </div>
             </section>
          </div>
@@ -383,6 +280,6 @@
    </div>
    {% include 'main/footer.html' %}
 </div>
-<script src="{% static 'scripts/favourtie.js' %}"></script>
-<script src="{% static 'scripts/home_user_type.js' %}"></script>
+<script src="{% static 'tm_scripts/favourtie.js' %}"></script>
+<script src="{% static 'tm_scripts/home_user_type.js' %}"></script>
 {% endblock %}

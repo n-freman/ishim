@@ -1,104 +1,124 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-   <div class="container__main pad-0 w-1920">
-      <header class="header-wavy">
-         <div class="container__content header-wavy__inner">
-            <img src="{% static 'images/header/Ishim__logo.png' %}" alt="" class="header__pic">
-            <div class="header__loc">
-               <select name="interface__lang" id=""
-                  onchange="window.location.href=this.options[this.selectedIndex].value" autocomplete="off">
-                  <option value="" class="header__loc__current">RU</option>
-                  <option value="" class="header__loc__current" selected>TM</option>
-               </select>
-            </div>
+<div class="container__main pad-0 w-1920">
+   <header class="header-wavy">
+      <div class="container__content header-wavy__inner">
+         <img src="{% static 'images/header/Ishim__logo.png' %}" alt="Sorry got some error" class="header__pic">
+         <div class="header__loc">
+            <select name="interface__lang" id="" onchange="window.location.href=this.options[this.selectedIndex].value"
+               autocomplete="off">
+               <option value="" class="header__loc__current">RU</option>
+               <option value="" class="header__loc__current" selected>TM</option>
+            </select>
          </div>
-      </header>
+      </div>
+   </header>
 
 
-         <div class="reg-user-conf container__content">
-         <div class="reg-user-conf__inner">
-            <div class="reg-user-conf__content">
-               <h1 class="reg-user-conf__title">Регистрация Работодателя</h1>
+   <div class="reg-user-conf container__content">
+      <div class="reg-user-conf__inner">
+         <div class="reg-user-conf__content">
+            <h1 class="reg-user-conf__title">Iş berijini hasaba alyş</h1>
 
-               <form action="" method="post" class="reg-user-conf__form" id="form__id" enctype="multipart/form-data">
-                    {% csrf_token %}
-                  <div class="user-info-block">
-                     <h2>Название компании</h2>
-                     <div class="user-inp-blok">
-                        <input type="text" class="user-text" value="" name="company_name">
-                     </div>
+            <form action="" method="post" class="reg-user-conf__form" id="form__id" enctype="multipart/form-data">
+               {% csrf_token %}
+               <div class="user-info-block">
+                  <h2>Kompaniýanyň ady</h2>
+                  <div class="user-inp-blok">
+                     <input type="text" class="user-text" value="" name="company_name">
                   </div>
-                  <div class="user-info-block">
-                     <div class="user-logo-blok">
-                        <div class="user__logo__txt">Добавить лого компании</div>
-                        <input required type="file" class="user-logo" id="user__logo" value="" name="logo">
-                        <label for="user__logo" class="user__logo__select">
-                           <span>+</span>
-                        </label>
-                     </div>
+               </div>
+               <div class="user-info-block">
+                  <div class="user-logo-blok">
+                     <div class="user__logo__txt">Kompaniýanyň logosyny goşuň</div>
+                     <input required type="file" class="user-logo" id="user__logo" value="" name="logo">
+                     <label for="user__logo" class="user__logo__select">
+                        <span>+</span>
+                     </label>
                   </div>
-                  <div class="user-info-block">
-                     <div class="user-info-block">
-                        <h2>Сфера</h2>
-                        <input type="text" class="user-text" value="" name="sphere">
-                     </div>
+               </div>
+               <div class="user-info-block" id="industry__wrapper">
+                  <h2>Işiň ugry </h2>
+                  <select required name="sphere" id="user__industry" class="user-text user-select-bg">
+                     <option value="IT, Dizaýn">IT, Dizaýn</option>
+                     <option value="Maliýe, buhgalteriýa">Maliýe, buhgalteriýa</option>
+                     <option value="Sungat, tomaşa, metbugat">Sungat, tomaşa, metbugat</option>
+                     <option value="Gözellik, sport">Gözellik, sport</option>
+                     <option value="Logistika">Logistika</option>
+                     <option value="- Marketing, Söwda, PR, SMM">- Marketing, Söwda, PR, SMM</option>
+                     <option value="Lukmançylyk ">Lukmançylyk</option>
+                     <option value="Energetika">Energetika</option>
+                     <option value="Bilim">Bilim</option>
+                     <option value="Gorag, howpsuzlyk">Gorag, howpsuzlyk</option>
+                     <option value="Gurluşyk">Gurluşyk</option>
+                     <option value="Syýahatçylyk">Syýahatçylyk</option>
+                     <option value="Enjam hyzmaty">Enjam hyzmaty</option>
+                     <option value="Hukuk">Hukuk</option>
+                     <option value="Başga">Başga</option>
+                  </select>
+
+               </div>
+
+               <div class="user-info-block user-mob-block">
+                  <h2>Telefon</h2>
+                  <div class="user-mob-pic-wrapper">
+                     <img src="{% static 'images/info__pic.svg' %}" alt="Sorry got some error" class="user-mob-pic">
+                     <p class="user-mob-info">
+                        Siziň ýa-da kadrlar bölüminiň müdiri bilen habarlaşmak üçin  telefon belgilerini ýazyň
+                     </p>
                   </div>
-                  
-                  <div class="user-info-block user-mob-block">
-                     <h2>Мобильный телефон</h2>
-                     <div class="user-mob-pic-wrapper">
-                        <img src="{% static 'images/info__pic.svg' %}" alt="" class="user-mob-pic">
-                        <p class="user-mob-info">
-                           Укажите номер по которому лучше всего можно связаться с вами
-                        </p>
-                     </div>
-                     <input required type="tel" class="user-text" value="+993" name="phone_num">
+                  <input required type="tel" class="user-text" value="+993" name="phone_num">
+               </div>
+
+               <div class="user-info-block">
+                  <h2>elektron poçta</h2>
+                  <input required type="text" class="user-text" value="" name="email">
+               </div>
+
+               <div class="user-info-block">
+                  <h2>Parol</h2>
+                  <div class="user-inp-blok">
+                     <input type="password" class="user-text" value="" name="password1">
+                     <img src="{% static 'images/close__eye.svg' %}" alt="Sorry got some error" class="user-block-pic"
+                        id="eye__btn">
                   </div>
 
-                  <div class="user-info-block">
-                     <h2>Эл. почта</h2>
-                     <input required type="text" class="user-text" value="" name="email">
+               </div>
+               <div class="user-info-block">
+                  <h2>Paroly tassyklamak</h2>
+                  <div class="user-inp-blok">
+                     <input type="password" class="user-text" value="" name="password2">
+                     <img src="{% static 'images/close__eye.svg' %}" alt="Sorry got some error" class="user-block-pic"
+                        id="eye__btn">
                   </div>
+               </div>
 
-                  <div class="user-info-block">
-                     <h2>Пароль</h2>
-                     <div class="user-inp-blok">
-                        <input type="password" class="user-text" value="" name="password1">
-                        <img src="{% static 'images/close__eye.svg' %}" alt="" class="user-block-pic"  id="eye__btn">
-                     </div>
-                     
-                  </div>
-                  <div class="user-info-block">
-                     <h2>Подтверждение пароля</h2>
-                     <div class="user-inp-blok">
-                        <input type="password" class="user-text" value="" name="password2">
-                        <img src="{% static 'images/close__eye.svg' %}" alt="" class="user-block-pic" id="eye__btn">
-                     </div>
-                  </div>
+               <div class="user-info-block" id="user__registration__wrapper">
+                  <h2>Şäher</h2>
+                  <select required name="registration" id="user__registration" class="user-text user-select-bg">
+                     <option value="Aşgabat">Aşgabat</option>
+                     <option value="Anau">Anau</option>
+                     <option value="Baharden">Baharden</option>
+                     <option value="Bizmein">Bizmein</option>
+                     <option value="Gökdepe">Gökdepe</option>
+                     <option value="Kaka">Kaka</option>
+                     <option value="Tejen">Tejen</option>
+                     <option value="Balkanabat">Balkanabat</option>
+                     <option value="Bereket">Bereket</option>
+                     <option value="Çardjou">Çardjou</option>
+                     <option value="Mary">Mary</option>
+                     <option value="Daşoguz">Daşoguz</option>
+                     <option value="anothr__city">wajib däl</option>
+                  </select>
+               </div>
+               <input required type="submit" class="continue__btn purp__btn m-0auto" value="Dowam et">
 
-                  <div class="user-info-block" id="city__wrapper">
-                     <h2>Город проживания</h2>
-                     <select required name="city" id="user__city" class="user-text user-select-bg">
-                        <option slected value="ag">Ашхабад</option>
-                        <option value="annau">Аннау</option>
-                        <option value="baharden">Бахарден</option>
-                        <option value="bizmein">Бизмеин</option>
-                        <option value="gektepe">Гёкдепе</option>
-                        <option value="kahka">Кахка</option>
-                        <option value="tedjen">Теджен</option>
-                        <option value="balkanabad">Балканабад</option>
-                        <option value="bereket">Берекет</option>
-                        <option value="anothr__city">Другой город</option>
-                     </select>
-                  </div>
-                  <input required type="submit" class="continue__btn purp__btn m-0auto" value="Продолжить">
-
-               </form>
-            </div>
+            </form>
          </div>
       </div>
    </div>
-   <script src="{% static 'scripts/select_another_city.js' %}"></script>
-   <script src="{% static 'scripts/show_hide_pass.js' %}"></script>
-   {% endblock %}
+</div>
+<script src="{% static 'tm_scripts/select_another_city.js' %}"></script>
+<script src="{% static 'tm_scripts/show_hide_pass.js' %}"></script>
+{% endblock %}
