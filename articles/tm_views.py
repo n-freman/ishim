@@ -34,6 +34,7 @@ def add_to_chosen(request, id):
 class ArticleListView(ListView):
     model = Article
     ordering = ['-creation_date']
+    template_name = 'tm_articles/article_list.html'
 
 
 def article_detail(request, id):

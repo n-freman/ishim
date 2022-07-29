@@ -67,7 +67,7 @@ function createVacancy(res) {
             <h2 class="vac__heading__item">${time.getFullYear()}.${time_num}${time.getMonth()}.${time_num}${time.getDate()}</h2>
             <svg width="26px" height="24px">
                <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico"
-                  data-link="/employee/chosen/${item.id}"></use>
+                  data-link="/tm/employee/chosen/${item.id}"></use>
             </svg>
          </div>
          <div class="vac__categories">
@@ -80,8 +80,8 @@ function createVacancy(res) {
          </div>
 
          <div class="vac__btns">
-            <a href="/employee/cv/${item.id}" class="vac__btns__item purp__btn" target="_blank">Giňişleýin</a>
-            <a href="#" class="vac__btns__item green__btn" target="_blank">Kontaktlary almak </a>
+            <a href="/tm/employee/cv/${item.id}" class="vac__btns__item purp__btn" target="_blank">Giňişleýin</a>
+            <a href="/tm/contacts/get-by-cv/${item.id}" class="vac__btns__item green__btn" target="_blank">Kontaktlary almak </a>
          </div>
       </div>`
       result_block.appendChild(div);

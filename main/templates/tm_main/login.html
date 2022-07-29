@@ -9,8 +9,8 @@
             <form action="">
                <select name="interface__lang" id=""
                   onchange="window.location.href=this.options[this.selectedIndex].value">
-                  <option value="RU" class="header__loc__current">RU</option>
-                  <option value="TM" class="header__loc__current">TM</option>
+                  <option value="" class="header__loc__current">RU</option>
+                  <option value="tm/" class="header__loc__current">TM</option>
                </select>
             </form>
          </div>
@@ -21,7 +21,7 @@
    <div class="reg-user-conf container__content">
       <div class="reg-user-conf__inner">
          <div class="reg-user-conf__content">
-            <h1 class="reg-user-conf__title">Войти</h1>
+            <h1 class="reg-user-conf__title">Girmek</h1>
 
             <form action="" class="reg-user-conf__form" method="post" enctype="multipart/form-data" id="form__id">
                {% csrf_token %}
@@ -38,7 +38,7 @@
                   </div>
 
                </div>
-               <input type="submit" class="continue__btn purp__btn m-0auto" value="Продолжить">
+               <input type="submit" class="continue__btn purp__btn m-0auto" value="Dowam etmek">
 
             </form>
          </div>

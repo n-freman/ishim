@@ -21,7 +21,7 @@
    </symbol>
 </svg>
 <div class="container__main pad-0 w-1920">
-   {% include 'main/header_hirer.html' %}
+   {% include 'tm_main/header_hirer.html' %}
    <div class="container__content">
       <div class="h__fav">
          <div class="h__fav__top">
@@ -45,7 +45,7 @@
                      <svg width="26px" height="24px">
                         <use xlink:href="#favorites__str" width="26px" height="24px"
                            class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == cv %}__selected{% endif %}{% endfor %}"
-                           data-link="{% url 'chosen-cv' cv.id %}"></use>
+                           data-link="{% url 'chosen-cv-tm' cv.id %}"></use>
                      </svg>
                   </div>
                   <div class="vac__categories">
@@ -57,7 +57,7 @@
                      <span class="vac__cat__item two-col">{{ cv.work_graph }}</span>
                   </div>
                   <div class="vac__btns">
-                     <a href="{% url 'cv-info' cv.id %}" class="vac__btns__item purp__btn"
+                     <a href="{% url 'cv-info-tm' cv.id %}" class="vac__btns__item purp__btn"
                         target="_blank">Giňişleýin</a>
                      <a href="" class="vac__btns__item green__btn" target="_blank">Kontaktlary almak </a>
                   </div>
@@ -77,11 +77,11 @@
 
                <div class="fav__article__section" id="article__btn__wrapper">
                   <div class="fav__article__section__top">
-                     <a href="{% url 'article-detail' article.id %}" class="article__subtitle">{{ article.title }}</a>
+                     <a href="{% url 'article-detail-tm' article.id %}" class="article__subtitle">{{ article.title }}</a>
                      <svg width="19" height="24">
                         <use xlink:href="#bookmark" width="19" height="24"
                            class="vac__ico{% for chosen in article.chosenarticle_set.all %}{% if chosen.user == user %}__selected__purp{% endif %}{% endfor %}"
-                           id="bookmarkbtn" data-link="{% url 'choose-article' article.id %}"></use>
+                           id="bookmarkbtn" data-link="{% url 'choose-article-tm' article.id %}"></use>
                      </svg>
                   </div>
                   <div class="fav__article__section__bottom">

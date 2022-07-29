@@ -10,7 +10,7 @@
    </symbol>
 </svg>
 <div class="container__main pad-0 w-1920">
-   {% include 'main/header_employee.html' %}
+   {% include 'tm_main/header_employee.html' %}
 
    <div class="search__history">
       <div class="container__content">
@@ -19,7 +19,7 @@
                <div class="search__history__title">
                   <h1 class="h__fav__top__title">Siziň gözlegleriňiz</h1>
 
-                  <a href="{% url 'clear-history' %}" class="priv__data__item__action">Gözleglerimi arassala
+                  <a href="{% url 'clear-history-tm' %}" class="priv__data__item__action">Gözleglerimi arassala
                      <img src="{% static 'images/trsh__box__pic.png' %}" alt="Sorry got some error">
                   </a>
                </div>
@@ -58,9 +58,9 @@
                   </div>
 
                   <div class="search__history__bottom">
-                     <a href="{% url 'delete-history' story.id %}" class="priv__data__item__action">Pozmak</a>
+                     <a href="{% url 'delete-history-tm' story.id %}" class="priv__data__item__action">Pozmak</a>
 
-                     <a href="{% url 'search-again' stroy.id %}" class="search__history__btn green__btn">
+                     <a href="{% url 'search-again-tm' stroy.id %}" class="search__history__btn green__btn">
                         Gözle
                         <svg width="26px" height="24px">
                            <use xlink:href="#search__pic" width="22" height="22" fill="none" class="white__stroke">

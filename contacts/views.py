@@ -62,18 +62,30 @@ def get_by_vac(reqeuest, id):
 @login_required
 def get_by_cv(request, id):
     cv = get_object_or_404(CV, id=id)
-    contact = get_object_or_404(
-        ChosenCVContact,
-        cv=cv,
-        user=request.user
-    )
+    try:
+        contact = ChosenCVContact.objects.get(
+            cv=cv,
+            user=request.user
+        )
+    except:
+        contact = None
     if contact:
         contact.delete()
     else:
-        data = cv.first_name + cv.last_name + '\n' + cv.mobile_num + '\n' + cv.email
+        data = cv.first_name + ' ' + cv.last_name + '\n' + cv.mobile_num + '\n' + cv.email
         contact = ChosenCVContact.objects.create(
             user=request.user,
             cv=cv,
             data=data
         )
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+@hirer_required
+@login_required
+def saved_cv_contacts(request):
+    contacts = request.user.cv_contacts.all()
+    context = {
+        'contacts': contacts
+    }
+    return render(request, 'contacts/saved_cv.html', context)

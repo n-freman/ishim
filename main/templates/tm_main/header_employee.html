@@ -3,7 +3,7 @@
    <div class="container__content">
       <div class="header__content">
          <section class="header__sec__type3 ">
-            <a href="{% url 'home' %}"><img src="{% static 'images/header/Ishim__logo.png' %}"
+            <a href="{% url 'home-tm' %}"><img src="{% static 'images/header/Ishim__logo.png' %}"
                   alt="Sorry got some error" class="header__pic "></a>
 
          </section>
@@ -17,7 +17,7 @@
                      name="position">
                   <input type="text" class="nav__inp__small" placeholder="Hünär" name="position">
                </div>
-               <a href="{% url 'wide-search-vacancy' %}">
+               <a href="{% url 'wide-search-vacancy-tm' %}">
                   <img src="{% static 'images/nav__setting.png' %}" alt="Sorry" class="nav__set__pic">
                </a>
             </form>
@@ -36,19 +36,19 @@
                   </div>
                   <div class="user__profile__item">
 
-                     <a href="{% url 'my-cv' %}" class="user__profile__link">Meniň rezýumelarym</a>
+                     <a href="{% url 'my-cv-tm' %}" class="user__profile__link">Meniň rezýumelarym</a>
 
-                     <a href="{% url 'profile' %}" class="user__profile__link">Şahsy maglumatlar</a>
+                     <a href="{% url 'profile-tm' %}" class="user__profile__link">Şahsy maglumatlar</a>
 
-                     <a href="{% url 'my-responses' %}" class="user__profile__link">Meniň jogaplarym</a>
+                     <a href="{% url 'my-responses-tm' %}" class="user__profile__link">Meniň jogaplarym</a>
 
                      <a href="" class="user__profile__link">Hödürlemeler</a>
 
-                     <a href="{% url 'employee-chosen' %}" class="user__profile__link">Saýlananlar</a>
+                     <a href="{% url 'employee-chosen-tm' %}" class="user__profile__link">Saýlananlar</a>
 
                   </div>
                   <div class="user__profile__item">
-                     <a href="{% url 'logout' %}" class="user__profile__last__link">Sahypadan çykmak</a>
+                     <a href="{% url 'logout-tm' %}" class="user__profile__last__link">Sahypadan çykmak</a>
                   </div>
                </div>
             </div>
@@ -63,18 +63,18 @@
    <div class="nav__burger disappear">
       <h1 class="nav__title">Menu</h1>
 
-      <a href="{% url 'company-catalog' %}" class="nav__link">Kompaniýalar katalogy</a>
+      <a href="{% url 'company-catalog-tm' %}" class="nav__link">Kompaniýalar katalogy</a>
 
-      <a href="{% url 'articles' %}" class="nav__link">Makalalar</a>
+      <a href="{% url 'articles-tm' %}" class="nav__link">Makalalar</a>
 
       <select name="interface__lang" onchange="window.location.href=this.options[this.selectedIndex].value"
          class="nav__link" autocomplete="off">
          <option selected disabled hidden class="header__loc__current">Dil</option>
-         <option value="" class="header__loc__current">RU</option>
-         <option value="" class="header__loc__current">TM</option>
+         <option value="/" class="header__loc__current">RU</option>
+         <option value="/tm" class="header__loc__current">TM</option>
       </select>
 
-      <a href="{% url 'search-histroy-employee' %}" class="nav__link">Siziň gözlegleriňiz</a>
+      <a href="{% url 'search-histroy-employee-tm' %}" class="nav__link">Siziň gözlegleriňiz</a>
 
       <a href="" class="nav__link">Ulanyş şertleri</a>
 

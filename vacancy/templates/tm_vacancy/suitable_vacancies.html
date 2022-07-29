@@ -13,7 +13,7 @@
 </svg>
 
 <div class="container__main pad-0 w-1920">
-   {% include 'main/header_employee.html' %}
+   {% include 'tm_main/header_employee.html' %}
 
    <div class="container__content">
 
@@ -44,9 +44,9 @@
                      <span class="vac__cat__item two-col">{{ vacancy.education }}</span>
                   </div>
                   <div class="vac__btns">
-                     <a href="{% url 'vacancy-info' vacancy.id %}" class="vac__btns__item purp__btn"
+                     <a href="{% url 'vacancy-info-tm' vacancy.id %}" class="vac__btns__item purp__btn"
                         target="_blank">Giňişleýin</a>
-                     <a href="{% url 'get-contact' id=vacancy.contact.id %}" class="vac__btns__item green__btn"
+                     <a href="{% url 'get-contact-tm' id=vacancy.contact.id %}" class="vac__btns__item green__btn"
                         target="_blank">Kontaktlary almak </a>
                   </div>
                </div>

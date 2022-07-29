@@ -7,7 +7,7 @@
          </symbol>
       </svg>
       <div class="container__main pad-0 w-1920">
-         {% include 'main/header_hirer.html' %}
+         {% include 'tm_main/header_hirer.html' %}
          <div class="container__content">
             <div class="my__vac__view">
                <h1 class="mvv__headline">Meniň wakansiýalarym</h1>
@@ -18,7 +18,7 @@
                <span class="mvv__main__info">{{ object.city }}</span>
                <span class="mvv__main__info">ýerleşdirildi {{ object.creation_date|date:"Y.m.d H:i"}}</span>
                <div class="mvv__amount__resp">{{ vacancy.response_set.count }} jogap</div>
-               <a href="{% url 'refresh-vacancy' object.id %}" class="mvv__refresh__in__search__btn green__btn">
+               <a href="{% url 'refresh-vacancy-tm' object.id %}" class="mvv__refresh__in__search__btn green__btn">
                   Gözlegde başda çyk
                </a>
                <a href="" class="mvv__see__all__resp purp__btn">Ähli jogaplary aç</a>
@@ -70,9 +70,9 @@
                   <span><span class="mr5">✉</span>{{ content.2 }}</span>
                   {% endwith %}
                </div>
-               <a href="{% url 'vacancy-edit' object.id %}" class="mvv__edit__btn purp__btn">Üýtegetmek</a>
-               <a href="{% url 'vacancy-delete' object.id %}" class="mvv__delete__btn">Pozmak</a>
-               <a href="{% url 'suitable-cvs' object.id %}" class="suitable__link">{{ vacancy.cv_set.count }} sany laýyk işgär tapyldy</a>
+               <a href="{% url 'vacancy-edit-tm' object.id %}" class="mvv__edit__btn purp__btn">Üýtegetmek</a>
+               <a href="{% url 'vacancy-delete-tm' object.id %}" class="mvv__delete__btn">Pozmak</a>
+               <a href="{% url 'suitable-cvs-tm' object.id %}" class="suitable__link">{{ vacancy.cv_set.count }} sany laýyk işgär tapyldy</a>
             </div>
          </div>    
       </div>

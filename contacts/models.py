@@ -30,4 +30,4 @@ class ChosenCVContact(models.Model):
     data = models.TextField()
 
     def content_as_list(self):
-        return self.content.split('\n')
+        return self.data.split('\n')

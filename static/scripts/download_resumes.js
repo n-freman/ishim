@@ -81,7 +81,7 @@ function createVacancy(res) {
 
          <div class="vac__btns">
             <a href="/employee/cv/${item.id}" class="vac__btns__item purp__btn" target="_blank">Подробнее</a>
-            <a href="#" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
+            <a href="/contacts/get-by-cv/${item.id}" class="vac__btns__item green__btn" target="_blank">Получить контакты</a>
          </div>
       </div>`
       result_block.appendChild(div);

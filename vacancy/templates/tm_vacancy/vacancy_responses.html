@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <div class="container__main pad-0 w-1920">
-   {% include 'main/header_hirer.html' %}
+   {% include 'tm_main/header_hirer.html' %}
    <div class="container__content">
       <div class="h__res__info">
          <h1 class="my__responses__title">
@@ -33,7 +33,7 @@
                   </div>
 
                   <div class="vac__btns">
-                     <a href="{% url 'my-vacancy-info' vacancy.id  %}" class="vac__btns__item purp__btn"
+                     <a href="{% url 'my-vacancy-info-tm' vacancy.id  %}" class="vac__btns__item purp__btn"
                         target="_blank">Giňişleýin</a>
                   </div>
                </div>
@@ -58,7 +58,7 @@
       </div>
    </div>
 
-   {% include 'main/footer.html' %}
+   {% include 'tm_main/footer.html' %}
 </div>
 <script src="{% static 'tm_scripts/header.js' %}"></script>
 

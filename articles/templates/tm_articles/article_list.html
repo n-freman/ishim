@@ -38,11 +38,11 @@
 </svg>
 <div class="container__main pad-0 w-1920">
    {% if user.hirer %}
-   {% include 'main/header_hirer.html' %}
+   {% include 'tm_main/header_hirer.html' %}
    {% endif %}
 
    {% if user.employee %}
-   {% include 'main/header_employee.html' %}
+   {% include 'tm_main/header_employee.html' %}
    {% endif %}
    <div class="article">
       <div class="container__content">
@@ -50,7 +50,7 @@
             <h1 class="h__fav__top__title">Makalalar</h1>
             {% for article in object_list %}
             <div class="article__item">
-               <h1 class="article__title"><a href="{% url 'article-detail' article.id %}">{{ article.title }}</a></h1>
+               <h1 class="article__title"><a href="{% url 'article-detail-tm' article.id %}">{{ article.title }}</a></h1>
 
                <p class="article__text">{{ article.content|truncatewords:25 }}</p>
 
@@ -59,12 +59,12 @@
                <div class="article__additionally">
                   <img src="{% static 'images/share__icon.png' %}" alt="Sorry got some error"
                      class="article__additionally__item" id="share"
-                     data-copy-link="{% url 'article-detail' article.id %}">
+                     data-copy-link="{% url 'article-detail-tm' article.id %}">
                   <div class="article__additionally__item" id="article__btn__wrapper">
                      <svg width="19" height="24">
                         <use xlink:href="#bookmark" width="19" height="24"
                            class="vac__ico{% for chosen in article.chosenarticle_set.all %}{% if chosen.user == user %}__selected__purp{% endif %}{% endfor %}"
-                           id="bookmarkbtn" data-link="{% url 'choose-article' article.id %}"></use>
+                           id="bookmarkbtn" data-link="{% url 'choose-article-tm' article.id %}"></use>
                      </svg>
                   </div>
                </div>

@@ -11,7 +11,7 @@
       </symbol>
    </svg>
    <div class="container__main pad-0 w-1920">
-      {% include 'main/header_employee.html' %}
+      {% include 'tm_main/header_employee.html' %}
       <div class="container__content">
          <div class="my__responses">
             <h1 class="my__responses__title">Meniň jogaplarym</h1>
@@ -25,7 +25,7 @@
 
                <div class="my__responses__item">
                   <div class="my__responses__item__additionally">{{ response.vacancy.creator.hirer.company_name }}</div>
-                  <a href="{% url 'make-response' response.vacancy.id %}" class="my__responses__item__btn">Jogabymy ýatyr</a>
+                  <a href="{% url 'make-response-tm' response.vacancy.id %}" class="my__responses__item__btn">Jogabymy ýatyr</a>
                </div>
             </div>
             {% endfor %}

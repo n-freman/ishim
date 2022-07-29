@@ -28,11 +28,11 @@
       </svg>
       <div class="container__main pad-0 w-1920">
          {% if user.hirer %}
-         {% include 'main/header_hirer.html' %}
+         {% include 'tm_main/header_hirer.html' %}
          {% endif %}
 
          {% if user.employee %}
-         {% include 'main/header_employee.html' %}
+         {% include 'tm_main/header_employee.html' %}
          {% endif %}
 
          <div class="catalog">
@@ -40,7 +40,7 @@
                <h1 class="catalog__title">Pudak boýunça kompaniýalaryň katalogy</h1>
                <div class="catalog__inner">
                   {% for sphere in spheres %}
-                  <a href="{% url 'companies-by-sphere' sphere.sphere %}" class="catalog__item">
+                  <a href="{% url 'companies-by-sphere-tm' sphere.sphere %}" class="catalog__item">
                      <div class="catalog__category">{{ sphere.sphere }}</div>
                      <div class="companies__amount">{{ sphere.dcount }}</div>
                   </a>

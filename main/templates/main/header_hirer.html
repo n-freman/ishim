@@ -38,7 +38,7 @@
 
                      <a href="{% url 'my-vacancies' %}" class="user__profile__link">Мои вакансии</a>
 
-                     <a href="" class="user__profile__link">Контакты соискателей</a>
+                     <a href="{% url 'saved-cv-contacts' %}" class="user__profile__link">Контакты соискателей</a>
 
                      <a href="{% url 'profile' %}" class="user__profile__link">Личные данные</a>
 
@@ -75,8 +75,8 @@
       <select name="interface__lang" onchange="window.location.href=this.options[this.selectedIndex].value"
          class="nav__link" autocomplete="off">
          <option selected disabled hidden class="header__loc__current">Язык</option>
-         <option value="" class="header__loc__current">RU</option>
-         <option value="" class="header__loc__current">TM</option>
+         <option value="/" class="header__loc__current">RU</option>
+         <option value="/tm" class="header__loc__current">TM</option>
       </select>
 
       <a href="{% url 'search-histroy-hirer' %}" class="nav__link">История поиска</a>

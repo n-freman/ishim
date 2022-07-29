@@ -11,8 +11,8 @@
             <div class="header__loc">
                <select name="interface__lang" id=""
                   onchange="window.location.href=this.options[this.selectedIndex].value" autocomplete="off">
-                  <option value="" class="header__loc__current">RU</option>
-                  <option value="" class="header__loc__current" selected>TM</option>
+                  <option value="/" class="header__loc__current">RU</option>
+                  <option value="/tm" class="header__loc__current" selected>TM</option>
                </select>
             </div>
          </div>
@@ -20,8 +20,8 @@
 
       <div class="reg-h-t container__content">
          <h1 class="reg-h-t__title m-0auto">Ulanyjy görnüşini saýlaň</h1>
-         <a class="reg-h-t__btn wh__btn" href="{% url 'create-enterpreneuer' %}">Şahsy adam</a>
-         <a class="reg-h-t__btn green__btn" href="{% url 'create-company' %}">kompaniýa, gurama</a>
+         <a class="reg-h-t__btn wh__btn" href="{% url 'create-enterpreneuer-tm' %}">Şahsy adam</a>
+         <a class="reg-h-t__btn green__btn" href="{% url 'create-company-tm' %}">kompaniýa, gurama</a>
       </div>
    </div>
    {% endblock %}

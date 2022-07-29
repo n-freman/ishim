@@ -77,3 +77,13 @@ def get_by_cv(request, id):
             data=data
         )
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+@hirer_required
+@login_required
+def saved_cv_contacts(request):
+    contacts = request.user.cv_contact()
+    context = {
+        'contacts': contacts
+    }
+    return render(request, 'tm_contact/saved_cv.html', context)
