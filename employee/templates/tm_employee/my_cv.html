@@ -5,14 +5,14 @@
    {% include 'tm_main/header_employee.html' %}
    <div class="container__content">
       <div class="my__vac">
-         <h1 class="my__vac__title">Мои Резюме</h1>
+         <h1 class="my__vac__title">Meniň rezýumelarym</h1>
          {% for cv in cv_list %}
          <div class="my__vac__item">
 
             <h2 class="my__vac__item__title"><a href="{% url 'my-cv-info-tm' cv.id %}">{{ cv.position }}</a></h2>
             <h3 class="my__vac__item__subtitle">{{ cv.min_salary }} manat.</h3>
 
-            <a href="" class="amount__resp">{{ cv.chosencv_set.count }} человек отметили это резюме</a>
+            <a href="" class="amount__resp">Bu rezýumeny {{ cv.chosencv_set.count }} adam belledi</a>
 
             <span>Rezýume {{ cv.creation_date|date:"m.d"}} iyulda täzelendi</span>
 

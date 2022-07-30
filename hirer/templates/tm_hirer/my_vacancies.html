@@ -1,32 +1,33 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-      <div class="container__main pad-0 w-1920">
-         {% icnlude 'tm_main/header_hirer.html' %}
-         <div class="container__content">
-            <div class="my__vac">
-               <h1 class="my__vac__title">Meniň wakansiýalarym</h1>
-               {% for vacancy in vacancies %}
-               <div class="my__vac__item">
+<div class="container__main pad-0 w-1920">
+   {% icnlude 'tm_main/header_hirer.html' %}
+   <div class="container__content">
+      <div class="my__vac">
+         <h1 class="my__vac__title">Meniň wakansiýalarym</h1>
+         {% for vacancy in vacancies %}
+         <div class="my__vac__item">
 
-                  <h2 class="my__vac__item__title">{{ vacancy.position }}</h2>
-                  <h3 class="my__vac__item__subtitle">{{ vacancy.min_salary }} ман.</h3>
+            <h2 class="my__vac__item__title">{{ vacancy.position }}</h2>
+            <h3 class="my__vac__item__subtitle">{{ vacancy.min_salary }} manat</h3>
 
-                  <a href="" class="amount__resp">{{ vacancy.response_set.count }} человек откликнулись к этой вакансии</a>
+            <a href="" class="amount__resp">Wakansiýa {{ vacancy.response_set.count }} dalaşgär ýüz tutdy</a>
 
-                  <span>Вакансия обновлена {{ vacancy.creation_date }}</span>
+            <span>Wakansiya {{ vacancy.creation_date }} üýtgedildi</span>
 
-                  <a class="refresh__in__search__btn green__btn" href="{% url 'refresh-vacany-tm' id=vacancy.id %}">Gözlegde başda çyk</button>
+            <a class="refresh__in__search__btn green__btn" href="{% url 'refresh-vacany-tm' id=vacancy.id %}">Gözlegde
+               başda çyk</button>
 
-                  <a href="" class="edit__btn purp__btn">Üýtegetmek</a>
+               <a href="" class="edit__btn purp__btn">Üýtegetmek</a>
 
-                  <a href="" class="suitable__link">{{ vacancy.cv_set.count }} sany laýyk işgär tapyldy</a>
-               </div>
-               {% endfor %}
+               <a href="" class="suitable__link">{{ vacancy.cv_set.count }} sany laýyk işgär tapyldy</a>
+         </div>
+         {% endfor %}
 
-               <a href="{% url 'create-vacancy-tm' %}" class="add__vac"><span>+</span>Täze wakansiýa goşmak</a>
-            </div>
-         </div>    
+         <a href="{% url 'create-vacancy-tm' %}" class="add__vac"><span>+</span>Täze wakansiýa goşmak</a>
       </div>
-      <script src="{% static 'tm_scripts/header.js' %}"></script>
+   </div>
+</div>
+<script src="{% static 'tm_scripts/header.js' %}"></script>
 {% endblock %}

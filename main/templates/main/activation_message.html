@@ -7,10 +7,9 @@
          <img src="{% static 'images/header/Ishim__logo.png' %}" alt="Sorry got some error" class="header__pic">
          <div class="header__loc">
             <form action="">
-               <select name="interface__lang" id=""
-                  onchange="window.location.href=this.options[this.selectedIndex].value">
-                  <option value="RU" class="header__loc__current">RU</option>
-                  <option value="TM" class="header__loc__current">TM</option>
+               <select name="interface__lang" id="" onchange="window.location.href=this.value" autocomplete="off">
+                  <option value="/" class="header__loc__current" selected>RU</option>
+                  <option value="/tm" class="header__loc__current">TM</option>
                </select>
             </form>
          </div>

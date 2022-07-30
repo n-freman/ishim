@@ -15,7 +15,7 @@
    <div class="container__content">
       <div class="my__vac__view" id="fav__btn__wrapper">
          <h1 class="mvv__headline">{{ object.position }}</h1>
-         <h3 class="mvv__salary">{{ object.min_salary }} манат</h3>
+         <h3 class="mvv__salary">{{ object.min_salary }} manat</h3>
          <span class="mvv__main__info">{{ object.creator.hirer.company_name }}</span>
          <span class="mvv__main__info">{{ object.sphere }}</span>
          <span class="mvv__main__info">{{ object.city }}</span>
@@ -23,11 +23,12 @@
 
          <div class="mvv__refresh__in__search__btn__wrapper">
             <a href="{% url 'make-response-tm' object.id %}"
-               class="mvv__refresh__in__search__btn green__btn">Откликнуться</a>
+               class="mvv__refresh__in__search__btn green__btn">Ýüz tutmak</a>
             <svg width="30px" height="30px">
                <use xlink:href="#favorites__str" width="30px" height="30px"
                   class="vac__ico{% for chosen in user.employee.chosenvacancy_set.all %}{% if chosen.vacancy == object %}__selected{% endif %}{% endfor %}"
-                  data-link="{% url 'chosen-vacancy' object.id %}" data-link=""></use>
+                  data-link="{% url 'chosen-vacancy' object.id %}" data-link="">
+               </use>
             </svg>
          </div>
 

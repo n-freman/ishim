@@ -28,7 +28,7 @@ function getResumes(cb) {
       const response = JSON.parse(xhr.responseText);
       count += response.length;
       if (response.length == 0) {
-         document.querySelector(`#refresh__btn__wrapper span`).textContent = 'Вы посмотрели все резюме'
+         document.querySelector(`#refresh__btn__wrapper span`).textContent = 'Siz ähli rezýumeleri gördüňiz'
          get_value_btn.removeChild(document.querySelector('.refresh__btn'));
          get_value_btn.removeEventListener("click", () => getResumes(createVacancy));
       } else {

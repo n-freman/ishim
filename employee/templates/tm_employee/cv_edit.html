@@ -147,7 +147,7 @@
 
                <div class="user-info-block">
                   <h2 class="fw500">Wezipe</h2>
-                  <h3>Какую профессию вы ищете?</h3>
+                  <h3>Haýsy kär gözleýarsiňiz?</h3>
                   <div class="user-inp-blok">
                      <input required type="text" class="user-text" value="{{ cv.position }}" placeholder=""
                         name="position" id="user__position">
@@ -243,7 +243,7 @@
                         <div class="user__info__block__txt__area__wrapper">
                            <textarea name="responsibilities" id="job__resp"
                               class="user-info-block-txtarea user__response__exp"
-                              placeholder="Расскажите обязанности и задачи которые вы выполняли на рабочем месте">{{ cvattr.workexperience.responsibilities }}</textarea>
+                              placeholder="Iş ýeriňizdäki ýerine ýetiren borçlaryňyz barada ýazyp beriň">{{ cvattr.workexperience.responsibilities }}</textarea>
                         </div>
                         <div class="user__time">
                            <h2>Işe duran wagtyňyz</h2>
@@ -330,7 +330,7 @@
                         </div>
 
                         <div class="user__time">
-                           <h2>Окончание работы</h2>
+                           <h2>Işi tamamlan wagtyňyz</h2>
                            <select name="exp_end__month" id="user__exp__time__end__mon"
                               class="user__time__item user-select-bg user__time__end__mon__exp">
                               <option {% if cvattr.workexperience.end_year|date:"m"==01 %}selected{% endif %}

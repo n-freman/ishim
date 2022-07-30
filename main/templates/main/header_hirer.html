@@ -72,8 +72,8 @@
 
       <a href="{% url 'articles' %}" class="nav__link">Статьи</a>
 
-      <select name="interface__lang" onchange="window.location.href=this.options[this.selectedIndex].value"
-         class="nav__link" autocomplete="off">
+      <select name="interface__lang" id="" onchange="window.location.href=this.value" autocomplete="off"
+         class="nav__link">
          <option selected disabled hidden class="header__loc__current">Язык</option>
          <option value="/" class="header__loc__current">RU</option>
          <option value="/tm" class="header__loc__current">TM</option>

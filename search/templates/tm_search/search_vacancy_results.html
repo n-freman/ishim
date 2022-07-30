@@ -1,26 +1,28 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-      <div class="container__main pad-0 w-1920">
-         {% include 'tm_main/header_employee.html' %}
-         <div class="container__content">
-            <div class="my__vac">
+<div class="container__main pad-0 w-1920">
+   {% include 'tm_main/header_employee.html' %}
+   <div class="container__content">
+      <div class="my__vac">
 
-               {% for vacancy in vacancies %}
-               <div class="my__vac__item">
+         {% for vacancy in vacancies %}
+         <div class="my__vac__item">
 
-                  <h2 class="my__vac__item__title"><a href="{% url 'vacancy-info-tm' vacancy.id %}">{{ vacancy.position }}</a></h2>
-                  <h3 class="my__vac__item__subtitle">{{ vacancy.min_salary }} ман.</h3>
+            <h2 class="my__vac__item__title"><a href="{% url 'vacancy-info-tm' vacancy.id %}">{{ vacancy.position }}</a>
+            </h2>
+            <h3 class="my__vac__item__subtitle">{{ vacancy.min_salary }} manat</h3>
 
-                  <a href="" class="amount__resp">{{ vacancy.response_set.count }} человек откликнулись к этой вакансии</a>
+            <a href="" class="amount__resp">Wakansiýa {{ vacancy.response_set.count }} dalaşgär ýüz tutdy</a>
 
-                  <span>Вакансия обновлена {{ vacancy.creation_date|date:"Y.m.d" }}</span>
+            <span>Вакансия обновлена {{ vacancy.creation_date|date:"Y.m.d" }}</span>
 
-                  <a href="{% url 'suitable-cvs-tm' vacancy.id %}" class="suitable__link">{{ vacancy.cv_set.count }} подходящих сотрудников</a>
-               </div>
-               {% endfor %}
-            </div>
-         </div>    
+            <a href="{% url 'suitable-cvs-tm' vacancy.id %}" class="suitable__link">{{ vacancy.cv_set.count }} sany
+               laýyk işgär tapyldy</a>
+         </div>
+         {% endfor %}
       </div>
-      <script src="{% static 'tm_scripts/header.js' %}"></script>
+   </div>
+</div>
+<script src="{% static 'tm_scripts/header.js' %}"></script>
 {% endblock %}

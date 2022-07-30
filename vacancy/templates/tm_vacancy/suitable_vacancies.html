@@ -18,14 +18,14 @@
    <div class="container__content">
 
       <div class="e__rec" id="fav__btn__wrapper">
-         <h1 class="e__rec__title">Подходящие вакансии</h1>
+         <h1 class="e__rec__title">Laýyk wakansiýalar</h1>
          <div class="e__rec__inner">
             {% for vacancy in vacancies %}
             <div class="vacancy__card" id="fav__btn__wrapper">
                <div class="vac__card__inner">
                   <div class="vac__heading">
                      <h2 class="vac__heading__item">{{ vacancy.position }}</h2>
-                     <h2 class="vac__heading__item">{{ vacancy.min_salary }} манат</h2>
+                     <h2 class="vac__heading__item">{{ vacancy.min_salary }} manat</h2>
                   </div>
                   <div class="vac__heading">
                      <h2 class="vac__heading__item">{{ vacancy.creation_date|date:"Y.m.d" }}</h2>

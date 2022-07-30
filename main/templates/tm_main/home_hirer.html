@@ -1,89 +1,91 @@
 {% extends "main/base.html" %}
 {% load static %}
 {% block content %}
-   <svg display="none">
-      <symbol id="favorites__str" viewBox="0 0 28 27">
-         <g>
-            <path
-               d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
-               stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-         </g>
-      </symbol>
-   </svg>
-   <div class="container__main pad-0 w-1920">
-      {% include 'tm_main/header_hirer.html' %}
-      <div class="result mt-60">
-         <div class="container__content">
-            <div class="result__inner">
-               <aside class="res__slbar">
-                  <div class="res__slbar__inner">
-                     <div class="res__slbar__content">
-                        <div class="res__slbar__item">
-                           <p class="res__slbar__item__title">Region</p>
-                           {% for city in city_data %}
-                           <div class="res__slbar__item__section">
-                              <span class="res__slbar__left-p">{{ city.registration }}</span>
-                              <span class="res__slbar__right-p">{{ city.dcount }}</span>
-                           </div>
-                           {% endfor %}
-                        </div>
-
-                        <div class="res__slbar__item">
-                           <p class="res__slbar__item__title">Talap edilýän aýlyk</p>
-                           <div class="res__slbar__item__section">
-                              <span class="res__slbar__left-p">1000</span>
-                              <span class="res__slbar__right-p">{{ payment_data.one }}</span>
-                           </div>
-                           <div class="res__slbar__item__section">
-                              <span class="res__slbar__left-p">2000</span>
-                              <span class="res__slbar__right-p">{{ payment_data.two }}</span>
-                           </div>
-                           <div class="res__slbar__item__section">
-                              <span class="res__slbar__left-p">3000</span>
-                              <span class="res__slbar__right-p">{{ payment_data.three }}</span>
-                           </div>
-                           <div class="res__slbar__item__section">
-                              <span class="res__slbar__left-p">4000</span>
-                              <span class="res__slbar__right-p">{{ payment_data.four }}</span>
-                           </div>
-                           <div class="res__slbar__item__section">
-                              <span class="res__slbar__left-p">5000</span>
-                              <span class="res__slbar__right-p">{{ payment_data.five }}</span>
-                           </div>
-                        </div>
-
-                       
-
-                     </div>
-                  </div>
-                  <div class="res__slbar__learn-more">
-                     <div class="res__slbar__learn-more__inner">
-                        <h2 class="res__slbar__learn-more__title">Makalalar</h2>
-                        {% for article in articles %}
-                        <div class="res__slbar__learn-more__item">
-                           <img src="{{ article.image.url }}" alt="Sorry" class="l-m__pic" width="50" height="50">
-                           <p class="l-m__txt">
-                              {{ article.title }}
-                           </p>
+<svg display="none">
+   <symbol id="favorites__str" viewBox="0 0 28 27">
+      <g>
+         <path
+            d="M14 1L18.017 9.13603L27 10.4487L20.5 16.7782L22.034 25.72L14 21.496L5.966 25.72L7.5 16.7782L1 10.4487L9.983 9.13603L14 1Z"
+            stroke="#C4C4C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+   </symbol>
+</svg>
+<div class="container__main pad-0 w-1920">
+   {% include 'tm_main/header_hirer.html' %}
+   <div class="result mt-60">
+      <div class="container__content">
+         <div class="result__inner">
+            <aside class="res__slbar">
+               <div class="res__slbar__inner">
+                  <div class="res__slbar__content">
+                     <div class="res__slbar__item">
+                        <p class="res__slbar__item__title">Region</p>
+                        {% for city in city_data %}
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">{{ city.registration }}</span>
+                           <span class="res__slbar__right-p">{{ city.dcount }}</span>
                         </div>
                         {% endfor %}
                      </div>
-                  </div>
-               </aside>
 
-               <section class="result__vacancy" id="fav__btn__wrapper">
-                  <div id="result__vacancy__inner">
+                     <div class="res__slbar__item">
+                        <p class="res__slbar__item__title">Talap edilýän aýlyk</p>
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">1000</span>
+                           <span class="res__slbar__right-p">{{ payment_data.one }}</span>
+                        </div>
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">2000</span>
+                           <span class="res__slbar__right-p">{{ payment_data.two }}</span>
+                        </div>
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">3000</span>
+                           <span class="res__slbar__right-p">{{ payment_data.three }}</span>
+                        </div>
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">4000</span>
+                           <span class="res__slbar__right-p">{{ payment_data.four }}</span>
+                        </div>
+                        <div class="res__slbar__item__section">
+                           <span class="res__slbar__left-p">5000</span>
+                           <span class="res__slbar__right-p">{{ payment_data.five }}</span>
+                        </div>
+                     </div>
+
+
+
+                  </div>
+               </div>
+               <div class="res__slbar__learn-more">
+                  <div class="res__slbar__learn-more__inner">
+                     <h2 class="res__slbar__learn-more__title">Makalalar</h2>
+                     {% for article in articles %}
+                     <div class="res__slbar__learn-more__item">
+                        <img src="{{ article.image.url }}" alt="Sorry" class="l-m__pic" width="50" height="50">
+                        <p class="l-m__txt">
+                           {{ article.title }}
+                        </p>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+            </aside>
+
+            <section class="result__vacancy" id="fav__btn__wrapper">
+               <div id="result__vacancy__inner">
                   {% for cv in cv_list %}
                   <div class="vacancy__card" id="fav__btn__wrapper">
                      <div class="vac__card__inner">
                         <div class="vac__heading">
                            <h2 class="vac__heading__item">{{ cv.position }}</h2>
-                           <h2 class="vac__heading__item">{{ cv.min_salary }} манат</h2>
+                           <h2 class="vac__heading__item">{{ cv.min_salary }} manat</h2>
                         </div>
                         <div class="vac__heading">
                            <h2 class="vac__heading__item">{{ cv.creation_date|date:"Y.m.d" }}</h2>
                            <svg width="26px" height="24px">
-                              <use xlink:href="#favorites__str" width="26px" height="24px" class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == cv %}__selected{% endif %}{% endfor %}" data-link="{% url 'chosen-cv' cv.id %}"></use>
+                              <use xlink:href="#favorites__str" width="26px" height="24px"
+                                 class="vac__ico{% for chosen in user.chosencv_set.all %}{% if chosen.cv == cv %}__selected{% endif %}{% endfor %}"
+                                 data-link="{% url 'chosen-cv' cv.id %}"></use>
                            </svg>
                         </div>
                         <div class="vac__categories">
@@ -95,34 +97,40 @@
                            <span class="vac__cat__item two-col">{{ cv.work_graph }}</span>
                         </div>
                         <div class="vac__btns">
-                           <a href="{% url 'cv-info-tm' cv.id %}" class="vac__btns__item purp__btn" target="_blank">Giňişleýin</a>
-                           <a href="{% url 'get-contact-by-cv-tm' cv.id %}" class="vac__btns__item green__btn" target="_blank">Kontaktlary almak </a>
+                           <a href="{% url 'cv-info-tm' cv.id %}" class="vac__btns__item purp__btn"
+                              target="_blank">Giňişleýin</a>
+                           <a href="{% url 'get-contact-by-cv-tm' cv.id %}" class="vac__btns__item green__btn"
+                              target="_blank">Kontaktlary almak </a>
                         </div>
                      </div>
                   </div>
                   {% endfor %}
                </div>
-                  <div class="refresh__btn__wrapper" id="refresh__btn__wrapper">
-                     <svg class="refresh__btn">
-                        <use xlink:href="#refresh" class="refresh__btn">
-                           <symbol id="refresh" viewBox="0 0 24 24" width="30px" height="30px">
-                              <g>
-                                 <path d="M12,2a10.032,10.032,0,0,1,7.122,3H16a1,1,0,0,0-1,1h0a1,1,0,0,0,1,1h4.143A1.858,1.858,0,0,0,22,5.143V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V3.078A11.981,11.981,0,0,0,.05,10.9a1.007,1.007,0,0,0,1,1.1h0a.982.982,0,0,0,.989-.878A10.014,10.014,0,0,1,12,2Z"></path>
-                                 <path d="M22.951,12a.982.982,0,0,0-.989.878A9.986,9.986,0,0,1,4.878,19H8a1,1,0,0,0,1-1H9a1,1,0,0,0-1-1H3.857A1.856,1.856,0,0,0,2,18.857V23a1,1,0,0,0,1,1H3a1,1,0,0,0,1-1V20.922A11.981,11.981,0,0,0,23.95,13.1a1.007,1.007,0,0,0-1-1.1Z"></path>
-                              </g>
-                           </symbol>
-                        </use>
-                     </svg>
-                     <span>Посмотреть ещё</span>
-                  </div>
-               </section>
-            </div>
+               <div class="refresh__btn__wrapper" id="refresh__btn__wrapper">
+                  <svg class="refresh__btn">
+                     <use xlink:href="#refresh" class="refresh__btn">
+                        <symbol id="refresh" viewBox="0 0 24 24" width="30px" height="30px">
+                           <g>
+                              <path
+                                 d="M12,2a10.032,10.032,0,0,1,7.122,3H16a1,1,0,0,0-1,1h0a1,1,0,0,0,1,1h4.143A1.858,1.858,0,0,0,22,5.143V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V3.078A11.981,11.981,0,0,0,.05,10.9a1.007,1.007,0,0,0,1,1.1h0a.982.982,0,0,0,.989-.878A10.014,10.014,0,0,1,12,2Z">
+                              </path>
+                              <path
+                                 d="M22.951,12a.982.982,0,0,0-.989.878A9.986,9.986,0,0,1,4.878,19H8a1,1,0,0,0,1-1H9a1,1,0,0,0-1-1H3.857A1.856,1.856,0,0,0,2,18.857V23a1,1,0,0,0,1,1H3a1,1,0,0,0,1-1V20.922A11.981,11.981,0,0,0,23.95,13.1a1.007,1.007,0,0,0-1-1.1Z">
+                              </path>
+                           </g>
+                        </symbol>
+                     </use>
+                  </svg>
+                  <span>Başgalary görmek</span>
+               </div>
+            </section>
          </div>
       </div>
-      {% include 'main/footer.html' %}
    </div>
+   {% include 'main/footer.html' %}
+</div>
 
-   <script src="{% static 'tm_scripts/header.js' %}"></script>
-   <script src="{% static 'tm_scripts/favourtie.js' %}"></script>
-   <script src="{% static 'tm_scripts/download_resumes.js' %}"></script>
-   {% endblock %}
+<script src="{% static 'tm_scripts/header.js' %}"></script>
+<script src="{% static 'tm_scripts/favourtie.js' %}"></script>
+<script src="{% static 'tm_scripts/download_resumes.js' %}"></script>
+{% endblock %}

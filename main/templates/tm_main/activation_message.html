@@ -7,10 +7,9 @@
          <img src="{% static 'images/header/Ishim__logo.png' %}" alt="Sorry got some error" class="header__pic">
          <div class="header__loc">
             <form action="">
-               <select name="interface__lang" id=""
-                  onchange="window.location.href=this.options[this.selectedIndex].value">
-                  <option value="RU" class="header__loc__current">RU</option>
-                  <option value="TM" class="header__loc__current">TM</option>
+               <select name="interface__lang" id="" onchange="window.location.href=this.value" autocomplete="off">
+                  <option value="/" class="header__loc__current">RU</option>
+                  <option value="/tm" class="header__loc__current" selected>TM</option>
                </select>
             </form>
          </div>
@@ -19,7 +18,7 @@
 
    <div class="reg-g-c container__content">
       <div class="reg-g-c__inner">
-         <h1 class="reg-g-c__title">Мы отправили ссылку на вашу почту, нажмите на нее, для подтверждения личности</h1>
+         <h1 class="reg-g-c__title">Elektron poçtaňyza ssylka iberdik, şahsyýetiňizi tassyklamak üçin, ssylka basyň</h1>
 
          <a class="reg-g-c__btn purp__btn" href="{% url 'login-tm' %}">Girmek</a>
       </div>
