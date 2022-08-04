@@ -1,3 +1,192 @@
+const exp_btn = document.getElementById('user__exp__wrap');
+
+function expAdditional(e) {
+  if (e.target.id == 'empl_exp2') {
+    const div = document.createElement('div');
+    div.innerHTML = `
+                    <div>
+                      <h2 class="fw500">Iş tejribesi</h2>
+                      <h2>Haýsy wezipäni tutýadyňyz?</h2>
+                      <input type="text" class="user-text user__txt__exp__pos" value="" name="exp_position">
+
+                      <h2>Guramanyň ady näme?</h2>
+                      <input type="text" class="user-text user__last__comp__name__exp" value="" name="org_name">
+
+                      <h2 class="fw500 user-info-block-title">Jogapkärçilikler</h2>
+                      <div class="user__info__block__txt__area__wrapper">
+                          <textarea name="responsibilities" id="job__resp"
+                            class="user-info-block-txtarea user__response__exp"
+                            placeholder=" Iş ýeriňizdäki ýerine ýetiren borçlaryňyz barada ýazyp beriň"></textarea>
+                      </div>
+                      <div class="user__time">
+                          <h2>Işe duran wagtyňyz </h2>
+                          <select name="exp_start__month" id="user__exp__time__start__mon"
+                            class="user__time__item user-select-bg user__time__start__mon__exp">
+                            <option value="01">Ýanwar</option>
+                            <option value="02">Fewral</option>
+                            <option selected value="03">Mart</option>
+                            <option value="04">Aprel</option>
+                            <option value="05">Maý</option>
+                            <option value="06">Iýun</option>
+                            <option value="07">Iýul</option>
+                            <option value="08">Awgust</option>
+                            <option value="09">Sentýabr</option>
+                            <option value="10">Oktýabr</option>
+                            <option value="11">Noýabr</option>
+                            <option value="12">Dekabr</option>
+                          </select>
+
+                          <div class="horizontal__row"></div>
+
+                          <select name="exp_start__year" id="user__exp__time__start__year"
+                            class="user__time__item user-select-bg user__time__start__year__exp">
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option selected value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                            <option value="1993">1993</option>
+                            <option value="1992">1992</option>
+                            <option value="1991">1991</option>
+                            <option value="1990">1990</option>
+                            <option value="1989">1989</option>
+                            <option value="1988">1988</option>
+                            <option value="1987">1987</option>
+                            <option value="1986">1986</option>
+                            <option value="1985">1985</option>
+                            <option value="1984">1984</option>
+                            <option value="1983">1983</option>
+                            <option value="1982">1982</option>
+                            <option value="1981">1981</option>
+                            <option value="1980">1980</option>
+                            <option value="1979">1979</option>
+                            <option value="1978">1978</option>
+                            <option value="1977">1977</option>
+                            <option value="1976">1976</option>
+                            <option value="1975">1975</option>
+                          </select>
+                      </div>
+
+                      <div class="user__time">
+                          <h2>Окончание работы</h2>
+                          <select name="exp_end__month" id="user__exp__time__end__mon"
+                            class="user__time__item user-select-bg user__time__end__mon__exp">
+                            <option value="1">Январь</option>
+                            <option value="2">Февраль</option>
+                            <option selected value="3">Март</option>
+                            <option value="4">Апрель</option>
+                            <option value="5">Май</option>
+                            <option value="6">Июнь</option>
+                            <option value="7">Июль</option>
+                            <option value="8">Август</option>
+                            <option value="9">Сентябрь</option>
+                            <option value="10">Октябрь</option>
+                            <option value="11">Ноябрь</option>
+                            <option value="12">Декабрь</option>
+                          </select>
+
+                          <div class="horizontal__row"></div>
+
+                          <select name="exp_end__year" id="user__exp__time__end__year"
+                            class="user__time__item user-select-bg user__time__end__year__exp">
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option selected value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                            <option value="1993">1993</option>
+                            <option value="1992">1992</option>
+                            <option value="1991">1991</option>
+                            <option value="1990">1990</option>
+                            <option value="1989">1989</option>
+                            <option value="1988">1988</option>
+                            <option value="1987">1987</option>
+                            <option value="1986">1986</option>
+                            <option value="1985">1985</option>
+                            <option value="1984">1984</option>
+                            <option value="1983">1983</option>
+                            <option value="1982">1982</option>
+                            <option value="1981">1981</option>
+                            <option value="1980">1980</option>
+                            <option value="1979">1979</option>
+                            <option value="1978">1978</option>
+                            <option value="1977">1977</option>
+                            <option value="1976">1976</option>
+                            <option value="1975">1975</option>
+                          </select>
+
+                          <div class="user__time__checkbox__wrapper">
+                            <input type="checkbox" class="user__time__checkbox" id="user__t__chk" name="user__t__chk"
+                                value="forpres">
+                            <label for="user__t__chk" class="user__time__checkbox__label work_pres">Häzirki wagtda
+                                işleýärin</label>
+                          </div>
+                      </div>
+                    </div>
+                
+
+
+
+                <div class="add__lang" id="addnew">
+                    <span id="addnew">+</span>
+                    <span id="addnew">Iş tejribesini goş</span>
+                </div>`
+    document.getElementById("user__exp__wrap").appendChild(div);
+    exp_btn.removeChild(document.getElementById('exp_btn_wrapper'));
+    exp_btn.removeEventListener('click' , expAdditional);
+  } else {
+    
+  }
+}
+exp_btn.addEventListener('click' , expAdditional);
+
+
+
+
+
+
 let nameNum = 1;
 document.getElementById("user__exp__btn__wrap").addEventListener("click", function (e) {
   const id = e.target.id;

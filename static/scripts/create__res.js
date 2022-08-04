@@ -162,8 +162,8 @@ function expAdditional(e) {
                                 время</label>
                           </div>
                       </div>
-                    </div>
-                </div>
+
+               
 
 
 
