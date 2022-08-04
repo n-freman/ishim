@@ -160,7 +160,7 @@ def create_cv(request, *args):
                 end_year=data['end_year_edu'][i]
             )
         return redirect(reverse('my-cv-tm'))
-    return render(request, '_tmemployee/cv_create.html')
+    return render(request, 'tm_employee/cv_create.html')
 
 @employee_required
 @login_required
