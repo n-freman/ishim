@@ -1,7 +1,7 @@
 const exp_btn = document.getElementById('user__exp__wrap');
+
 function expAdditional(e) {
-  e.target.preventDefault();
-  if (e.target.id = 'empl_exp2') {
+  if (e.target.id == 'empl_exp2') {
     const div = document.createElement('div');
     div.innerHTML = `<h2>Какую должность вы занимали?</h2>
                       <input type="text" class="user-text user__txt__exp__pos" value="" name="exp_position">
@@ -172,11 +172,17 @@ function expAdditional(e) {
                     <span id="addnew">Добавить опыт работы</span>
                 </div>`
     document.getElementById("user__exp__wrap").appendChild(div);
+    exp_btn.removeChild(document.getElementById('exp_btn_wrapper'));
+    exp_btn.removeEventListener('click' , expAdditional);
   } else {
     
   }
 }
 exp_btn.addEventListener('click' , expAdditional);
+
+
+
+
 
 
 let nameNum = 1;
@@ -319,8 +325,6 @@ document.getElementById("user__exp__btn__wrap").addEventListener("click", functi
       </div>
     `
     document.getElementById("user__exp__wrap").appendChild(div);
-    nameNum++;
-    return nameNum;
   } else {
   }
 });
