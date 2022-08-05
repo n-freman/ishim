@@ -5,7 +5,6 @@ function expAdditional(e) {
     const div = document.createElement('div');
     div.innerHTML = `
                     <div>
-                      <h2 class="fw500">Iş tejribesi</h2>
                       <h2>Haýsy wezipäni tutýadyňyz?</h2>
                       <input type="text" class="user-text user__txt__exp__pos" value="" name="exp_position">
 
