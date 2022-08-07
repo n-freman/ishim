@@ -29,18 +29,18 @@
                   <input required type="tel" class="user-bd__date user-bd__item" name="birth_date__date"
                      id="user__bd__date" value="{{ cv.birth_date|date:" d" }}" placeholder="03">
                   <select required name="birth_date__month" id="user__bd__mon" class="user-bd__item user-select-bg">
-                     <option {% if cv.birth_date|date:"m"==1 %}selected{% endif %} value="01">Январь</option>
-                     <option {% if cv.birth_date|date:"m"==2 %}selected{% endif %} value="02">Февраль</option>
-                     <option {% if cv.birth_date|date:"m"==3 %}selected{% endif %} value="03">Март</option>
-                     <option {% if cv.birth_date|date:"m"==4 %}selected{% endif %} value="04">Апрель</option>
-                     <option {% if cv.birth_date|date:"m"==5 %}selected{% endif %} value="05">Май</option>
-                     <option {% if cv.birth_date|date:"m"==6 %}selected{% endif %} value="06">Июнь</option>
-                     <option {% if cv.birth_date|date:"m"==7 %}selected{% endif %} value="07">Июль</option>
-                     <option {% if cv.birth_date|date:"m"==8 %}selected{% endif %} value="08">Август</option>
-                     <option {% if cv.birth_date|date:"m"==9 %}selected{% endif %} value="09">Сентябрь</option>
-                     <option {% if cv.birth_date|date:"m"==10 %}selected{% endif %} value="10">Октябрь</option>
-                     <option {% if cv.birth_date|date:"m"==11 %}selected{% endif %} value="11">Ноябрь</option>
-                     <option {% if cv.birth_date|date:"m"==12 %}selected{% endif %} value="12">Декабрь</option>
+                     <option {% if cv.birth_date|date:"m" == 1 %}selected{% endif %} value="01">Январь</option>
+                     <option {% if cv.birth_date|date:"m" == 2 %}selected{% endif %} value="02">Февраль</option>
+                     <option {% if cv.birth_date|date:"m" == 3 %}selected{% endif %} value="03">Март</option>
+                     <option {% if cv.birth_date|date:"m" == 4 %}selected{% endif %} value="04">Апрель</option>
+                     <option {% if cv.birth_date|date:"m" == 5 %}selected{% endif %} value="05">Май</option>
+                     <option {% if cv.birth_date|date:"m" == 6 %}selected{% endif %} value="06">Июнь</option>
+                     <option {% if cv.birth_date|date:"m" == 7 %}selected{% endif %} value="07">Июль</option>
+                     <option {% if cv.birth_date|date:"m" == 8 %}selected{% endif %} value="08">Август</option>
+                     <option {% if cv.birth_date|date:"m" == 9 %}selected{% endif %} value="09">Сентябрь</option>
+                     <option {% if cv.birth_date|date:"m" == 10 %}selected{% endif %} value="10">Октябрь</option>
+                     <option {% if cv.birth_date|date:"m" == 11 %}selected{% endif %} value="11">Ноябрь</option>
+                     <option {% if cv.birth_date|date:"m" == 12 %}selected{% endif %} value="12">Декабрь</option>
                   </select>
 
                   <select required name="birth_date__year" id="user__bd__year" class="user-bd__item user-select-bg">
@@ -251,29 +251,29 @@
                            <h2>Начало работы</h2>
                            <select name="exp_start__month" id="user__exp__time__start__mon"
                               class="user__time__item user-select-bg user__time__start__mon__exp">
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="01" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "01" %}selected{% endif %}
                                  value="01">Январь</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="02" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "02" %}selected{% endif %}
                                  value="02">Февраль</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="03" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "03" %}selected{% endif %}
                                  value="03">Март</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="04" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "04" %}selected{% endif %}
                                  value="04">Апрель</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="05" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "05" %}selected{% endif %}
                                  value="05">Май</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="06" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "06" %}selected{% endif %}
                                  value="06">Июнь</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="07" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "07" %}selected{% endif %}
                                  value="07">Июль</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="08" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "08" %}selected{% endif %}
                                  value="08">Август</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="09" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "09" %}selected{% endif %}
                                  value="09">Сентябрь</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="10" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "10" %}selected{% endif %}
                                  value="10">Октябрь</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="11" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "11" %}selected{% endif %}
                                  value="11">Ноябрь</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="12" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "12" %}selected{% endif %}
                                  value="12">Декабрь</option>
                            </select>
 
@@ -281,8 +281,7 @@
 
                            <select name="exp_start__year" id="user__exp__time__start__year"
                               class="user__time__item user-select-bg user__time__start__year__exp">
-                              <option selected value="{{  cvattr.workexperience.start_year|slice:" :4" }}">{{
-                                 cvattr.workexperience.start_year|slice:":4" }}</option>
+                              <option selected value="{{  cvattr.workexperience.start_year|slice:" :4" }}">{{ cvattr.workexperience.start_year|slice:":4" }}</option>
                               <option value="2019">2019</option>
                               <option value="2018">2018</option>
                               <option value="2017">2017</option>
@@ -333,31 +332,31 @@
 
                         <div class="user__time">
                            <h2>Окончание работы</h2>
-                           <select name="exp_end__month" id="user__exp__time__end__mon"
+                           <select name="exp_end__month" id="user__exp__time__end__mon" autocomplete="1098539801375"
                               class="user__time__item user-select-bg user__time__end__mon__exp">
-                              <option {% if cvattr.workexperience.end_year|date:"m"==01 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == "01" %}selected{% endif %}
                                  value="01">Январь</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==02 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 02 %}selected{% endif %}
                                  value="02">Февраль</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==03 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 03 %}selected{% endif %}
                                  value="03">Март</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==04 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 04 %}selected{% endif %}
                                  value="04">Апрель</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==05 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 05 %}selected{% endif %}
                                  value="05">Май</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==06 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 06 %}selected{% endif %}
                                  value="06">Июнь</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==07 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 07 %}selected{% endif %}
                                  value="07">Июль</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==08 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 08 %}selected{% endif %}
                                  value="08">Август</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==09 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 09 %}selected{% endif %}
                                  value="09">Сентябрь</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==10 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 10 %}selected{% endif %}
                                  value="10">Октябрь</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==11 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 11 %}selected{% endif %}
                                  value="11">Ноябрь</option>
-                              <option {% if cvattr.workexperience.end_year|date:"m"==12 %}selected{% endif %}
+                              <option {% if cvattr.workexperience.end_year|slice:"5:7" == 12 %}selected{% endif %}
                                  value="12">Декабрь</option>
                            </select>
 
@@ -365,8 +364,7 @@
 
                            <select name="exp_end__year" id="user__exp__time__end__year"
                               class="user__time__item user-select-bg user__time__end__year__exp">
-                              <option selected value="{{ cvattr.workexperience.end_year|slice:" :4" }}">{{
-                                 cvattr.workexperience.end_year|slice:":4" }}</option>
+                              <option selected value="{{ cvattr.workexperience.end_year|slice:" :4" }}">{{ cvattr.workexperience.end_year|slice:":4" }}</option>
                               <option value="2019">2019</option>
                               <option value="2018">2018</option>
                               <option value="2017">2017</option>
