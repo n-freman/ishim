@@ -29,18 +29,18 @@
                   <input required type="tel" class="user-bd__date user-bd__item" name="birth_date__date"
                      id="user__bd__date" value="{{ cv.birth_date|date:" d" }}" placeholder="03">
                   <select required name="birth_date__month" id="user__bd__mon" class="user-bd__item user-select-bg">
-                     <option {% if cv.birth_date|date:"m"==1 %}selected{% endif %} value="01">Ýanwar</option>
-                     <option {% if cv.birth_date|date:"m"==2 %}selected{% endif %} value="02">Fewral</option>
-                     <option {% if cv.birth_date|date:"m"==3 %}selected{% endif %} value="03">Mart</option>
-                     <option {% if cv.birth_date|date:"m"==4 %}selected{% endif %} value="04">Aprel</option>
-                     <option {% if cv.birth_date|date:"m"==5 %}selected{% endif %} value="05">Maý</option>
-                     <option {% if cv.birth_date|date:"m"==6 %}selected{% endif %} value="06">Iýun</option>
-                     <option {% if cv.birth_date|date:"m"==7 %}selected{% endif %} value="07">Iýul</option>
-                     <option {% if cv.birth_date|date:"m"==8 %}selected{% endif %} value="08">Awgust</option>
-                     <option {% if cv.birth_date|date:"m"==9 %}selected{% endif %} value="09">Sentýabr</option>
-                     <option {% if cv.birth_date|date:"m"==10 %}selected{% endif %} value="10">Oktýabr</option>
-                     <option {% if cv.birth_date|date:"m"==11 %}selected{% endif %} value="11">Noýabr</option>
-                     <option {% if cv.birth_date|date:"m"==12 %}selected{% endif %} value="12">Dekabr</option>
+                     <option {% if cv.birth_date|date:"m" == 1 %}selected{% endif %} value="01">Ýanwar</option>
+                     <option {% if cv.birth_date|date:"m" == 2 %}selected{% endif %} value="02">Fewral</option>
+                     <option {% if cv.birth_date|date:"m" == 3 %}selected{% endif %} value="03">Mart</option>
+                     <option {% if cv.birth_date|date:"m" == 4 %}selected{% endif %} value="04">Aprel</option>
+                     <option {% if cv.birth_date|date:"m" == 5 %}selected{% endif %} value="05">Maý</option>
+                     <option {% if cv.birth_date|date:"m" == 6 %}selected{% endif %} value="06">Iýun</option>
+                     <option {% if cv.birth_date|date:"m" == 7 %}selected{% endif %} value="07">Iýul</option>
+                     <option {% if cv.birth_date|date:"m" == 8 %}selected{% endif %} value="08">Awgust</option>
+                     <option {% if cv.birth_date|date:"m" == 9 %}selected{% endif %} value="09">Sentýabr</option>
+                     <option {% if cv.birth_date|date:"m" == 10 %}selected{% endif %} value="10">Oktýabr</option>
+                     <option {% if cv.birth_date|date:"m" == 11 %}selected{% endif %} value="11">Noýabr</option>
+                     <option {% if cv.birth_date|date:"m" == 12 %}selected{% endif %} value="12">Dekabr</option>
                   </select>
 
                   <select required name="birth_date__year" id="user__bd__year" class="user-bd__item user-select-bg">
@@ -249,29 +249,29 @@
                            <h2>Işe duran wagtyňyz</h2>
                            <select name="exp_start__month" id="user__exp__time__start__mon"
                               class="user__time__item user-select-bg user__time__start__mon__exp">
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="01" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "01" %}selected{% endif %}
                                  value="01">Ýanwar</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="02" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "02" %}selected{% endif %}
                                  value="02">Fewral</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="03" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "03" %}selected{% endif %}
                                  value="03">Mart</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="04" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "04" %}selected{% endif %}
                                  value="04">Aprel</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="05" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "05" %}selected{% endif %}
                                  value="05">Maý</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="06" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "06" %}selected{% endif %}
                                  value="06">Iýun</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="07" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "07" %}selected{% endif %}
                                  value="07">Iýul</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="08" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "08" %}selected{% endif %}
                                  value="08">Awgust</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="09" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "09" %}selected{% endif %}
                                  value="09">Sentýabr</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="10" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "10" %}selected{% endif %}
                                  value="10">Oktýabr</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="11" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "11" %}selected{% endif %}
                                  value="11">Noýabr</option>
-                              <option {% if cvattr.workexperience.start_year|slice:"5:7"=="12" %}selected{% endif %}
+                              <option {% if cvattr.workexperience.start_year|slice:"5:7" == "12" %}selected{% endif %}
                                  value="12">Dekabr</option>
                            </select>
 
