@@ -25,7 +25,8 @@ from main.views import (
     delete_user, password_edit,
     company_name_edit, phone_num_edit,
     sphere_edit, city_edit, 
-    logo_edit
+    logo_edit, first_name_edit,
+    last_name_edit
 )
 
 from main import tm_views
@@ -54,6 +55,8 @@ urlpatterns = [
     path('edit/phone', phone_num_edit, name='edit-phone'),
     path('edit/sphere', sphere_edit, name='edit-sphere'),
     path('edit/city', city_edit, name='edit-city'),
+    path('edit/first_name', first_name_edit, name='edit-first-name'),
+    path('edit/last_name', last_name_edit, name='edit-last-name'),
     path('edit/logo', logo_edit, name='logo-edit'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
@@ -81,6 +84,8 @@ tm_urlpatterns = [
     path('tm/edit/phone', tm_views.phone_num_edit, name='edit-phone-tm'),
     path('tm/edit/sphere', tm_views.sphere_edit, name='edit-sphere-tm'),
     path('tm/edit/city', tm_views.city_edit, name='edit-city-tm'),
+    path('edit/first_name', tm_views.first_name_edit, name='edit-first-name-tm'),
+    path('edit/last_name', tm_views.last_name_edit, name='edit-last-name-tm'),
     path('tm/edit/logo', tm_views.logo_edit, name='logo-edit-tm'),
 ]
 

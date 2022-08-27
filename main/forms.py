@@ -29,3 +29,11 @@ class CityEditForm(forms.Form):
 
 class LogoEditForm(forms.Form):
     logo = forms.ImageField()
+
+
+class FirstNameEditForm(forms.Form):
+    first_name = forms.CharField(max_length=65)
+
+
+class LastNameEditForm(forms.Form):
+    last_name = forms.CharField(max_length=65)

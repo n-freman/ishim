@@ -7,12 +7,13 @@ from django.contrib.auth.decorators import login_required
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from .utils import generate_token, get_user_type, get_data, get_footer
-from .decorators import login_forbidden, hirer_required
+from .decorators import login_forbidden, hirer_required, employee_required
 from .forms import (
     PhoneNumEditForm, EmailEditForm, 
     PasswordEditForm, SphereEditForm,
     CompNameEditForm, CityEditForm,
-    LogoEditForm
+    LogoEditForm, FirstNameEditForm,
+    LastNameEditForm
 )
 
 
@@ -108,6 +109,42 @@ def company_name_edit(request):
     context = {
         'heading': 'название компании',
         'name': 'company_name'
+    }
+    return render(request, 'main/edit.html', context)
+
+
+@employee_required
+@login_required
+def first_name_edit(request):
+    if request.method == 'POST':
+        form = FirstNameEditForm(request.POST)
+        if form.is_valid():
+            request.user.employee.first_name = form.cleaned_data.get(
+                'first_name'
+            )
+            request.user.employee.save()
+        return redirect(reverse('profile'))
+    context = {
+        'heading': 'Имя',
+        'name': 'first_name'
+    }
+    return render(request, 'main/edit.html', context)
+
+
+@employee_required
+@login_required
+def last_name_edit(request):
+    if request.method == 'POST':
+        form = LastNameEditForm(request.POST)
+        if form.is_valid():
+            request.user.employee.last_name = form.cleaned_data.get(
+                'last_name'
+            )
+            request.user.employee.save()
+        return redirect(reverse('profile'))
+    context = {
+        'heading': 'Фамилия',
+        'name': 'last_name'
     }
     return render(request, 'main/edit.html', context)
 
