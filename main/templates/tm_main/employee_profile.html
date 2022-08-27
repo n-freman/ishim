@@ -9,7 +9,7 @@
             <h1 class="priv__data__title">Şahsy maglumatlar</h1>
 
             <div class="priv__data__item">
-               <div>Имия</div>
+               <div>Ady</div>
                <div>{{ request.user.employee.first_name }}</div>
 
                <a href="{% url 'edit-first-name-tm' %}" class="priv__data__item__action">üýtgetmek</a>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="priv__data__item">
-               <div>Фамилия</div>
+               <div>Familiýa</div>
                <div>{{ request.user.employee.last_name }}</div>
 
                <a href="{% url 'edit-last-name-tm' %}" class="priv__data__item__action">üýtgetmek</a>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="priv__data__item">
-               <div>Электронная почта</div>
+               <div>elektron poçta</div>
                <div>{{ request.user.email }}</div>
 
                <a href="#" class="priv__data__item__action">üýtgetmek</a>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="priv__data__item">
-               <div>Мобильный телефон</div>
+               <div>Telefon</div>
                <div>{{ request.user.employee.phone_num }}</div>
 
                <a href="{% url 'edit-phone-tm' %}" class="priv__data__item__action">üýtgetmek</a>
@@ -49,7 +49,7 @@
             </div>
 
             <div class="priv__data__item">
-               <div>Пароль</div>
+               <div>Parol</div>
                <div>********</div>
 
                <a href="{% url 'edit-password-tm' %}" class="priv__data__item__action">üýtgetmek</a>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="priv__data__item">
-               <div>Город</div>
+               <div>Şäher</div>
                <div>{{ request.user.employee.city }}</div>
 
                <a href="{% url 'edit-city-tm' %}" class="priv__data__item__action">üýtgetmek</a>
