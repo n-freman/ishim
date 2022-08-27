@@ -6,13 +6,13 @@
    <div class="priv__data mt-60">
       <div class="container__content">
          <div class="priv__data__inner" id="delete__wrap">
-            <h1 class="priv__data__title">Личные данные</h1>
+            <h1 class="priv__data__title">Şahsy maglumatlar</h1>
 
             <div class="priv__data__item">
                <div>Имия</div>
                <div>{{ request.user.employee.first_name }}</div>
 
-               <a href="{% url 'edit-first-name-tm' %}" class="priv__data__item__action">изменить</a>
+               <a href="{% url 'edit-first-name-tm' %}" class="priv__data__item__action">üýtgetmek</a>
                <a href="{% url 'edit-first-name-tm' %}" class="priv__data__item__action__mob">
                   <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
                </a>
@@ -22,7 +22,7 @@
                <div>Фамилия</div>
                <div>{{ request.user.employee.last_name }}</div>
 
-               <a href="{% url 'edit-last-name-tm' %}" class="priv__data__item__action">изменить</a>
+               <a href="{% url 'edit-last-name-tm' %}" class="priv__data__item__action">üýtgetmek</a>
                <a href="{% url 'edit-last-name-tm' %}" class="priv__data__item__action__mob">
                   <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
                </a>
@@ -32,7 +32,7 @@
                <div>Электронная почта</div>
                <div>{{ request.user.email }}</div>
 
-               <a href="#" class="priv__data__item__action">изменить</a>
+               <a href="#" class="priv__data__item__action">üýtgetmek</a>
                <a href="#" class="priv__data__item__action__mob">
                   <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
                </a>
@@ -42,7 +42,7 @@
                <div>Мобильный телефон</div>
                <div>{{ request.user.employee.phone_num }}</div>
 
-               <a href="{% url 'edit-phone-tm' %}" class="priv__data__item__action">изменить</a>
+               <a href="{% url 'edit-phone-tm' %}" class="priv__data__item__action">üýtgetmek</a>
                <a href="{% url 'edit-phone-tm' %}" class="priv__data__item__action__mob">
                   <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
                </a>
@@ -52,7 +52,7 @@
                <div>Пароль</div>
                <div>********</div>
 
-               <a href="{% url 'edit-password-tm' %}" class="priv__data__item__action">изменить</a>
+               <a href="{% url 'edit-password-tm' %}" class="priv__data__item__action">üýtgetmek</a>
                <a href="{% url 'edit-password-tm' %}" class="priv__data__item__action__mob">
                   <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
                </a>
@@ -62,13 +62,13 @@
                <div>Город</div>
                <div>{{ request.user.employee.city }}</div>
 
-               <a href="{% url 'edit-city-tm' %}" class="priv__data__item__action">изменить</a>
+               <a href="{% url 'edit-city-tm' %}" class="priv__data__item__action">üýtgetmek</a>
                <a href="{% url 'edit-city-tm' %}" class="priv__data__item__action__mob">
                   <img src="{% static 'images/pen__pic.svg' %}" alt="Sorry got some error">
                </a>
             </div>
 
-            <div class="priv__data__item__action" id="delete__btn">Удаление</div>
+            <div class="priv__data__item__action" id="delete__btn">Akkaundymy pozmak</div>
 
          </div>
       </div>

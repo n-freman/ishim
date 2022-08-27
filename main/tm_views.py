@@ -75,7 +75,7 @@ def phone_num_edit(request):
             user.save()
         return redirect(reverse('profile-tm'))
     context = {
-        'heading': 'номер телефона',
+        'heading': 'Telefon',
         'name': 'phone_num'
     }
     return render(request, 'tm_main/edit.html', context)
@@ -90,7 +90,7 @@ def password_edit(request):
             request.user.save()
         return redirect(reverse('profile-tm'))
     context = {
-        'heading': 'пароль',
+        'heading': 'Parol',
         'name': 'password'
     }
     return render(request, 'tm_main/edit.html', context)
@@ -107,7 +107,7 @@ def company_name_edit(request):
             request.user.hirer.save()
         return redirect(reverse('profile-tm'))
     context = {
-        'heading': 'название компании',
+        'heading': 'Kompaniýanyň ady',
         'name': 'company_name'
     }
     return render(request, 'tm_main/edit.html', context)
@@ -125,7 +125,7 @@ def first_name_edit(request):
             request.user.employee.save()
         return redirect(reverse('profile'))
     context = {
-        'heading': 'Имя',
+        'heading': 'Ady',
         'name': 'first_name'
     }
     return render(request, 'tm_main/edit.html', context)
@@ -143,7 +143,7 @@ def last_name_edit(request):
             request.user.employee.save()
         return redirect(reverse('profile'))
     context = {
-        'heading': 'Фамилия',
+        'heading': 'Familiýa',
         'name': 'last_name'
     }
     return render(request, 'tm_main/edit.html', context)
@@ -158,7 +158,7 @@ def sphere_edit(request):
             request.user.hirer.save()
         return redirect(reverse('profile-tm'))
     context = {
-        'heading': 'пароль',
+        'heading': 'parol',
         'name': 'sphere'
     }
     return render(request, 'tm_main/edit.html', context)
@@ -174,7 +174,7 @@ def city_edit(request):
             user.save()
         return redirect(reverse('profile-tm'))
     context = {
-        'heading': 'город',
+        'heading': 'Şäher',
         'name': 'city'
     }
     return render(request, 'tm_main/edit.html', context)
