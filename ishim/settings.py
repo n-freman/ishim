@@ -127,10 +127,10 @@ LOGIN_URL = 'login'
 
 # Email config
 # os.environ.get('EMAIL_FROM_USER')
-EMAIL_FROM_USER = ''
+EMAIL_FROM_USER = 'smiron1703@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'smiron1703@gmail.com'
+EMAIL_HOST_PASSWORD = 'lvpxrbqqgubosdyh'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 
