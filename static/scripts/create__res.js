@@ -1,6 +1,6 @@
 const exp_btn = document.getElementById('user__exp__wrap');
 function expAdditional(e) {
-  e.target.preventDefault();
+  e.target.preventDefault;
   if (e.target.id = 'empl_exp2') {
     const div = document.createElement('div');
     div.innerHTML = `<h2>Какую должность вы занимали?</h2>
