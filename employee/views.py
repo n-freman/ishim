@@ -131,23 +131,25 @@ def create_cv(request, *args):
                 cv=new_cv,
                 program=data['program'][i]
             )
-        for i in range(len(data['exp_position'])):
-            new_exp = WorkExperience.objects.create(
-                cv=new_cv,
-                position=data['exp_position'][i],
-                org_name=data['org_name'][i],
-                responsibilities=data['responsibilities'][i],
-                start_year=datetime.date(
-                    int(data['exp_start__year'][i]), 
-                    int(data['exp_start__month'][i]),
-                    1
-                ),
-                end_year=datetime.date(
-                    int(data['exp_end__year'][i]), 
-                    int(data['exp_end__month'][i]),
-                    1
+        exp_positions = data.get('exp_position')
+        if exp_positions:
+            for i in range(len(exp_positions)):
+                new_exp = WorkExperience.objects.create(
+                    cv=new_cv,
+                    position=data['exp_position'][i],
+                    org_name=data['org_name'][i],
+                    responsibilities=data['responsibilities'][i],
+                    start_year=datetime.date(
+                        int(data['exp_start__year'][i]), 
+                        int(data['exp_start__month'][i]),
+                        1
+                    ),
+                    end_year=datetime.date(
+                        int(data['exp_end__year'][i]), 
+                        int(data['exp_end__month'][i]),
+                        1
+                    )
                 )
-            )
         edu_degrees = [key for key in data.keys() if key.startswith('edu_degrees')]
         for i in range(len(data['establishment'])):
             new_education = Education.objects.create(

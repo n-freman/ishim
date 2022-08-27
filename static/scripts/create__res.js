@@ -1,7 +1,7 @@
 const exp_btn = document.getElementById('user__exp__wrap');
+
 function expAdditional(e) {
-  e.target.preventDefault;
-  if (e.target.id = 'empl_exp2') {
+  if (e.target.id == 'empl_exp2') {
     const div = document.createElement('div');
     div.innerHTML = `<h2>Какую должность вы занимали?</h2>
                       <input type="text" class="user-text user__txt__exp__pos" value="" name="exp_position">
@@ -162,8 +162,8 @@ function expAdditional(e) {
                                 время</label>
                           </div>
                       </div>
-                    </div>
-                </div>
+
+               
 
 
 
@@ -172,11 +172,17 @@ function expAdditional(e) {
                     <span id="addnew">Добавить опыт работы</span>
                 </div>`
     document.getElementById("user__exp__wrap").appendChild(div);
+    exp_btn.removeChild(document.getElementById('exp_btn_wrapper'));
+    exp_btn.removeEventListener('click' , expAdditional);
   } else {
     
   }
 }
 exp_btn.addEventListener('click' , expAdditional);
+
+
+
+
 
 
 let nameNum = 1;
@@ -319,8 +325,6 @@ document.getElementById("user__exp__btn__wrap").addEventListener("click", functi
       </div>
     `
     document.getElementById("user__exp__wrap").appendChild(div);
-    nameNum++;
-    return nameNum;
   } else {
   }
 });
@@ -503,99 +507,6 @@ document.getElementById("user__progs__btn__wrapper").addEventListener("click", f
   } else {
   }
 });
-
-
-// let user_gender;
-// let user_degree = [];
-// let user_busyness;
-// let user_schedule;
-// document.getElementById('gender__block__wrapper').addEventListener('click' , (e) => {
-//   if (e.target.tagName == 'input' || 'label'){
-//     user_gender = e.target.value;
-//   }
-// })
-// document.getElementById('user__education__wrapper').addEventListener('click' , (e) => {
-//   if (e.target.tagName == 'input' || 'label'){
-//     user_degree.push(e.target.value)
-//   }
-// })
-// document.getElementById('user__busyness__wrapper').addEventListener('click' , (e) => {
-//   if (e.target.tagName == 'input' || 'label'){
-//      user_busyness = e.target.value;
-//   }
-// })
-// document.getElementById('user__schedule__wrapper').addEventListener('click' , (e) => {
-//   if (e.target.tagName == 'input' || 'label'){
-//      user_schedule = e.target.value;
-//   }
-// })
-// document.getElementById('btn').addEventListener('click' , function(e) {
-//   e.preventDefault();
-
-//   function createArr(cls) {
-//     let arrName = [];
-//     let elemName = document.getElementsByClassName(cls);
-//     if (elemName.length > 0) {
-//        for (let i = 0; i < elemName.length; i++) {
-//         arrName.push(elemName[i].value)
-//        }
-//     }
-//     return arrName
-//   }
-
-//   const lang_arr = createArr('user-info-block__lang__item__txt');
-//   const langlev_arr = createArr('user-info-block__lang__item__select');
-
-//   const user_exp_pos_arr = createArr('user__txt__exp__pos');
-//   const comp_name = createArr('user__last__comp__name__exp');
-//   const user_exp_res = createArr('user__response__exp');
-//   const user_exp_start_mon = createArr('user__time__start__mon__exp');
-//   const user_exp_start_year = createArr('user__time__start__year__exp');
-//   const user_exp_end_mon = createArr('user__time__end__mon__exp');
-//   const user_exp_end_year = createArr('user__time__end__year__exp');
-//   const user_exp_work_pres = createArr('work_pres');
-//   const user_edu__instance = createArr('user__edu__instance');
-//   const user_specialize = createArr('user__specialize');
-//   const user_education_start = createArr('user__time__start__year__educ');
-//   const user_education_end = createArr('user__time__end__year__exp');
-//   const user_progs = createArr('user__progs');
-//   let body = {
-//     first_name:document.getElementById('user__name').value,
-//     last_name:document.getElementById('user__surname').value,
-//     birth_date:`${document.getElementById('user__bd__year').value}-${document.getElementById('user__bd__mon').value}-${document.getElementById('user__bd__date').value}`,
-//     phone_number: document.getElementById('user__number').value,
-//     email: document.getElementById('user__email').value,
-//     registration:document.getElementById('user__registration').value,
-//     gender:user_gender,
-//     position:document.getElementById('user__position').value,
-//     sphere:document.getElementById('user__industry').value,
-//     min_salary:document.getElementById('user__salary').value,
-//     busyness:user_busyness,
-//     schedule:user_schedule,
-//     work_exp:{
-//       position:user_exp_pos_arr,
-//       org_name:comp_name,
-//       responsibilities:user_exp_res,
-//       start_year:`${user_exp_start_year}-${user_exp_start_mon}-01`,
-//       end_year:`${user_exp_end_year}-${user_exp_end_mon}-01` || user_exp_work_pres,
-//     },
-//     education: {
-//       degree:user_degree,
-//       establishment:user_edu__instance,
-//       specialization :user_specialize,
-//       start_year:user_education_start,
-//       end_year:user_education_end,
-//     },
-//     progs: user_progs,
-//     langs: {
-//      lang:lang_arr,
-//      lang_lev:langlev_arr,
-//     },
-//     about:document.getElementById('user__about').value
-//   }
-//   makeRequest(body);
-//   console.log(body);
-// });
 
 const selectIndustry = document.getElementById('user__industry');
 selectIndustry.addEventListener('change' , (e) => {

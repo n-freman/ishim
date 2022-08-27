@@ -22,11 +22,6 @@
                <img src="{% static 'images/header/header__logo2.png' %}" alt="Sorry got some error" class="header__pic2"
                   title="Header Logo">
                <div class="header__loc header__loc2">
-                  <select name="interface__lang" id=""
-                     onchange="window.location.href=this.options[this.selectedIndex].value" autocomplete="off">
-                     <option value="" class="header__loc__current">RU</option>
-                     <option value="" class="header__loc__current">TM</option>
-                  </select>
                   <select name="interface__lang" id="" onchange="window.location.href=this.value" autocomplete="off">
                      <option value="/" class="header__loc__current" selected>RU</option>
                      <option value="/tm" class="header__loc__current">TM</option>
@@ -217,12 +212,12 @@
                   <div class="res__slbar__learn-more__inner">
                      <h2 class="res__slbar__learn-more__title">Статьи</h2>
                      {% for article in articles %}
-                     <div class="res__slbar__learn-more__item">
+                     <a href="" class="res__slbar__learn-more__item">
                         <img src="{{ article.image.url }}" alt="Sorry" class="l-m__pic" width="50" height="50">
                         <p class="l-m__txt">
                            {{ article.title }}
                         </p>
-                     </div>
+                     </a>
                      {% endfor %}
 
                   </div>

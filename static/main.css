@@ -180,6 +180,10 @@ svg {
 	margin: 0 auto;
 }
 
+.bottom_mb {
+	margin-bottom: 120px;
+}
+
 .wh__btn {
 	background-color: #ffff;
 	font-size: 1.2rem;
@@ -2169,7 +2173,6 @@ reg-h-t = registration-hirer-type
 	padding: 12px 24px 24px 24px;
 	background: #F0F0F0;
 	border-radius: 20px;
-	margin-bottom: 20px;
 }
 
 .mvv__contacts .mvv__subtitle {
@@ -2445,11 +2448,10 @@ reg-h-t = registration-hirer-type
 ================================ */
 .article {
 	margin-top: 116px;
-	margin-bottom: 62px;
 }
 
 .article__inner {
-	padding: 0 20%;
+	padding: 0 20% 10% 20%;
 }
 
 .article__title {
@@ -2470,6 +2472,7 @@ reg-h-t = registration-hirer-type
 .article__pic {
 	width: 100%;
 	height: auto;
+	max-height: 510px;
 	margin-bottom: 30px;
 }
 
@@ -2774,7 +2777,7 @@ reg-h-t = registration-hirer-type
 }
 
 .search__history__section {
-	margin-bottom: 20px;
+	margin-bottom: 120px;
 
 }
 
@@ -3203,9 +3206,9 @@ reg-h-t = registration-hirer-type
 		padding-left: 0;
 	}
 
-	.search__history__section:last-child {
+	/* .search__history__section:last-child {
 		display: none;
-	}
+	} */
 
 	.delete__title {
 		margin: 40px 20px;

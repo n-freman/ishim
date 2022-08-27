@@ -60,12 +60,12 @@
                   <div class="res__slbar__learn-more__inner">
                      <h2 class="res__slbar__learn-more__title">Makalalar</h2>
                      {% for article in articles %}
-                     <div class="res__slbar__learn-more__item">
+                     <a href="" class="res__slbar__learn-more__item">
                         <img src="{{ article.image.url }}" alt="Sorry" class="l-m__pic" width="50" height="50">
                         <p class="l-m__txt">
                            {{ article.title }}
                         </p>
-                     </div>
+                     </a>
                      {% endfor %}
                   </div>
                </div>

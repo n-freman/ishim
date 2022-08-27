@@ -11,7 +11,7 @@
    </symbol>
 </svg>
 <div class="container__main pad-0 w-1920">
-   {% include 'main/header_employee.html' %}
+   {% include 'tm_main/header_employee.html' %}
    <div class="result mt-60">
       <div class="container__content">
          <div class="result__inner">
@@ -59,12 +59,12 @@
                   <div class="res__slbar__learn-more__inner">
                      <h2 class="res__slbar__learn-more__title">Makalalar</h2>
                      {% for article in articles %}
-                     <div class="res__slbar__learn-more__item">
+                     <a href="" class="res__slbar__learn-more__item">
                         <img src="{{ article.image.url }}" alt="Sorry" class="l-m__pic" width="50" height="50">
                         <p class="l-m__txt">
                            {{ article.title }}
                         </p>
-                     </div>
+                     </a>
                      {% endfor %}
                   </div>
                </div>
